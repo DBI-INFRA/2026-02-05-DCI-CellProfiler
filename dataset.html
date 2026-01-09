@@ -207,12 +207,19 @@
 <div class="accordion accordion-flush" id="accordionFlushcurrent">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-headingcurrent">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapsecurrent" aria-expanded="true" aria-controls="flush-collapsecurrent">
         <span class="visually-hidden">Current Chapter</span>
         <span class="current-chapter">
         1. Introduction to the BBBC021 dataset
         </span>
-      
+      </button>
     </div><!--/div.accordion-header-->
+
+    <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
+      <div class="accordion-body">
+        <ul><li><a href="#the-example-dataset-bbbc021">The example dataset BBBC021</a></li>
+        </ul></div><!--/div.accordion-body-->
+    </div><!--/div.accordion-collapse-->
 
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
@@ -318,9 +325,8 @@
 </div>
 </div>
 </div>
-<div class="section level1">
-<h1 id="the-example-dataset-bbbc021">The example dataset BBBC021<a class="anchor" aria-label="anchor" href="#the-example-dataset-bbbc021"></a></h1>
-<p>Welcome! For the next exercise we will use a compact, <a href="https://doi.org/10.1158/1535-7163.MCT-09-1148" class="external-link">well-studied</a>
+<section><h2 class="section-heading" id="the-example-dataset-bbbc021">The example dataset BBBC021<a class="anchor" aria-label="anchor" href="#the-example-dataset-bbbc021"></a></h2>
+<hr class="half-width"><p>Welcome! For the next exercise we will use a compact, <a href="https://doi.org/10.1158/1535-7163.MCT-09-1148" class="external-link">well-studied</a>
 image set pulled from the <a href="https://bbbc.broadinstitute.org/" class="external-link">Broad Bioimage Benchmark
 Collection</a> (BBBC). The collection we are using is BBBC021, which
 contains images of MCF7 breast cancer cells treated with a panel of
@@ -367,7 +373,7 @@ using the images.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>One option is: does cytochalasin D induce a morphological change in
 MCF7 cells?</p>
@@ -411,11 +417,7 @@ any links that you are not going to use.
 [carpentries-workbench]: https://carpentries.github.io/sandpaper-docs/
  -->
 </div>
-</div>
-
-
-
-      </div> <!-- / div.lesson-content -->
+</section></div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Previous and Next Chapter"><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="index.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
         <a class="chapter-link float-end" href="introduction.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
