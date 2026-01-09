@@ -16,7 +16,7 @@ editor_options:
 -   Understand the file structure.
 :::
 
-# The example dataset BBBC021
+## The example dataset BBBC021
 
 Welcome! For the next exercise we will use a compact,
 [well-studied](https://doi.org/10.1158/1535-7163.MCT-09-1148) image set
