@@ -265,6 +265,18 @@
 </div>
 <!--/div.accordion-flush-->
 
+<div class="accordion accordion-flush" id="accordionFlush4">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading4">
+        <a href="detecting-nuclei.html">3. Detecting nuclei</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
                 </div>
               </div>
             </div>
@@ -660,6 +672,84 @@ our analysis.</p>
 module</li>
 <li>Translate your folder and file names into metadata Cellprofiler can
 interpret using modules.</li>
+</ul>
+</div>
+</div>
+</div>
+<!--
+Place links that you need to refer to multiple times across pages here. Delete
+any links that you are not going to use.
+[pandoc]: https://pandoc.org/MANUAL.html
+[r-markdown]: https://rmarkdown.rstudio.com/
+[rstudio]: https://www.rstudio.com/
+[carpentries-workbench]: https://carpentries.github.io/sandpaper-docs/
+ -->
+</div></section><section id="aio-detecting-nuclei"><p>Content from <a href="detecting-nuclei.html">Detecting nuclei</a></p>
+<hr>
+<p>Last updated on 2026-01-09 |
+
+        <a href="https://github.com/DBI-INFRA/2026-02-05-DCI-CellProfiler/edit/main/episodes/detecting-nuclei.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+<div class="text-end">
+          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
+        </div>
+<div class="overview card">
+<h2 class="card-header">Overview</h2>
+<div class="row g-0">
+<div class="col-md-4">
+<div class="card-body">
+<div class="inner">
+<h3 class="card-title">Questions</h3>
+<ul>
+<li>What do we want to measure?</li>
+<li>How can we detect nuclei?</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-8">
+<div class="card-body">
+<div class="inner bordered">
+<h3 class="card-title">Objectives</h3>
+<ul>
+<li>Use the IdentifyPrimaryObjects module to detect nuclei</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section level3">
+<h3 id="help">Help<a class="anchor" aria-label="anchor" href="#help"></a>
+</h3>
+<p>Got stuck with one of the steps? Download a working version of the
+pipeline here:</p>
+<p><a href="data/pipeline.cppipe" download class="btn btn-primary" style="display:inline-block;padding:8px 12px;background:#007bff;color:#fff;border-radius:4px;text-decoration:none;">Download
+pipeline</a></p>
+<div id="callout1" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div class="callout-inner">
+<div class="callout-content">
+<p>If you are using Firefox, you have to right click the button and
+select “Save Link As…”.</p>
+</div>
+</div>
+</div>
+<p>If you like, you can compare this pipeline to yours. To do so, first
+open a new CellProfiler window. Then, import this pipeline in
+CellProfiler by clicking on File &gt; Import &gt; Pipeline from
+File.</p>
+<div id="keypoints1" class="callout keypoints">
+<div class="callout-square">
+<i class="callout-icon" data-feather="key"></i>
+</div>
+<span class="callout-header">Key Points</span>
+<div class="callout-inner">
+<div class="callout-content">
+<ul>
+<li>The IdentifyPrimaryObjects module can detect nuclei from a DNA</li>
 </ul>
 </div>
 </div>
