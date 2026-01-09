@@ -1,11 +1,11 @@
 # This template CITATION.cff file was generated with cffinit.
 # Visit https://bit.ly/cffinit to replace its contents
 # with information about your lesson.
-# Remember to update this file periodically, 
+# Remember to update this file periodically,
 # ensuring that the author list and other fields remain accurate.
 
 cff-version: 1.2.0
-title: FIXME
+title: Introduction to bioimage analysis and CellProfiler
 message: >-
   Please cite this lesson using the information in this file
   when you refer to it in publications, and/or if you
@@ -13,10 +13,15 @@ message: >-
   training material.
 type: dataset
 authors:
-  - given-names: FIXME
-    family-names: FIXME
+  - given-names: Jesko
+    family-names: Wagner
+    orcid: 'https://orcid.org/0000-0001-9805-7192'
+repository-code: 'https://github.com/dbi-infra/2026-02-25-DCI-CellProfiler/'
+url: 'https://dbi-infra.github.io/2026-02-25-DCI-CellProfiler/'
 abstract: >-
-  FIXME Replace this with a short abstract describing the
-  lesson, e.g. its target audience and main intended
-  learning objectives.
+  Introduction to bioimage analysis and CellProfiler
+keywords:
+  - CellProfiler
+  - microscopy
+  - bioimage analysis
 license: CC-BY-4.0

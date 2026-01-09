@@ -33,13 +33,13 @@ life_cycle: 'pre-alpha'
 license: 'CC-BY 4.0'
 
 # Link to the source repository for this lesson
-source: 'https://example.com/template-source/lesson-example'
+source: 'https://dbi-infra.github.io//2026-02-05-DCI-CellProfiler'
 
 # Default branch of your lesson
 branch: 'main'
 
 # Who to contact if there are any issues
-contact: 'team@carpentries.org'
+contact: 'jesko.wagner@sund.ku.dk'
 
 # Navigation ------------------------------------------------
 #
@@ -64,17 +64,18 @@ contact: 'team@carpentries.org'
 # - another-learner.md
 
 # Order of episodes in your lesson
-episodes: 
+episodes:
+- dataset.Rmd
 - introduction.Rmd
 
 # Information for Learners
-learners: 
+learners:
 
 # Information for Instructors
-instructors: 
+instructors:
 
 # Learner Profiles
-profiles: 
+profiles:
 
 # Customisation ---------------------------------------------
 #

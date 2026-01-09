@@ -1,5 +1,6 @@
 ---
-title: FIXME
+title: Learner profiles
 ---
 
-This is a placeholder file. Please add content here.
+This is a placeholder file. We will not be using this section during the
+exercise.
