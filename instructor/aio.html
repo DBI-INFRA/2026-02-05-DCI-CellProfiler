@@ -269,6 +269,18 @@
 </div>
 <!--/div.accordion-flush-->
 
+<div class="accordion accordion-flush" id="accordionFlush5">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading5">
+        <a href="detecting-cells.html">4. Identifying secondary objects</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
                 </div>
               </div>
             </div>
@@ -529,7 +541,7 @@ CellProfiler</h3>
   Solution: loading images
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>You can drag and drop the two folders, <code>DMSO</code> and
 <code>cytoD_0.1</code>, onto the white field in CellProfiler.
@@ -590,7 +602,7 @@ expression?</p>
   Solution: regular expressions in CellProfiler
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>We can break up our file names by underscores. For example,
 <code>cytoD_B07_s1_channel1.tif</code> can be read as</p>
@@ -683,7 +695,7 @@ any links that you are not going to use.
 <p>Last updated on 2026-01-20 |
 
         <a href="https://github.com/DBI-INFRA/2026-02-05-DCI-CellProfiler/edit/main/episodes/detecting-nuclei.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
-<p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 20 minutes</p>
+<p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 45 minutes</p>
 <div class="text-end">
           <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
         </div>
@@ -1081,6 +1093,285 @@ contrast and exist in nearly all cells.</li>
 method, and declumping.</li>
 <li>Always test segmentation on multiple images and across experimental
 conditions.</li>
+</ul>
+</div>
+</div>
+</div>
+<!--
+Place links that you need to refer to multiple times across pages here. Delete
+any links that you are not going to use.
+[pandoc]: https://pandoc.org/MANUAL.html
+[r-markdown]: https://rmarkdown.rstudio.com/
+[rstudio]: https://www.rstudio.com/
+[carpentries-workbench]: https://carpentries.github.io/sandpaper-docs/
+ -->
+</div>
+</section></section><section id="aio-detecting-cells"><p>Content from <a href="detecting-cells.html">Identifying secondary objects</a></p>
+<hr>
+<p>Last updated on 2026-01-20 |
+
+        <a href="https://github.com/DBI-INFRA/2026-02-05-DCI-CellProfiler/edit/main/episodes/detecting-cells.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+<p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 35 minutes</p>
+<div class="text-end">
+          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
+        </div>
+<div class="overview card">
+<h2 class="card-header">Overview</h2>
+<div class="row g-0">
+<div class="col-md-4">
+<div class="card-body">
+<div class="inner">
+<h3 class="card-title">Questions</h3>
+<ul>
+<li>How can we detect whole cells once we have identified nuclei?</li>
+<li>What does is the differences between detecting primary and secondary
+objects?</li>
+<li>Which settings matter most for cell boundary detection?</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-8">
+<div class="card-body">
+<div class="inner bordered">
+<h3 class="card-title">Objectives</h3>
+<ul>
+<li>Use <strong>IdentifySecondaryObjects</strong> to segment whole cells
+from an actin image.</li>
+<li>Understand how secondary objects depend on primary objects.</li>
+<li>Learn how propagation-based segmentation expands from nuclei to cell
+edges.</li>
+<li>Create a cell object set suitable for per-cell measurements.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<section><h2 class="section-heading" id="introduction-from-nuclei-to-whole-cells">Introduction: from nuclei to whole cells<a class="anchor" aria-label="anchor" href="#introduction-from-nuclei-to-whole-cells"></a>
+</h2>
+<hr class="half-width">
+<p>In the previous episode, we identified nuclei as <strong>primary
+objects</strong>. This gives us reliable “seed” objects: one nucleus
+(ideally) per cell.</p>
+<p>However, many biologically interesting measurements (e.g. cell area,
+shape and cytoplasmic fluorescence) require us to segment the
+<strong>whole cell</strong>. This is often more challenging than nuclei
+segmentation because:</p>
+<ul>
+<li>cytoplasm and boundaries can be <strong>fainter</strong> than
+nuclei,</li>
+<li>neighboring cells may <strong>touch</strong> or overlap,</li>
+<li>staining can be <strong>uneven</strong> across the cell body.</li>
+</ul>
+<p>To tackle this, CellProfiler provides
+<strong>IdentifySecondaryObjects</strong>, which grows secondary objects
+outward from nuclei using information from another image (here an actin
+channel). This approach helps prevent ambiguous assignments of boundary
+pixels by ensuring each cell is linked to exactly one starting
+nucleus.</p>
+</section><section><h2 class="section-heading" id="the-identifysecondaryobjects-module">The IdentifySecondaryObjects module<a class="anchor" aria-label="anchor" href="#the-identifysecondaryobjects-module"></a>
+</h2>
+<hr class="half-width">
+<p>Add a new module via <strong>+ Add</strong> → <strong>Object
+Processing</strong> → <strong>IdentifySecondaryObjects</strong>.</p>
+<p>You should now see a module where you need to specify:</p>
+<ol style="list-style-type: decimal">
+<li>which primary objects act as “seeds” (nuclei),</li>
+<li>which image contains cell boundary information (actin),</li>
+<li>how to determine where each cell ends (thresholding + method),</li>
+<li>how to handle cells the image border.</li>
+</ol>
+<div class="section level3">
+<h3 id="step-1-choose-primary-input-objects-the-seeds">Step 1: choose primary input objects (the seeds)<a class="anchor" aria-label="anchor" href="#step-1-choose-primary-input-objects-the-seeds"></a>
+</h3>
+<p>Set <strong>Select the input objects</strong> (or similarly named
+setting) to <code>Nuclei</code> or the name you set in the previous
+lesson. This tells CellProfiler that each cell object should be grown
+outward from one nucleus.</p>
+</div>
+<div class="section level3">
+<h3 id="step-2-choose-the-correct-input-image-actin">Step 2: choose the correct input image (actin)<a class="anchor" aria-label="anchor" href="#step-2-choose-the-correct-input-image-actin"></a>
+</h3>
+<p>Set <strong>Select the input image</strong> to your actin (or
+cytoplasmic) channel, e.g. <code>Actin</code> (or whatever name you
+assigned in <em>NamesAndTypes</em>).</p>
+<p>This image should contain relatively strong signal across the cell
+body and/or along the cell boundary.</p>
+<div id="challenge-confirm-the-actin-image-is-suitable-for-cell-boundaries" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<span class="callout-header">Challenge</span>
+<div id="challenge-confirm-the-actin-image-is-suitable-for-cell-boundaries" class="callout-inner">
+<h3 class="callout-title">Challenge: confirm the actin image is suitable
+for cell boundaries</h3>
+<div class="callout-content">
+<p>Using Test Mode, inspect a few images:</p>
+<ul>
+<li>Can you see whole cell bodies?</li>
+<li>Are neighboring cells separable?</li>
+<li>Is the background reasonably dark?</li>
+</ul>
+<p>If not, what issues do you observe?</p>
+</div>
+</div>
+</div>
+<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
+  <h4 class="accordion-header" id="headingSolution1"> Solution (placeholder) </h4>
+</button>
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div class="accordion-body">
+<p><em>Placeholder:</em> Provide an example description of what “good”
+vs “difficult” actin staining looks like for segmentation in this
+dataset.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section level3">
+<h3 id="step-3-choose-a-method-to-identify-secondary-objects">Step 3: choose a method to identify secondary objects<a class="anchor" aria-label="anchor" href="#step-3-choose-a-method-to-identify-secondary-objects"></a>
+</h3>
+<p><code>IdentifySecondaryObjects</code> offers multiple approaches to
+build cells from nuclei. In this course, we will use a method that
+expands outward from nuclei and uses the actin image to decide where
+boundaries should fall.</p>
+<p><em>Placeholder:</em> Briefly explain the intuition in your own words
+(1–2 sentences): “cells grow from nuclei until actin signal indicates a
+boundary / until reaching a threshold / until meeting another cell”.</p>
+<div id="challenge-explore-methods-optional-exploration" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<span class="callout-header">Challenge</span>
+<div id="challenge-explore-methods-optional-exploration" class="callout-inner">
+<h3 class="callout-title">Challenge: explore methods (optional
+exploration)</h3>
+<div class="callout-content">
+<p>Try two different methods (e.g. propagation vs watershed gradient).
+How do the resulting cell boundaries differ?</p>
+</div>
+</div>
+</div>
+<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
+  <h4 class="accordion-header" id="headingSolution2"> Comparing methods </h4>
+</button>
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div class="accordion-body">
+<p>As with the segmentation of nuclei, getting cell segmentation can be
+tricky. Often, starting with “propagation” as method is a good starting
+point, because watershed can expand into neighboring cells (see below).
+But you can certainly find areas of the image where the reverse is true.
+This means that, once again, choices should be made carefully. <img src="../fig/secondary_watershed_propagation.png" alt="Comparing two methods of identifying cell boundaries: watershed and propagation. Using watershed, some cell boundaries spill over into adjacent cells, leading to incorrect cell masks." class="figure"></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section level3">
+<h3 id="step-4-choose-a-threshold-strategy-and-threshold-method">Step 4: choose a threshold strategy and threshold method<a class="anchor" aria-label="anchor" href="#step-4-choose-a-threshold-strategy-and-threshold-method"></a>
+</h3>
+<p>Much like when segmenting nuclei, the
+<code>IdentifySecondaryObjects</code> module allows us to fine-tune our
+segmentation by changing the thresholding strategy and method. As
+before, the best choice depends on illumination and staining
+consistency. While <strong>Minimum Cross-Entropy</strong> (right) is the
+default thresholding method, <strong>Propagation</strong> (left) often
+yields less jagged cell boundaries:</p>
+<figure><img src="../fig/secondary_propagation_me.png" alt="Side-by-side of propagation and minimum cross-entropy threshold results." class="figure mx-auto d-block"></figure><div id="challenge-biological-pitfalls" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<span class="callout-header">Challenge</span>
+<div id="challenge-biological-pitfalls" class="callout-inner">
+<h3 class="callout-title">Challenge: biological pitfalls</h3>
+<div class="callout-content">
+<p>Think about the assumptions CellProfiler is making in its
+identification of secondary objects. Can you think of biological samples
+where these assumptions may not be met? Discuss with your neighbor.</p>
+</div>
+</div>
+</div>
+<div id="accordionSolution3" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
+  <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
+</button>
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div class="accordion-body">
+<p>CellProfiler identifies cells by expanding outwards from a nucleus.
+This assumes that each cell only has exactly one nucleus in the same
+plane. When imaging hepatocytes, for example, this can prove
+problematic: they often contain more than one nucleus. Equally, if we
+were imaging cells in suspension, we would have to make sure than we
+capture the nucleus accurately in 3D and expand the cell in 3D space
+too. And lastly, red blood cells do not even have a nucleus, so this
+method would not work for them either!</p>
+<p>Other pitfalls include mitotic/meiotic cells: from when on do we term
+a splitting cell as two cells? When the two nuclei have budded off, or
+when the membrane is fully split? CellProfiler cannot answer these
+questions for us, instead, we must consider these biological
+complexities when designing our analysis pipeline to not yield
+nonsensical data down the line.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="identifying-cytoplasm">Identifying cytoplasm<a class="anchor" aria-label="anchor" href="#identifying-cytoplasm"></a>
+</h2>
+<hr class="half-width">
+<p>You have now created whole-cell objects from nuclei seeds and an
+actin image. With nuclei and cells in hand, we can create one last
+object: the cytoplasm.</p>
+</section><section><h2 class="section-heading" id="conclusions">Conclusions<a class="anchor" aria-label="anchor" href="#conclusions"></a>
+</h2>
+<hr class="half-width">
+<p>Finally, we can move on to measure things!</p>
+<div class="section level3">
+<h3 id="help">Help<a class="anchor" aria-label="anchor" href="#help"></a>
+</h3>
+<p>Did you get stuck with one of the steps? Download a working version
+of the pipeline here:</p>
+<p><a href="../data/pipeline_secondary.cppipe" download class="btn btn-primary" style="display:inline-block;padding:8px 12px;background:#007bff;color:#fff;border-radius:4px;text-decoration:none;">Download
+pipeline</a></p>
+<div id="callout1" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div class="callout-inner">
+<div class="callout-content">
+<p>If you are using Firefox, you have to right click the button and
+select “Save Link As…”.</p>
+</div>
+</div>
+</div>
+<p>If you like, you can compare this pipeline to yours. To do so, first
+open a new CellProfiler window. Then, import this pipeline in
+CellProfiler by clicking on File &gt; Import &gt; Pipeline from
+File.</p>
+<div id="keypoints1" class="callout keypoints">
+<div class="callout-square">
+<i class="callout-icon" data-feather="key"></i>
+</div>
+<span class="callout-header">Key Points</span>
+<div class="callout-inner">
+<div class="callout-content">
+<ul>
+<li>Secondary objects (cells) are typically grown from primary objects
+(nuclei) using a cytoplasmic/cell-boundary stain (here: actin).</li>
+<li>Filtering border-touching nuclei helps avoid partial cells and
+misleading measurements.</li>
+<li>The most important settings in
+<strong>IdentifySecondaryObjects</strong> are the identification method
+and thresholding choices, which strongly affect whether cells merge or
+fragment.</li>
 </ul>
 </div>
 </div>

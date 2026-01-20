@@ -14,7 +14,7 @@ carpentry: 'DBI'
 
 # Custom carpentry description
 # This will be used as the alt text for the logo
-carpentry_description: "DBI-INFRA"
+# carpentry_description: "Custom Carpentry"
 
 # Overall title for pages.
 title: 'Introduction to bioimage analysis and CellProfiler'
@@ -64,23 +64,26 @@ contact: 'jesko.wagner@sund.ku.dk'
 # - another-learner.md
 
 # Order of episodes in your lesson
-episodes:
+episodes: 
 - dataset.Rmd
 - introduction.Rmd
 - detecting-nuclei.Rmd
+- detecting-cells.Rmd
 
 # Information for Learners
-learners:
+learners: 
 
 # Information for Instructors
-instructors:
+instructors: 
 
 # Learner Profiles
-profiles:
+profiles: 
 
 # Customisation ---------------------------------------------
 #
 # This space below is where custom yaml items (e.g. pinning
 # sandpaper and varnish versions) should live
-varnish: 'jeskowagner/varnish'
 
+
+carpentry_description: DBI-INFRA
+varnish: jeskowagner/varnish
