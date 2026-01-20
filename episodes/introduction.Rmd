@@ -1,5 +1,5 @@
 ---
-title: 'Reading images with CellProfiler'
+title: 'Reading images'
 teaching: 10
 exercises: 2
 editor_options: 
@@ -37,7 +37,7 @@ Open CellProfiler and try loading the images into CellProfiler.
 
 You can drag and drop the two folders, `DMSO` and `cytoD_0.1`, onto the white
 field in CellProfiler. Afterwards, it should look something like this:
-![Screenshot of the CellProfiler module "Images"](fig/images_loaded.png)
+![](fig/images_loaded.png){alt="Screenshot of the CellProfiler `Images` module"}
 
 :::
 ::::
@@ -53,12 +53,13 @@ module's purpose is to translate information that is captured in the file names
 into information that CellProfiler can understand.
 
 Get started by click on ´yes´ for ´Extract metadata?´, upon which a menu should
-pop open. This is what it looks like by default: ![Screenshot of the
-CellProfiler module "Metadata" with default settings](fig/metadata_default.png)
+pop open. This is what it looks like by default: 
+!(fig/metadata_default.png){Screenshot of the
+CellProfiler module "Metadata" with default settings}
 
 Now, we wish to inform CellProfiler about which image contains what. To do so,
-set up the module as follows. ![Screenshot showing metadata module
-settings](fig/metadata_regular_expression.png)
+set up the module as follows. 
+![](fig/metadata_regular_expression.png){alt="Screenshot showing metadata module settings"}
 
 While these regular expressions look complicated, they can be crafted more
 easily using tools like [regex101.com](https://regex101.com/). Unfortunately,
@@ -106,7 +107,7 @@ CellProfiler can understand. To see this in action, press on the update button
 right containing information about the imaging site, the week of the experiment,
 the imaged well, and treatment used.
 
-![Screenshot showing the extracted metadata](fig/metadata_extracted.png)
+![](fig/metadata_extracted.png){alt="Screenshot showing the extracted metadata"}
 
 ## NamesAndTypes
 
@@ -119,8 +120,8 @@ to detect cells from.
 
 To do so, the `NamedAndTypes` modules tells CellProfiler which channel belongs
 to which stain. Opening the module, we can see the following defaults:
-![Screenshot of the NamesAndTypes module with default
-settings](fig/namesandtypes_default.png)
+![](fig/namesandtypes_default.png){alt="Screenshot of the NamesAndTypes module with default
+settings"}
 
 Recall that in the Metadata module we extracted the channel number. We can now
 make use of this information to assign stain names to the images. To do so, we
@@ -129,8 +130,7 @@ assign the channels to names. You will have to click "Add another image" to add
 a new stain name, filling out the information as in the screenshot and then
 clicking "Update".
 
-![Screenshot of the NamesAndTypes module after configuration
-settings](fig/namesandtypes_configured.png)
+![](fig/namesandtypes_configured.png){alt="Screenshot of the NamesAndTypes module after configuration settings"}
 
 ## Groups
 
