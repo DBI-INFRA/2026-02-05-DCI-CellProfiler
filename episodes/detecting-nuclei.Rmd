@@ -1,10 +1,10 @@
 ---
 title: 'Identifying primary objects'
-teaching: 15
-exercises: 5
+teaching: 5
+exercises: 40
 editor_options: 
   markdown: 
-    wrap: 80
+    wrap: 100
 ---
 
 ::: questions
