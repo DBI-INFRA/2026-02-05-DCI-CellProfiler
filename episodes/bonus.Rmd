@@ -18,7 +18,6 @@ exercises: 2
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Introduction
 
 Finished with the previous steps already? Well done! In this episode we will
 dive into the data that CellProfiler outputs and start to get a feel for the 
@@ -95,7 +94,8 @@ CellProfiler output:
 Then open https://software.broadinstitute.org/morpheus/ and drop the file into Morpheus.
 You should now have a view like this:
 
-![](fig/bonus_morpheus.png)
+![](fig/bonus_morpheus.png){alt="Screenshot of morpheus, showing a heatmap with
+cells in columns and features in rows."}
 Each column represents measurements from a single cell. Each row represents a measurement.
 The boxes are color coded by the feature value for this cell (after some
 normalization). Cells (columns) are clustered based on similarity to each other.

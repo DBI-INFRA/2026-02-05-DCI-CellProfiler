@@ -8,7 +8,7 @@ For this workshop, you will need to:
 
 <a href="data/BBBC021_data.zip" download class="btn btn-primary" style="display:inline-block;padding:8px 12px;background:#007bff;color:#fff;border-radius:4px;text-decoration:none;">Download the dataset</a>
 
-<a href="https://cellprofiler.org/releases" download class="btn btn-primary" style="display:inline-block;padding:8px 12px;background:#007bff;color:#fff;border-radius:4px;text-decoration:none;">Download CellProfiler</a>
+<a href="https://cellprofiler.org/releases" class="btn btn-primary" style="display:inline-block;padding:8px 12px;background:#007bff;color:#fff;border-radius:4px;text-decoration:none;">Download CellProfiler</a>
 
 If you have any trouble with these steps, please let one of the teachers know
 so they can help you set this up before proceeding. Once you are ready, navigate
