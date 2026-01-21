@@ -1,5 +1,5 @@
 ---
-title: 'Identifying secondary objects'
+title: 'Identifying secondary & tertiary objects'
 teaching: 5
 exercises: 30
 editor_options: 
@@ -9,9 +9,8 @@ editor_options:
 
 ::: questions
 -   How can we detect whole cells once we have identified nuclei?
--   What does is the differences between detecting primary and secondary
+-   What is the differences between detecting primary, secondary, and tertiary
     objects?
--   Which settings matter most for cell boundary detection?
 :::
 
 ::: objectives
@@ -19,12 +18,13 @@ editor_options:
 -   Understand how secondary objects depend on primary objects.
 -   Learn how propagation-based segmentation expands from nuclei to cell edges.
 -   Create a cell object set suitable for per-cell measurements.
+-   Use **IdentifyTertiaryObjects** to create cytoplasm masks.
 :::
 
-## Introduction: from nuclei to whole cells
+## From nuclei to whole cells
 
-In the previous episode, we identified nuclei as **primary objects**. This gives
-us reliable “seed” objects: one nucleus (ideally) per cell.
+In the previous section, we identified nuclei as **primary objects**. This gives
+us “seed” objects: one nucleus per cell.
 
 However, many biologically interesting measurements (e.g. cell area, shape
 and cytoplasmic fluorescence) require us to segment the **whole cell**. This is
@@ -50,7 +50,7 @@ You should now see a module where you need to specify:
 3. how to determine where each cell ends (thresholding + method),
 4. how to handle cells the image border.
 
-### Step 1: choose primary input objects (the seeds)
+### Step 1: choose primary input objects
 
 Set **Select the input objects** (or similarly named setting) to `Nuclei` or
 the name you set in the previous lesson. This tells CellProfiler that each cell
@@ -61,11 +61,11 @@ object should be grown outward from one nucleus.
 Set **Select the input image** to your actin (or cytoplasmic) channel, e.g.
 `Actin` (or whatever name you assigned in *NamesAndTypes*).
 
-This image should contain relatively strong signal across the cell body and/or
+The channel should contain relatively strong signal across the cell body and/or
 along the cell boundary.
 
 :::: challenge
-## Challenge: confirm the actin image is suitable for cell boundaries
+## Challenge: confirm the actin image is suitable to find cell boundaries
 
 Using Test Mode, inspect a few images:
 
@@ -75,26 +75,41 @@ Using Test Mode, inspect a few images:
 
 If not, what issues do you observe?
 
+::::: callout
+If you find the contrast too dim to see the channel well, you can increase
+the contrast by selectig  File > (Object name) outlines > Adjust Contrast,
+selecting normalized and a normalization factor in the range of 2-5, 
+then click Apply to all.
+![](fig/secondary_contrast.png){alt="Screenshots showing that contrast
+be adjusted using File > (Object name) outlines > Adjust Contrast and selecting
+normalized and a normalization factor in the range of 2-5, the clicking Apply
+to all."}
+:::::
 ::: solution
-#### Solution (placeholder)
 
-*Placeholder:* Provide an example description of what “good” vs “difficult”
-actin staining looks like for segmentation in this dataset.
+Compared to nuclei, cell boundaries are often less easily distinguished.
+We can see that the actin channel does increase at cell junctions, which should
+help in segmenting the cells in later steps. But it is important to keep in mind
+that any segmentation will not be perfect here: after all, where would you draw 
+the boundaries by hand?
+![](fig/secondary_actin_dna.png){alt="Picture of cells, with DNA stain shown
+in blue and actin stain shown in gray. While nuclei are fairly well separated,
+cell boundaries are touching in many places and are not easily distinguished."}
+
 :::
 ::::
 
 ### Step 3: choose a method to identify secondary objects
 
-`IdentifySecondaryObjects` offers multiple approaches to build cells from nuclei.
-In this course, we will use a method that expands outward from nuclei and uses
-the actin image to decide where boundaries should fall.
-
-*Placeholder:* Briefly explain the intuition in your own words (1–2 sentences):
-“cells grow from nuclei until actin signal indicates a boundary / until reaching
-a threshold / until meeting another cell”.
+Now we will use `IdentifySecondaryObjects` to segment cells. Many of the options
+are the same as in `IdentifyPrimaryObjects`, but the most important difference
+is the presence of `Select the method to identify the secondary objects` option.
+We encourage you to read their descriptions in CellProfiler by clicking the `?`
+symbol, but most often it is set to `Propagation`. To see why, let's see what
+happens when we try segmenting cells with either method!
 
 :::: challenge
-## Challenge: explore methods (optional exploration)
+## Challenge (optional): explore methods
 
 Try two different methods (e.g. propagation vs watershed gradient).
 How do the resulting cell boundaries differ?
@@ -102,7 +117,7 @@ How do the resulting cell boundaries differ?
 ::: solution
 #### Comparing methods
 
-As with the segmentation of nuclei, getting cell segmentation can be tricky.
+As with the segmentation of nuclei, getting cell segmentation right can be tricky.
 Often, starting with "propagation" as method is a good starting point,
 because watershed can expand into neighboring cells (see below). But you can
 certainly find areas of the image where the reverse is true. This means that,
@@ -152,16 +167,40 @@ yield nonsensical data down the line.
 :::
 ::::
 
+Once you are happy with the result, make sure to check the following options:
+
+1. Fill holes in identifies objects: Yes
+2. Discard secondary objects touching the border of the image: Yes
+3. Discard the associated primary objects: Yes
+
+And finally, name the new primary objects thus filtered, e.g. `Nuclei_Filtered`.
+
 
 ## Identifying cytoplasm
 
 You have now created whole-cell objects from nuclei seeds
-and an actin image. With nuclei and cells in hand, we can create one last
-object: the cytoplasm.
+and an actin image. Well done! 🎉 
+
+With nuclei and cells in hand, we can create one last
+object: the cytoplasm. Fortunately, this one is easy:
+
+> Cytoplasm = Cell - Nucleus
+
+To do this, add the `IdentifyTertiaryObjects` module and select what you think
+are the correct options.
+
+::::::::::: spoiler
+
+- Larger objects: cells identified with `IdentifySecondaryObjects`
+- Smaller objects: nuclei filtered in `IdentifySecondaryObjects`
+- Name: e.g. `Cytoplasm`
+- Shrink smaller object prior to subtraction: `Yes` (default)
+
+:::::::::::
 
 ## Conclusions
 
-Finally, we can move on to measure things! 
+Finally, we have created all masks we need and can move on to measure things! 
 
 ### Help
 
@@ -174,9 +213,10 @@ pipeline here:
 If you are using Firefox, you have to right click the button and select "Save Link As...".
 ::::::::::
 
-If you like, you can compare this pipeline to yours. To do so, first open a new
-CellProfiler window. Then, import this pipeline in CellProfiler by clicking on
-File > Import > Pipeline from File.
+After downloading the pipeline, you can compare it to yours for troubleshooting. 
+To do so, first open a new CellProfiler window. 
+Then, import this pipeline in CellProfiler by clicking on
+`File` > `Import` > `Pipeline from File`.
 
 ::: keypoints
 -   Secondary objects (cells) are typically grown from primary objects (nuclei)
@@ -186,4 +226,5 @@ File > Import > Pipeline from File.
 -   The most important settings in **IdentifySecondaryObjects** are the
     identification method and thresholding choices, which strongly affect
     whether cells merge or fragment.
+-   Tertiary objects (cytoplasm) are a subtraction of nuclei from the cell mask.
 :::
