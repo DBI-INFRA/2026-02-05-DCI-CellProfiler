@@ -190,6 +190,7 @@ To do this, add the `IdentifyTertiaryObjects` module and select what you think
 are the correct options.
 
 ::::::::::: spoiler
+#### Suggested settings
 
 - Larger objects: cells identified with `IdentifySecondaryObjects`
 - Smaller objects: nuclei filtered in `IdentifySecondaryObjects`
