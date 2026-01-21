@@ -281,6 +281,18 @@
 </div>
 <!--/div.accordion-flush-->
 
+<div class="accordion accordion-flush" id="accordionFlush6">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading6">
+        <a href="measure-features.html">5. Measuring object intensity and shape</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
                 </div>
               </div>
             </div>
@@ -397,9 +409,6 @@ concentrations (we will use just two wells for the workshop)</li>
 </ul>
 </li>
 </ul>
-<p>A small fun fact: the DAPI + phalloidin pair used here are part of
-the core staining strategy still employed in modern Cell Painting
-protocols.</p>
 <p>In this workshop, we will focus on comparing cells treated with DMSO
 to those treated with <strong>cytochalasin D</strong> (cytoD). It is a
 classic actin‑disrupting drug. When actin polymerization is disrupted
@@ -425,7 +434,7 @@ using the images.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>One option is: does cytochalasin D induce a morphological change in
 MCF7 cells?</p>
@@ -1250,7 +1259,7 @@ range of 2-5, then click Apply to all. <img src="../fig/secondary_contrast.png" 
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>Compared to nuclei, cell boundaries are often less easily
 distinguished. We can see that the actin channel does increase at cell
@@ -1293,7 +1302,7 @@ How do the resulting cell boundaries differ?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Comparing methods </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>As with the segmentation of nuclei, getting cell segmentation right
 can be tricky. Often, starting with “propagation” as method is a good
@@ -1335,7 +1344,7 @@ where these assumptions may not be met? Discuss with your neighbor.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <p>CellProfiler identifies cells by expanding outwards from a nucleus.
 This assumes that each cell only has exactly one nucleus in the same
@@ -1382,7 +1391,7 @@ select what you think are the correct options.</p>
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler1" aria-expanded="false" aria-controls="collapseSpoiler1">
   <h3 class="accordion-header" id="headingSpoiler1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> Suggested settings </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
 <div class="accordion-body">
 <ul>
 <li>Larger objects: cells identified with
@@ -1446,6 +1455,380 @@ and thresholding choices, which strongly affect whether cells merge or
 fragment.</li>
 <li>Tertiary objects (cytoplasm) are a subtraction of nuclei from the
 cell mask.</li>
+</ul>
+</div>
+</div>
+</div>
+<!--
+Place links that you need to refer to multiple times across pages here. Delete
+any links that you are not going to use.
+[pandoc]: https://pandoc.org/MANUAL.html
+[r-markdown]: https://rmarkdown.rstudio.com/
+[rstudio]: https://www.rstudio.com/
+[carpentries-workbench]: https://carpentries.github.io/sandpaper-docs/
+ -->
+</div>
+</section></section><section id="aio-measure-features"><p>Content from <a href="measure-features.html">Measuring object intensity and shape</a></p>
+<hr>
+<p>Last updated on 2026-01-21 |
+
+        <a href="https://github.com/DBI-INFRA/2026-02-05-DCI-CellProfiler/edit/main/episodes/measure-features.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+<p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 30 minutes</p>
+<div class="text-end">
+          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
+        </div>
+<div class="overview card">
+<h2 class="card-header">Overview</h2>
+<div class="row g-0">
+<div class="col-md-4">
+<div class="card-body">
+<div class="inner">
+<h3 class="card-title">Questions</h3>
+<ul>
+<li>Once we have segmentation masks, what can CellProfiler measure from
+them?</li>
+<li>What is the difference between intensity measurements and shape
+measurements?</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-8">
+<div class="card-body">
+<div class="inner bordered">
+<h3 class="card-title">Objectives</h3>
+<ul>
+<li>Use <strong>MeasureObjectIntensity</strong> to quantify fluorescence
+per nucleus, cell, and cytoplasm.</li>
+<li>Use <strong>MeasureObjectSizeShape</strong> to quantify area/shape
+descriptors for each object.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<section><h2 class="section-heading" id="measuring-turning-segmentations-into-numbers">Measuring: turning segmentations into numbers<a class="anchor" aria-label="anchor" href="#measuring-turning-segmentations-into-numbers"></a>
+</h2>
+<hr class="half-width">
+<p>So far, we have been creating <em>masks</em>: pixels belonging to
+nuclei, cells, and cytoplasm. Masks are useful on their own for quality
+control, but the real power of CellProfiler is that it can turn masks
+into <strong>quantitative measurements</strong>.</p>
+<p>In this episode, we will measure two broad classes of features:</p>
+<ol style="list-style-type: decimal">
+<li>
+<strong>Intensity features</strong>: “how bright is this object in a
+given channel?”
+<ul>
+<li>Example questions:
+<ul>
+<li>Is actin intensity higher in treated cells?</li>
+<li>Do nuclei become brighter/dimmer in the DNA channel?</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<strong>Size and shape features</strong>: “what is the geometry of
+this object?”
+<ul>
+<li>Example questions:
+<ul>
+<li>Do cells spread out or shrink?</li>
+<li>Do nuclei become larger or more elongated?</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol></section><section><h2 class="section-heading" id="measureobjectintensity-measuring-fluorescence-per-object">MeasureObjectIntensity: measuring fluorescence per object<a class="anchor" aria-label="anchor" href="#measureobjectintensity-measuring-fluorescence-per-object"></a>
+</h2>
+<hr class="half-width">
+<p>Add the <strong>MeasureObjectIntensity</strong> to your pipeline.</p>
+<p>This module measures per-object intensity statistics for one or more
+images. For example, it can quantify the DNA stain in the nucleus, or
+the actin stain intensity in the cytoplasm.</p>
+<div id="challenge1" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<span class="callout-header">Challenge</span>
+<div class="callout-inner">
+<h3 class="callout-title">Challenge</h3>
+<div class="callout-content">
+<p>What channel should be measured in what part of the cell? For
+example, should we quantify DNA signal only in the nucleus, or
+everywhere (nucleus, cytoplasm, whole cell)? Discuss with your
+neighbor.</p>
+</div>
+</div>
+</div>
+<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
+  <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
+</button>
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div class="accordion-body">
+<p>The simplest setup is to measure all channels in all parts of the
+cells and decide which measurements to interpret down the line. Perhaps
+surprisingly, this is the approach frequently chosen in high-throughput
+experiments: measure everything, ask questions later. And indeed, one
+can envision scenarios where measuring e.g. DNA in the cytoplasm may
+prove useful if <a href="https://doi.org/10.1073/pnas.1404171111" class="external-link">DNA
+leaks through the nuclear envelope due to environmental stress</a>.</p>
+<p>That said, if you have a narrow research question and an idea of
+where to look for changes in cell morphology, then only measuring the
+“correct” combination of channel and cell components will be the right
+approach.</p>
+</div>
+</div>
+</div>
+</div>
+<p>To set this up in CellProfiler, for <strong>Select the objects to
+measure</strong> select:</p>
+<ul>
+<li><code>Nuclei_Filtered</code></li>
+<li><code>Cells</code></li>
+<li><code>Cytoplasm</code></li>
+</ul>
+<div id="callout1" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div class="callout-inner">
+<div class="callout-content">
+<p>Note: these names may differ, depending on what you called them in
+previous modules. We will not use the nuclei created in
+<code>IdentifyPrimaryObjects</code>, because we filtered them in
+<code>IdentifySecondaryObjects</code> to only contain nuclei of cells
+that are not touching the image boundary.</p>
+</div>
+</div>
+</div>
+<p>Then, select all channels in <strong>Select images to
+measure</strong>, unless you would like to only measure some of the
+channels. Finally, run the module in test mode and look at the
+output.</p>
+<div id="challenge2" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<span class="callout-header">Challenge</span>
+<div class="callout-inner">
+<h3 class="callout-title">Challenge</h3>
+<div class="callout-content">
+<p>Let’s see whether the DNA intensity is higher in the cytoplasm or the
+nucleus. Using the table that the module outputs in test mode, look for
+a row with “DNA - Cytoplasm - MeanIntensity” and read off the value in
+the “Mean” column. Then repeat this for “DNA - Nuclei_Filtered -
+MeanIntensity”. What do you observe?</p>
+</div>
+</div>
+</div>
+<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
+  <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
+</button>
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div class="accordion-body">
+<p>Depending on your segmentation settings and which image you are using
+to test, the mean DNA intensity is about 3-4x higher in nuclei than in
+the cytoplasm, as you would expect.</p>
+</div>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="measureobjectsizeshape-measuring-geometry">MeasureObjectSizeShape: measuring geometry<a class="anchor" aria-label="anchor" href="#measureobjectsizeshape-measuring-geometry"></a>
+</h2>
+<hr class="half-width">
+<p>Beyond fluorescence intensities, it is common to measure shape
+descriptors of cells. Example measurements include:</p>
+<ul>
+<li>area</li>
+<li>perimeter</li>
+<li>eccentricity / elongation</li>
+<li>compactness</li>
+</ul>
+<p>Once again, we add the module
+(<strong>MeasureObjectSizeShape</strong>) and select our objects to
+measure in as before. For this workshop, disable Zernike and advanced
+features, as they slow down CellProfiler, which can be annoying while
+building the pipeline.</p>
+<div class="section level3">
+<h3 id="step-3-qc-shape-measurements-visually">Step 3: QC shape measurements visually<a class="anchor" aria-label="anchor" href="#step-3-qc-shape-measurements-visually"></a>
+</h3>
+<p>Shape measurements are only as good as your segmentation. If cell
+boundaries are off, area and shape will be misleading.</p>
+<div id="challenge-calculate-the-cytoplasmnucleus-ratio" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<span class="callout-header">Challenge</span>
+<div id="challenge-calculate-the-cytoplasmnucleus-ratio" class="callout-inner">
+<h3 class="callout-title">Challenge: calculate the cytoplasm/nucleus
+ratio</h3>
+<div class="callout-content">
+<p>Run the module in test mode and look for the <strong>Area</strong>
+feature for <strong>Cytoplasm</strong> and
+<strong>Nuclei_Filtered</strong> (or equivalent names in your pipeline).
+This feature describes the average number of pixels occupied by the
+cytoplasm/nucleus.</p>
+</div>
+</div>
+</div>
+<div id="accordionSolution3" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
+  <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
+</button>
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div class="accordion-body">
+<p>The cytoplasm occupies about 3-4x more space than the nucleus. Again,
+depending on your segmentation settings, your result may differ.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="exporting-measurements">Exporting measurements<a class="anchor" aria-label="anchor" href="#exporting-measurements"></a>
+</h2>
+<hr class="half-width">
+<p>So far we have created segmentation masks and computed measurements
+(intensity and size/shape). To actually <em>use</em> these measurements
+outside CellProfiler (e.g. in R, Python, or Excel), we need to export
+them to files. The standard way to do this is the
+<strong>ExportToSpreadsheet</strong> module.</p>
+<p>Add the <strong>ExportToSpreadsheet</strong> module. For this
+workshop, the <strong>default settings are fine</strong>. The most
+important thing is that:</p>
+<ul>
+<li>the module exports <strong>object-level measurements</strong> (for
+<code>Nuclei_Filtered</code>, <code>Cells</code>, and
+<code>Cytoplasm</code>), and</li>
+<li>you know where the files are written to.</li>
+</ul>
+<div id="challenge-export-your-measurements" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<span class="callout-header">Challenge</span>
+<div id="challenge-export-your-measurements" class="callout-inner">
+<h3 class="callout-title">Challenge: export your measurements</h3>
+<div class="callout-content">
+<ol style="list-style-type: decimal">
+<li>Add <strong>ExportToSpreadsheet</strong> at the end of your
+pipeline.</li>
+<li>Run the pipeline (not in test mode, but by clicking
+<code>Analyze images</code>)</li>
+<li>Find the exported files on disk.</li>
+</ol>
+<p>Questions: - What file format(s) were produced
+(e.g. <code>.csv</code>)? - Do you get separate files for
+<code>Nuclei_Filtered</code>, <code>Cells</code>, and
+<code>Cytoplasm</code>? - Open up one of the files. Can you identify at
+least one column coming from intensity measurements and one coming from
+shape measurements?</p>
+</div>
+</div>
+</div>
+<div id="accordionSolution4" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
+  <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
+</button>
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div class="accordion-body">
+<p>With default settings, CellProfiler typically exports one spreadsheet
+per object type (e.g. one for nuclei, one for cells, one for cytoplasm),
+plus one for image-level measurements if any were computed.</p>
+<p>Open one of the exported spreadsheets and look for column names such
+as:</p>
+<ul>
+<li>
+<code>Intensity_MeanIntensity_*</code> or
+<code>Intensity_IntegratedIntensity_*</code> (from
+<strong>MeasureObjectIntensity</strong>)</li>
+<li>
+<code>AreaShape_Area</code> / <code>AreaShape_Perimeter</code> /
+<code>AreaShape_Eccentricity</code> (from
+<strong>MeasureObjectSizeShape</strong>)</li>
+</ul>
+<p>If you cannot find the files, check the <strong>Output file
+location</strong> setting in ExportToSpreadsheet and re-run the
+pipeline.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="tip-run-on-a-subset-first" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div id="tip-run-on-a-subset-first" class="callout-inner">
+<h3 class="callout-title">Tip: run on a subset first</h3>
+<div class="callout-content">
+<p>When developing a pipeline, it’s often faster to run on a small
+subset of images first to confirm that exports look correct. Once you’re
+satisfied, run the pipeline on the full dataset.</p>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="conclusions">Conclusions<a class="anchor" aria-label="anchor" href="#conclusions"></a>
+</h2>
+<hr class="half-width">
+<p>We have now added measurement modules to compute:</p>
+<ul>
+<li>per-object fluorescence intensities (per nucleus, cell,
+cytoplasm)</li>
+<li>per-object morphology features (size and shape)</li>
+</ul>
+<p>These features are the raw material for downstream analyses like
+comparing treated vs control populations, building morphological
+profiles, or training classifiers.</p>
+<div class="section level3">
+<h3 id="help">Help<a class="anchor" aria-label="anchor" href="#help"></a>
+</h3>
+<p>Did you get stuck with one of the steps? Download a working version
+of the pipeline here:</p>
+<p><a href="../data/pipeline_measurements.cppipe" download class="btn btn-primary" style="display:inline-block;padding:8px 12px;background:#007bff;color:#fff;border-radius:4px;text-decoration:none;">Download
+pipeline</a></p>
+<div id="callout3" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div class="callout-inner">
+<div class="callout-content">
+<p>If you are using Firefox, you have to right click the button and
+select “Save Link As…”.</p>
+</div>
+</div>
+</div>
+<p>After downloading the pipeline, you can compare it to yours for
+troubleshooting. To do so, first open a new CellProfiler window. Then,
+import this pipeline in CellProfiler by clicking on <code>File</code>
+&gt; <code>Import</code> &gt; <code>Pipeline from File</code>.</p>
+<div id="keypoints1" class="callout keypoints">
+<div class="callout-square">
+<i class="callout-icon" data-feather="key"></i>
+</div>
+<span class="callout-header">Key Points</span>
+<div class="callout-inner">
+<div class="callout-content">
+<ul>
+<li>
+<strong>MeasureObjectIntensity</strong> quantifies fluorescence per
+object; choose objects and channels deliberately.</li>
+<li>
+<strong>MeasureObjectSizeShape</strong> quantifies morphology;
+disable Zernike/advanced features to iterate faster.</li>
+<li>Consistent object relationships matter: measure
+<code>Nuclei_Filtered</code> to maintain clean 1-to-1 mapping with
+cells.</li>
 </ul>
 </div>
 </div>

@@ -64,20 +64,21 @@ contact: 'jesko.wagner@sund.ku.dk'
 # - another-learner.md
 
 # Order of episodes in your lesson
-episodes: 
+episodes:
 - dataset.Rmd
 - introduction.Rmd
 - detecting-nuclei.Rmd
 - detecting-cells.Rmd
+- measure-features.Rmd
 
 # Information for Learners
-learners: 
+learners:
 
 # Information for Instructors
-instructors: 
+instructors:
 
 # Learner Profiles
-profiles: 
+profiles:
 
 # Customisation ---------------------------------------------
 #
