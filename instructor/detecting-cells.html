@@ -109,11 +109,11 @@
   Introduction to bioimage analysis and CellProfiler
 </div>
 
-<aside class="col-md-12 lesson-progress"><div style="width: 51%" class="percentage">
-    51%
+<aside class="col-md-12 lesson-progress"><div style="width: 47%" class="percentage">
+    47%
   </div>
   <div class="progress DBI">
-    <div class="progress-bar DBI" role="progressbar" style="width: 51%" aria-valuenow="51" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100">
+    <div class="progress-bar DBI" role="progressbar" style="width: 47%" aria-valuenow="47" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100">
     </div>
   </div>
 </aside><div class="container">
@@ -248,6 +248,15 @@
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading6">
         <a href="measure-features.html">5. Measuring object intensity and shape</a>
+    </div><!--/div.accordion-header-->
+
+  </div><!--/div.accordion-item-->
+</div><!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush7">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading7">
+        <a href="bonus.html">6. Bonus: visualising features</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -431,7 +440,7 @@ range of 2-5, then click Apply to all. <img src="../fig/secondary_contrast.png" 
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>Compared to nuclei, cell boundaries are often less easily
 distinguished. We can see that the actin channel does increase at cell
@@ -473,7 +482,7 @@ How do the resulting cell boundaries differ?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Comparing methods </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>As with the segmentation of nuclei, getting cell segmentation right
 can be tricky. Often, starting with “propagation” as method is a good
@@ -514,7 +523,7 @@ where these assumptions may not be met? Discuss with your neighbor.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <p>CellProfiler identifies cells by expanding outwards from a nucleus.
 This assumes that each cell only has exactly one nucleus in the same
@@ -557,7 +566,7 @@ select what you think are the correct options.</p>
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler1" aria-expanded="false" aria-controls="collapseSpoiler1">
   <h3 class="accordion-header" id="headingSpoiler1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> Suggested settings </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
 <div class="accordion-body">
 <ul><li>Larger objects: cells identified with
 <code>IdentifySecondaryObjects</code>
