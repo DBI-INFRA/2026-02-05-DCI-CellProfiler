@@ -42,9 +42,6 @@ What did the experiment involve?
     -   Phalloidin: stains f‑actin (channel2)
     -   Anti‑β‑tubulin antibody: stains microtubules (channel3)
 
-A small fun fact: the DAPI + phalloidin pair used here are part of the
-core staining strategy still employed in modern Cell Painting protocols.
-
 In this workshop, we will focus on comparing cells treated with DMSO to
 those treated with **cytochalasin D** (cytoD). It is a classic
 actin‑disrupting drug. When actin polymerization is disrupted you often
