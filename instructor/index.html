@@ -284,11 +284,23 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><h1 class="schedule-heading">Summary and Schedule</h1>
       
-
-<p>In this exercise, we will analyse a small image dataset on the impact
-of a chemical compound on cell morphology. We will use CellProfiler to
-detect cells and measure their morphology, before exporting our results.
-Time permitting, you can then see how to use these results in the bonus
+<div class="section level3">
+<h3 id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a></h3>
+<p>This workshop will teach you how to use CellProfiler for nuclei and
+cell segmentation, as well as feature extraction. It is organised by the
+<strong><a href="https://dbi-infra.eu" class="external-link">Danish Bioimaging
+Infrastructure</a></strong>, which is a network that provides services
+for bioimage analysis, including teaching workshops, setting up
+workstations and providing 1-on-1 support. It includes the
+<a href="https://www.dbi-infra.eu/iacf-home" class="external-link"> Image Analysis Core
+Facility</a>, which provides further help, for example by completing
+entire analysis projects. For more information,
+<a href="https://www.dbi-infra.eu/iacf-services" class="external-link">click here</a> to learn
+more about the things IACF can help you with.</p>
+<p>Together, we will analyse a small image dataset on the impact of a
+chemical compound on cell morphology. We will use CellProfiler to detect
+cells and measure their morphology, before exporting our results. Time
+permitting, you can then see how to use these results in the bonus
 episode!</p>
 <!--
 Place links that you need to refer to multiple times across pages here. Delete
@@ -298,7 +310,7 @@ any links that you are not going to use.
 [rstudio]: https://www.rstudio.com/
 [carpentries-workbench]: https://carpentries.github.io/sandpaper-docs/
  -->
-
+</div>
 
       <section id="schedule"><table class="table table schedule table-striped" role="presentation"><tbody><tr><td></td><td><a href="#setup">Setup Instructions</a></td><td> Download files required for the lesson</td>
           </tr><tr><td>
@@ -361,16 +373,48 @@ any links that you are not going to use.
  --></tbody></table><p>
       The actual schedule may vary slightly depending on the topics and exercises chosen by the instructor.
       </p>
-      </section><section id="setup"><p>For this exercise, you will need to:</p>
-<ul><li>Download the <a href="../data/BBBC021_data.zip">sample data</a> and
-unzip the archive.</li>
-<li>If you have not already, download and install CellProfiler. You can
-download CellProfiler from here: <a href="https://cellprofiler.org/releases" class="external-link uri">https://cellprofiler.org/releases</a>
-</li>
-</ul><p>If you have any trouble with these steps, please let one of the
+      </section><section id="setup"><div class="section level3">
+<h3 id="setup">Setup<a class="anchor" aria-label="anchor" href="#setup"></a></h3>
+<p>For this workshop, you will need to:</p>
+<p><a href="../data/BBBC021_data.zip" download class="btn btn-primary" style="display:inline-block;padding:8px 12px;background:#007bff;color:#fff;border-radius:4px;text-decoration:none;">Download
+the dataset</a></p>
+<p><a href="https://cellprofiler.org/releases" download class="external-link btn btn-primary" style="display:inline-block;padding:8px 12px;background:#007bff;color:#fff;border-radius:4px;text-decoration:none;">Download
+CellProfiler</a></p>
+<p>If you have any trouble with these steps, please let one of the
 teachers know so they can help you set this up before proceeding. Once
 you are ready, navigate to the exercise using the arrow buttons
 below.</p>
+</div>
+<div class="section level3">
+<h3 id="help">Help<a class="anchor" aria-label="anchor" href="#help"></a></h3>
+<p>If you get stuck at any step, first try to solve the issue yourself
+or with the help of an instructor. If needed, you can also download a
+working version of the pipeline here:</p>
+<p><a href="../data/pipeline.cppipe" download class="btn btn-primary" style="display:inline-block;padding:8px 12px;background:#007bff;color:#fff;border-radius:4px;text-decoration:none;">Download
+pipeline</a></p>
+<div id="callout1" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div class="callout-inner">
+<div class="callout-content">
+<p>You may have to right click the button and select “Save Link
+As…”.</p>
+</div>
+</div>
+</div>
+<p>After downloading the pipeline, you can compare it to yours for
+troubleshooting. To do so, first open a new CellProfiler window. Then,
+import this pipeline in CellProfiler by clicking on <code>File</code>
+&gt; <code>Import</code> &gt; <code>Pipeline from File</code>.</p>
+</div>
+<div class="section level3">
+<h3 id="further-information">Further information<a class="anchor" aria-label="anchor" href="#further-information"></a></h3>
+<p>A lot of the information covered in this workshop are also covered in
+the <a href="https://www.youtube.com/watch?v=JcfPQ44p3pc&amp;list=PLCucasmZ3XNm24zV2bx-gG9InCAASqfOn" class="external-link">Ask
+Erin Dear Beth podcast</a> series, a fantastic resource by Erin Weisbart
+and Beth Cimini.</p>
 <!--
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
@@ -379,6 +423,7 @@ any links that you are not going to use.
 [rstudio]: https://www.rstudio.com/
 [carpentries-workbench]: https://carpentries.github.io/sandpaper-docs/
  -->
+</div>
 
 
       </section></main><nav class="bottom-pagination mx-md-4" aria-label="Next Chapter"><!-- content for small screens --><div class="d-block d-sm-block d-md-none">
@@ -432,8 +477,8 @@ any links that you are not going to use.
   "url": "https://DBI-INFRA.github.io/2026-02-05-DCI-CellProfiler/instructor/index.html",
   "identifier": "https://DBI-INFRA.github.io/2026-02-05-DCI-CellProfiler/instructor/index.html",
   "dateCreated": "2026-01-08",
-  "dateModified": "2026-01-20",
-  "datePublished": "2026-01-20"
+  "dateModified": "2026-01-21",
+  "datePublished": "2026-01-21"
 }
 
   </script><script>
