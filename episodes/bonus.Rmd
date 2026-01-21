@@ -84,6 +84,7 @@ If you
 #### Analysis with Morpheus
 
 One useful tool to visualize CellProfiler outputs is Morpheus: https://software.broadinstitute.org/morpheus/
+
 Morpheus is a matrix visualization tool that can quickly cluster rows and columns.
 
 To see it in action, first download this sample input, which we created from a
