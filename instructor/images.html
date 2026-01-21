@@ -272,7 +272,7 @@
 <div class="accordion accordion-flush" id="accordionFlush5">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading5">
-        <a href="detecting-cells.html">4. Identifying secondary objects</a>
+        <a href="detecting-cells.html">4. Identifying secondary &amp; tertiary objects</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -406,17 +406,34 @@ affected by the settings we will change next. <img src="../fig/primary_global_vs
 <p aria-hidden="true">Image 1 of 1: ‘Enabling declumping can help discern nearby nuclei.’</p>
 <p>This figure shows the impact of not using declumping at all (left) vs
 declumping using “Shape” (right). <img src="../fig/primary_declumping.png" alt="Enabling declumping can help discern nearby nuclei." class="figure"></p>
-<hr></section><section id="detecting-cells"><h2 class="section-heading"><a href="detecting-cells.html">Identifying secondary objects</a></h2>
+<hr></section><section id="detecting-cells"><h2 class="section-heading"><a href="detecting-cells.html">Identifying secondary &amp; tertiary objects</a></h2>
 <hr class="half-width">
 <h3 id="detecting-cells-figure-1">Figure 1</h3>
-<p aria-hidden="true">Image 1 of 1: ‘Comparing two methods of identifying cell boundaries: watershed and propagation. Using watershed, some cell boundaries spill over into adjacent cells, leading to incorrect cell masks.’</p>
-<p>As with the segmentation of nuclei, getting cell segmentation can be
-tricky. Often, starting with “propagation” as method is a good starting
-point, because watershed can expand into neighboring cells (see below).
-But you can certainly find areas of the image where the reverse is true.
-This means that, once again, choices should be made carefully. <img src="../fig/secondary_watershed_propagation.png" alt="Comparing two methods of identifying cell boundaries: watershed and propagation. Using watershed, some cell boundaries spill over into adjacent cells, leading to incorrect cell masks." class="figure"></p>
+<p aria-hidden="true">Image 1 of 1: ‘Screenshots showing that contrast be adjusted using File &gt; (Object name) outlines &gt; Adjust Contrast and selecting normalized and a normalization factor in the range of 2-5, the clicking Apply to all.’</p>
+<p>If you find the contrast too dim to see the channel well, you can
+increase the contrast by selectig File &gt; (Object name) outlines &gt;
+Adjust Contrast, selecting normalized and a normalization factor in the
+range of 2-5, then click Apply to all. <img src="../fig/secondary_contrast.png" alt="Screenshots showing that contrast be adjusted using File &gt; (Object name) outlines &gt; Adjust Contrast and selecting normalized and a normalization factor in the range of 2-5, the clicking Apply to all." class="figure"></p>
 <hr>
 <h3 id="detecting-cells-figure-2">Figure 2</h3>
+<p aria-hidden="true">Image 1 of 1: ‘Picture of cells, with DNA stain shown in blue and actin stain shown in gray. While nuclei are fairly well separated, cell boundaries are touching in many places and are not easily distinguished.’</p>
+<p>Compared to nuclei, cell boundaries are often less easily
+distinguished. We can see that the actin channel does increase at cell
+junctions, which should help in segmenting the cells in later steps. But
+it is important to keep in mind that any segmentation will not be
+perfect here: after all, where would you draw the boundaries by hand?
+<img src="../fig/secondary_actin_dna.png" alt="Picture of cells, with DNA stain shown in blue and actin stain shown in gray. While nuclei are fairly well separated, cell boundaries are touching in many places and are not easily distinguished." class="figure"></p>
+<hr>
+<h3 id="detecting-cells-figure-3">Figure 3</h3>
+<p aria-hidden="true">Image 1 of 1: ‘Comparing two methods of identifying cell boundaries: watershed and propagation. Using watershed, some cell boundaries spill over into adjacent cells, leading to incorrect cell masks.’</p>
+<p>As with the segmentation of nuclei, getting cell segmentation right
+can be tricky. Often, starting with “propagation” as method is a good
+starting point, because watershed can expand into neighboring cells (see
+below). But you can certainly find areas of the image where the reverse
+is true. This means that, once again, choices should be made carefully.
+<img src="../fig/secondary_watershed_propagation.png" alt="Comparing two methods of identifying cell boundaries: watershed and propagation. Using watershed, some cell boundaries spill over into adjacent cells, leading to incorrect cell masks." class="figure"></p>
+<hr>
+<h3 id="detecting-cells-figure-4">Figure 4</h3>
 <p aria-hidden="true">Image 1 of 1: ‘Side-by-side of propagation and minimum cross-entropy threshold results.’</p>
 <figure><img src="../fig/secondary_propagation_me.png" alt="Side-by-side of propagation and minimum cross-entropy threshold results." class="figure mx-auto d-block"></figure><hr></section>
 </div>
