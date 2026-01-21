@@ -443,7 +443,7 @@ using the images.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>One option is: does cytochalasin D induce a morphological change in
 MCF7 cells?</p>
@@ -571,7 +571,7 @@ CellProfiler</h3>
   Solution: loading images
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>You can drag and drop the two folders, <code>DMSO</code> and
 <code>cytoD_0.1</code>, onto the white field in CellProfiler.
@@ -632,7 +632,7 @@ expression?</p>
   Solution: regular expressions in CellProfiler
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>We can break up our file names by underscores. For example,
 <code>cytoD_B07_s1_channel1.tif</code> can be read as</p>
@@ -1573,7 +1573,7 @@ neighbor.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>The simplest setup is to measure all channels in all parts of the
 cells and decide which measurements to interpret down the line. Perhaps
@@ -1637,7 +1637,7 @@ MeanIntensity”. What do you observe?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>Depending on your segmentation settings and which image you are using
 to test, the mean DNA intensity is about 3-4x higher in nuclei than in
@@ -1689,7 +1689,7 @@ cytoplasm/nucleus.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <p>The cytoplasm occupies about 3-4x more space than the nucleus. Again,
 depending on your segmentation settings, your result may differ.</p>
@@ -1744,7 +1744,7 @@ shape measurements?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <p>With default settings, CellProfiler typically exports one spreadsheet
 per object type (e.g. one for nuclei, one for cells, one for cytoplasm),
@@ -1882,9 +1882,6 @@ any links that you are not going to use.
 </div>
 </div>
 </div>
-<section><h2 class="section-heading" id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
-</h2>
-<hr class="half-width">
 <p>Finished with the previous steps already? Well done! In this episode
 we will dive into the data that CellProfiler outputs and start to get a
 feel for the problems we may face in analyzing it.</p>
@@ -1981,11 +1978,11 @@ created from a CellProfiler output:</p>
 Morpheus input</a></p>
 <p>Then open <a href="https://software.broadinstitute.org/morpheus/" class="external-link uri">https://software.broadinstitute.org/morpheus/</a> and drop
 the file into Morpheus. You should now have a view like this:</p>
-<p><img src="fig/bonus_morpheus.png" class="figure"> Each column represents
-measurements from a single cell. Each row represents a measurement. The
-boxes are color coded by the feature value for this cell (after some
-normalization). Cells (columns) are clustered based on similarity to
-each other.</p>
+<p><img src="fig/bonus_morpheus.png" alt="Screenshot of morpheus, showing a heatmap with cells in columns and features in rows." class="figure">
+Each column represents measurements from a single cell. Each row
+represents a measurement. The boxes are color coded by the feature value
+for this cell (after some normalization). Cells (columns) are clustered
+based on similarity to each other.</p>
 <p>Spend some time getting acquainted with the interface. Can you
 identify which cells belonged to which treatment? Do the cells cluster
 separately? Which features seem to have changed after treatment with
@@ -2024,8 +2021,7 @@ any links that you are not going to use.
 [carpentries-workbench]: https://carpentries.github.io/sandpaper-docs/
  -->
 </div>
-</div>
-</section></section>
+</div></section>
 </div>
     </main>
 </div>

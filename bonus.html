@@ -242,19 +242,12 @@
 <div class="accordion accordion-flush" id="accordionFlushcurrent">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-headingcurrent">
-      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapsecurrent" aria-expanded="true" aria-controls="flush-collapsecurrent">
         <span class="visually-hidden">Current Chapter</span>
         <span class="current-chapter">
         6. Bonus: visualising features
         </span>
-      </button>
+      
     </div><!--/div.accordion-header-->
-
-    <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
-      <div class="accordion-body">
-        <ul><li><a href="#introduction">Introduction</a></li>
-        </ul></div><!--/div.accordion-body-->
-    </div><!--/div.accordion-collapse-->
 
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
@@ -352,8 +345,7 @@
 </div>
 </div>
 </div>
-<section><h2 class="section-heading" id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a></h2>
-<hr class="half-width"><p>Finished with the previous steps already? Well done! In this episode
+<p>Finished with the previous steps already? Well done! In this episode
 we will dive into the data that CellProfiler outputs and start to get a
 feel for the problems we may face in analyzing it.</p>
 <p>To start with, find the folder with the <code>.csv</code> files
@@ -442,11 +434,11 @@ created from a CellProfiler output:</p>
 Morpheus input</a></p>
 <p>Then open <a href="https://software.broadinstitute.org/morpheus/" class="external-link uri">https://software.broadinstitute.org/morpheus/</a> and drop
 the file into Morpheus. You should now have a view like this:</p>
-<p><img src="fig/bonus_morpheus.png" class="figure"> Each column represents
-measurements from a single cell. Each row represents a measurement. The
-boxes are color coded by the feature value for this cell (after some
-normalization). Cells (columns) are clustered based on similarity to
-each other.</p>
+<p><img src="fig/bonus_morpheus.png" alt="Screenshot of morpheus, showing a heatmap with cells in columns and features in rows." class="figure">
+Each column represents measurements from a single cell. Each row
+represents a measurement. The boxes are color coded by the feature value
+for this cell (after some normalization). Cells (columns) are clustered
+based on similarity to each other.</p>
 <p>Spend some time getting acquainted with the interface. Can you
 identify which cells belonged to which treatment? Do the cells cluster
 separately? Which features seem to have changed after treatment with
@@ -484,7 +476,10 @@ any links that you are not going to use.
  -->
 </div>
 </div>
-</section></div> <!-- / div.lesson-content -->
+
+
+
+      </div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Previous and Next Chapter"><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="measure-features.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
         <a class="chapter-link float-end" href="index.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
