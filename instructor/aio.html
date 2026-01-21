@@ -425,7 +425,7 @@ using the images.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>One option is: does cytochalasin D induce a morphological change in
 MCF7 cells?</p>
@@ -456,9 +456,13 @@ now. Click on the button below and unzip the archive to a convenient
 location on your computer.
 <a href="../data/BBBC021_data.zip" download class="btn btn-primary" style="display:inline-block;padding:8px 12px;background:#007bff;color:#fff;border-radius:4px;text-decoration:none;">Download
 dataset</a></p>
-<p>Ready to build the pipeline? Proceed to the next section to open
-these images in CellProfiler and start measuring the features that will
-answer our question.</p>
+</div>
+<div class="section level3">
+<h3 id="next-steps">Next steps<a class="anchor" aria-label="anchor" href="#next-steps"></a>
+</h3>
+<p>Ready to build the analysis pipeline? Proceed to the next section to
+open these images in CellProfiler and start measuring the features that
+will answer our question.</p>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -550,7 +554,7 @@ CellProfiler</h3>
   Solution: loading images
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>You can drag and drop the two folders, <code>DMSO</code> and
 <code>cytoD_0.1</code>, onto the white field in CellProfiler.
@@ -611,7 +615,7 @@ expression?</p>
   Solution: regular expressions in CellProfiler
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>We can break up our file names by underscores. For example,
 <code>cytoD_B07_s1_channel1.tif</code> can be read as</p>
@@ -701,7 +705,7 @@ any links that you are not going to use.
  -->
 </div></section><section id="aio-detecting-nuclei"><p>Content from <a href="detecting-nuclei.html">Identifying primary objects</a></p>
 <hr>
-<p>Last updated on 2026-01-20 |
+<p>Last updated on 2026-01-21 |
 
         <a href="https://github.com/DBI-INFRA/2026-02-05-DCI-CellProfiler/edit/main/episodes/detecting-nuclei.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 45 minutes</p>
@@ -1083,10 +1087,10 @@ select “Save Link As…”.</p>
 </div>
 </div>
 </div>
-<p>If you like, you can compare this pipeline to yours. To do so, first
-open a new CellProfiler window. Then, import this pipeline in
-CellProfiler by clicking on File &gt; Import &gt; Pipeline from
-File.</p>
+<p>After downloading the pipeline, you can compare it to yours for
+troubleshooting. To do so, first open a new CellProfiler window. Then,
+import this pipeline in CellProfiler by clicking on <code>File</code>
+&gt; <code>Import</code> &gt; <code>Pipeline from File</code>.</p>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -1231,7 +1235,7 @@ for cell boundaries</h3>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Solution (placeholder) </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p><em>Placeholder:</em> Provide an example description of what “good”
 vs “difficult” actin staining looks like for segmentation in this
@@ -1270,7 +1274,7 @@ How do the resulting cell boundaries differ?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Comparing methods </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>As with the segmentation of nuclei, getting cell segmentation can be
 tricky. Often, starting with “propagation” as method is a good starting
@@ -1311,7 +1315,7 @@ where these assumptions may not be met? Discuss with your neighbor.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <p>CellProfiler identifies cells by expanding outwards from a nucleus.
 This assumes that each cell only has exactly one nucleus in the same
