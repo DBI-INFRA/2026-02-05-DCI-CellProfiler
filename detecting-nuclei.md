@@ -270,9 +270,10 @@ If you are using Firefox, you have to right click the button and select "Save Li
 
 ::::::::::
 
-If you like, you can compare this pipeline to yours. To do so, first open a new
-CellProfiler window. Then, import this pipeline in CellProfiler by clicking on
-File > Import > Pipeline from File.
+After downloading the pipeline, you can compare it to yours for troubleshooting. 
+To do so, first open a new CellProfiler window. 
+Then, import this pipeline in CellProfiler by clicking on
+`File` > `Import` > `Pipeline from File`.
 
 
 ::: keypoints
