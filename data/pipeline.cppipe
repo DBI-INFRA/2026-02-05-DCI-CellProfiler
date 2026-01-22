@@ -65,7 +65,7 @@ Groups:[module_num:4|svn_version:'Unknown'|variable_revision_number:2|show_windo
     grouping metadata count:1
     Metadata category:None
 
-IdentifyPrimaryObjects:[module_num:5|svn_version:'Unknown'|variable_revision_number:15|show_window:False|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+IdentifyPrimaryObjects:[module_num:5|svn_version:'Unknown'|variable_revision_number:15|show_window:True|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
     Select the input image:DNA
     Name the primary objects to be identified:Nuclei_Declumped
     Typical diameter of objects, in pixel units (Min,Max):20,60
@@ -101,7 +101,7 @@ IdentifyPrimaryObjects:[module_num:5|svn_version:'Unknown'|variable_revision_num
     # of deviations:2.0
     Thresholding method:Minimum Cross-Entropy
 
-IdentifySecondaryObjects:[module_num:6|svn_version:'Unknown'|variable_revision_number:10|show_window:False|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+IdentifySecondaryObjects:[module_num:6|svn_version:'Unknown'|variable_revision_number:10|show_window:True|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
     Select the input objects:Nuclei_Declumped
     Name the objects to be identified:Cells
     Select the method to identify the secondary objects:Propagation
@@ -131,22 +131,22 @@ IdentifySecondaryObjects:[module_num:6|svn_version:'Unknown'|variable_revision_n
     # of deviations:2.0
     Thresholding method:Otsu
 
-IdentifyTertiaryObjects:[module_num:7|svn_version:'Unknown'|variable_revision_number:3|show_window:False|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+IdentifyTertiaryObjects:[module_num:7|svn_version:'Unknown'|variable_revision_number:3|show_window:True|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
     Select the larger identified objects:Cells
     Select the smaller identified objects:Nuclei_Filtered
     Name the tertiary objects to be identified:Cytoplasm
     Shrink smaller object prior to subtraction?:Yes
 
-MeasureObjectIntensity:[module_num:8|svn_version:'Unknown'|variable_revision_number:4|show_window:False|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+MeasureObjectIntensity:[module_num:8|svn_version:'Unknown'|variable_revision_number:4|show_window:True|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
     Select images to measure:Actin, DNA, Tubulin
     Select objects to measure:Cells, Cytoplasm, Nuclei_Filtered
 
-MeasureObjectSizeShape:[module_num:9|svn_version:'Unknown'|variable_revision_number:3|show_window:False|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+MeasureObjectSizeShape:[module_num:9|svn_version:'Unknown'|variable_revision_number:3|show_window:True|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
     Select object sets to measure:Cells, Cytoplasm, Nuclei_Filtered
     Calculate the Zernike features?:No
     Calculate the advanced features?:No
 
-ExportToSpreadsheet:[module_num:10|svn_version:'Unknown'|variable_revision_number:13|show_window:False|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+ExportToSpreadsheet:[module_num:10|svn_version:'Unknown'|variable_revision_number:13|show_window:True|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
     Select the column delimiter:Comma (",")
     Add image metadata columns to your object data file?:Yes
     Add image file and folder names to your object data file?:No

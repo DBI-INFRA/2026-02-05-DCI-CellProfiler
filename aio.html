@@ -295,7 +295,19 @@
 <div class="accordion accordion-flush" id="accordionFlush7">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading7">
-        <a href="bonus.html">6. Bonus: visualising features</a>
+        <a href="reproducibility.html">6. Reproducibility in CellProfiler</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush8">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading8">
+        <a href="bonus.html">7. Bonus: visualising features</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -443,7 +455,7 @@ using the images.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>One option is: does cytochalasin D induce a morphological change in
 MCF7 cells?</p>
@@ -1573,7 +1585,7 @@ neighbor.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>The simplest setup is to measure all channels in all parts of the
 cells and decide which measurements to interpret down the line. Perhaps
@@ -1637,7 +1649,7 @@ MeanIntensity”. What do you observe?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>Depending on your segmentation settings and which image you are using
 to test, the mean DNA intensity is about 3-4x higher in nuclei than in
@@ -1689,7 +1701,7 @@ cytoplasm/nucleus.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <p>The cytoplasm occupies about 3-4x more space than the nucleus. Again,
 depending on your segmentation settings, your result may differ.</p>
@@ -1744,7 +1756,7 @@ shape measurements?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <p>With default settings, CellProfiler typically exports one spreadsheet
 per object type (e.g. one for nuclei, one for cells, one for cytoplasm),
@@ -1847,6 +1859,215 @@ any links that you are not going to use.
 [carpentries-workbench]: https://carpentries.github.io/sandpaper-docs/
  -->
 </div>
+</section></section><section id="aio-reproducibility"><p>Content from <a href="reproducibility.html">Reproducibility in CellProfiler</a></p>
+<hr>
+<p>Last updated on 2026-01-22 |
+
+        <a href="https://github.com/DBI-INFRA/2026-02-05-DCI-CellProfiler/edit/main/episodes/reproducibility.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+<div class="text-end">
+          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
+        </div>
+<div class="overview card">
+<h2 class="card-header">Overview</h2>
+<div class="row g-0">
+<div class="col-md-4">
+<div class="card-body">
+<div class="inner">
+<h3 class="card-title">Questions</h3>
+<ul>
+<li>What is the difference between saving a CellProfiler
+<em>project</em> and exporting a <em>pipeline</em>?</li>
+<li>Which approach is more portable across computers and
+collaborators?</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-8">
+<div class="card-body">
+<div class="inner bordered">
+<h3 class="card-title">Objectives</h3>
+<ul>
+<li>Practice sharing both formats with a neighbour and observe what
+breaks.</li>
+<li>Verify reproducibility by comparing exported measurements.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>A CellProfiler analysis is only useful if someone else (or future
+you) can reproduce it. In practice, “someone else” might be the person
+sitting next to you today, using a different computer with a different
+folder structure. But more generally, reproducibility is important at
+many stages: when you come back to your analysis two years later, when
+the next student wants to pick up the project, or when you publish your
+results. Reviewers may well demand access to the pipeline to see which
+steps were done to analyse images. So how do we share our workflow?</p>
+<p>CellProfiler gives you two common ways to save your work:</p>
+<p><strong>Save Project</strong> captures your <em>whole working
+session</em>, including the image file list. This is convenient when you
+want to pause and continue later on the same computer.</p>
+<p><strong>Export Pipeline</strong> captures your <em>analysis
+recipe</em> (modules + settings), but not the image file list. Which one
+is better for sharing your workflow? Let’s find out!</p>
+<div id="callout1" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div class="callout-inner">
+<div class="callout-content">
+<p>Save your workflow in CellProfiler in two ways:</p>
+<ol style="list-style-type: decimal">
+<li><strong>File → Save Project</strong></li>
+<li><strong>File → Export → Pipeline</strong></li>
+</ol>
+<p>naming them with your name. Note the different file endings,
+<code>.cpproj</code> for the former and <code>.cppipe</code> for the
+latter.</p>
+<p>Then share the file with your neighbor by following the instructions
+below.</p>
+</div>
+</div>
+</div>
+<p>You have a few options to quickly share your files. If you have a USB
+stick with you, that may be the fastest option. But otherwise follow the
+instructions under <code>Online file share</code>. ::: tab</p>
+<div class="section level3">
+<h3 id="usb-stick">USB stick<a class="anchor" aria-label="anchor" href="#usb-stick"></a>
+</h3>
+<p>If you have a USB stick, just copy the files onto it, pass it to your
+neighbor and have them copy it onto their computer for testing.
+Easy!</p>
+</div>
+<div class="section level3">
+<h3 id="online-file-share">Online file share<a class="anchor" aria-label="anchor" href="#online-file-share"></a>
+</h3>
+<p>If you do not have a USB stick with you, we can use an online file
+sharing solution. You can use OneDrive/Dropbox/Google Drive if you like,
+or follow the instructions below if you do not want to create an account
+on a service.</p>
+<ol style="list-style-type: decimal">
+<li>Both you and your neighbor should open <a href="https://toffeeshare.com" class="external-link uri">https://toffeeshare.com</a>
+</li>
+<li>You share one of the two files by clicking on the <code>+</code>
+<img src="fig/reproducibility_toffeeshare.png" alt="Toffeeshare website" class="figure">
+</li>
+<li>Make sure to set the <code>Local sharing code</code> option <img src="fig/reproducibility_toffeeshare_options.png" alt="Toffeeshare website sharing options" class="figure">
+</li>
+<li>Your neighbor now clicks on <code>Nearby devices</code> in the top
+right</li>
+<li>Then, they enter the share code displayed on your device.</li>
+<li>The download should start within ~10 seconds, make sure you both
+keep the window open in the meantime.</li>
+<li>Repeat 1-6 with the other file.</li>
+<li>Repeat 1-7 with your neighbor now sharing their files with you.</li>
+</ol>
+<p>:::</p>
+<p>You should now have shared your workflows with each other, each
+having two files of the other:</p>
+<ol style="list-style-type: decimal">
+<li>The pipeline file (<code>.cppipe</code>)</li>
+<li>The project file (<code>.cpproj</code>)</li>
+</ol>
+<div id="try-to-reproduce-your-neighbours-results" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<span class="callout-header">Challenge</span>
+<div id="try-to-reproduce-your-neighbours-results" class="callout-inner">
+<h3 class="callout-title">Try to reproduce your neighbour’s results</h3>
+<div class="callout-content">
+<p>Start with loading the project file into CellProfiler with
+<strong>File → Load Project</strong>. You may get a warning about
+version mismatches, this can usually be ignored but using the latest
+available version is advised.</p>
+<p>Try going through the workflow. Does everything work as you would
+expect?</p>
+<p>You can verify that you are getting the same results by looking at
+the output of <code>MeasureObjectIntensity</code> in test mode and
+comparing with each other.</p>
+</div>
+</div>
+</div>
+<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
+  <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
+</button>
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div class="accordion-body">
+<p>The workflow should be reproducible, but you may encounter an issue:
+the images loaded in with the <code>Images</code> module are not in the
+same location on your computer. You will have to select and delete them
+(right click &gt; Remove From File List). Then, add the images into
+CellProfiler again. Now run through the workflow.</p>
+</div>
+</div>
+</div>
+</div>
+<p>As you may have noticed, most of the workflow was reproducible, but
+we had to switch out the images first. The other way of sharing a
+workflow avoids this.</p>
+<p>In a new CellProfiler window (File &gt; New Project), load in the
+<code>.cppipe</code> file by using
+<code>File &gt; Import &gt; Pipeline From File</code>. Load in the
+images and go through the workflow again. You should notice that the
+results remain unchanged.</p>
+<div id="callout2" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div class="callout-inner">
+<div class="callout-content">
+<p>Recall from <a href="introduction#metadata">episode 2</a> that we
+extract metadata from the file but not folder names in this exercise.
+This can differ between projects - for example, you may have a different
+folder for each day of imaging. In this case, you will need to reproduce
+the folder structure on the new PC before you will be able to run the
+pipeline.</p>
+</div>
+</div>
+</div>
+</div>
+<section><h2 class="section-heading" id="practical-takeaways">Practical takeaways<a class="anchor" aria-label="anchor" href="#practical-takeaways"></a>
+</h2>
+<hr class="half-width">
+<p>When you want to <em>continue your own work</em>, saving the project
+is convenient.</p>
+<p>When you want to <em>share a reproducible analysis</em>, exporting
+the pipeline is usually the better default. If you share a pipeline, it
+is a good idea to also share some example images for testing. And of
+course for full reproducibility, you need to <a href="https://doi.org/10.1111/jmi.13317" class="external-link">share all images</a>.</p>
+<div id="keypoints1" class="callout keypoints">
+<div class="callout-square">
+<i class="callout-icon" data-feather="key"></i>
+</div>
+<span class="callout-header">Key Points</span>
+<div class="callout-inner">
+<div class="callout-content">
+<ul>
+<li>
+<strong>Save Project</strong> is great for restoring a full session,
+but often stores image paths that are not portable.</li>
+<li>
+<strong>Export/Import Pipeline</strong> is a more reproducible way
+to share an analysis workflow.</li>
+</ul>
+</div>
+</div>
+</div>
+<!--
+Place links that you need to refer to multiple times across pages here. Delete
+any links that you are not going to use.
+[pandoc]: https://pandoc.org/MANUAL.html
+[r-markdown]: https://rmarkdown.rstudio.com/
+[rstudio]: https://www.rstudio.com/
+[carpentries-workbench]: https://carpentries.github.io/sandpaper-docs/
+ -->
 </section></section><section id="aio-bonus"><p>Content from <a href="bonus.html">Bonus: visualising features</a></p>
 <hr>
 <p>Last updated on 2026-01-21 |
@@ -1938,7 +2159,7 @@ show?</p>
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler1" aria-expanded="false" aria-controls="collapseSpoiler1">
   <h3 class="accordion-header" id="headingSpoiler1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> Show details </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
 <div class="accordion-body">
 <p>You should get a table and bar chart similar to this: <img src="fig/bonus_excel_bar.png" alt="Bar graph showing that cells treated with cytoD are about ~30 percent points smaller than cells treated with DMSO only, on average." class="figure"></p>
 <p>If we do the math, this shows that cells treated with cytoD are about
@@ -2071,8 +2292,8 @@ any links that you are not going to use.
   "url": "https://DBI-INFRA.github.io/2026-02-05-DCI-CellProfiler/aio.html",
   "identifier": "https://DBI-INFRA.github.io/2026-02-05-DCI-CellProfiler/aio.html",
   "dateCreated": "2026-01-08",
-  "dateModified": "2026-01-21",
-  "datePublished": "2026-01-21"
+  "dateModified": "2026-01-22",
+  "datePublished": "2026-01-22"
 }
 
   </script><script>
