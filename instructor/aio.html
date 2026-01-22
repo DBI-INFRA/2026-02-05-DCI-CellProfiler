@@ -1294,7 +1294,7 @@ normalization factor in the range of 2-5 and click Apply to all. <img src="../fi
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>Compared to nuclei, cell boundaries are often less easily
 distinguished. We can see that the actin channel does increase at cell
@@ -1337,7 +1337,7 @@ How do the resulting cell boundaries differ?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Comparing methods </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>As with the segmentation of nuclei, getting cell segmentation right
 can be tricky. Often, starting with “propagation” as method is a good
@@ -1382,7 +1382,7 @@ where these assumptions may not be met? Discuss with your neighbor.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <p>CellProfiler identifies cells by expanding outwards from a nucleus.
 This assumes that <strong>each cell only has exactly one
@@ -1430,7 +1430,7 @@ select what you think are the correct options.</p>
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler1" aria-expanded="false" aria-controls="collapseSpoiler1">
   <h3 class="accordion-header" id="headingSpoiler1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> Suggested settings </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
 <div class="accordion-body">
 <ul>
 <li>Larger objects: cells identified with
@@ -1975,22 +1975,22 @@ instructions under <code>Online file share</code>.</p>
 </button>
 </div>
 </nav><div id="nav-tabContent-1" class="tab-content">
-<div id="nav-tabpanel-1-1" class="tab-pane show active" aria-labelledby="nav-tab-1-1" role="tabpanel">
+<div id="nav-tabpanel-1-1" class="tab-pane show active" role="tabpanel" aria-labelledby="nav-tab-1-1">
 <p>If you have a USB stick, just copy the files onto it, pass it to your
 neighbor and have them copy it onto their computer for testing.
 Easy!</p>
 </div>
-<div id="nav-tabpanel-1-2" class="tab-pane" aria-labelledby="nav-tab-1-2" role="tabpanel">
+<div id="nav-tabpanel-1-2" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-2">
 <p>If you do not have a USB stick with you, we can use an online file
-sharing solution. You can use OneDrive/Dropbox/Google Drive if you like,
-or follow the instructions below if you do not want to create an account
-on a service.</p>
+sharing solution. You can use email/OneDrive/Dropbox/Google Drive if you
+like, or follow the instructions below if you do not want to create an
+account on a service.</p>
 <ol style="list-style-type: decimal">
 <li>Both you and your neighbor should open <a href="https://toffeeshare.com" class="external-link uri">https://toffeeshare.com</a>
 </li>
 <li>You share one of the two files by clicking on the <code>+</code>
-<img src="../fig/reproducibility_toffeeshare.png" alt="Toffeeshare website" class="figure">
-</li>
+<img src="../fig/reproducibility_toffeeshare.png" alt="Toffeeshare website" class="figure">. Note that toffeeshare only allows sharing
+one file at a time.</li>
 <li>Make sure to set the <code>Local sharing code</code> option <img src="../fig/reproducibility_toffeeshare_options.png" alt="Toffeeshare website sharing options" class="figure">
 </li>
 <li>Your neighbor now clicks on <code>Nearby devices</code> in the top
