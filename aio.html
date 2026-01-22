@@ -455,7 +455,7 @@ using the images.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>One option is: does cytochalasin D induce a morphological change in
 MCF7 cells?</p>
@@ -1111,7 +1111,7 @@ boundaries.</p>
 </h3>
 <p>Did you get stuck with one of the steps? Download a working version
 of the pipeline here:</p>
-<p><a href="data/pipeline.cppipe" download class="btn btn-primary" style="display:inline-block;padding:8px 12px;background:#007bff;color:#fff;border-radius:4px;text-decoration:none;">Download
+<p><a href="data/pipeline_1.cppipe" download class="btn btn-primary" style="display:inline-block;padding:8px 12px;background:#007bff;color:#fff;border-radius:4px;text-decoration:none;">Download
 pipeline</a></p>
 <div id="callout3" class="callout">
 <div class="callout-square">
@@ -1160,7 +1160,7 @@ any links that you are not going to use.
 </div>
 </section></section><section id="aio-detecting-cells"><p>Content from <a href="detecting-cells.html">Identifying secondary &amp; tertiary objects</a></p>
 <hr>
-<p>Last updated on 2026-01-21 |
+<p>Last updated on 2026-01-22 |
 
         <a href="https://github.com/DBI-INFRA/2026-02-05-DCI-CellProfiler/edit/main/episodes/detecting-cells.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -1396,7 +1396,7 @@ nonsensical data down the line.</p>
 <p>Once you are happy with the result, make sure to check the following
 options:</p>
 <ol style="list-style-type: decimal">
-<li>Fill holes in identifies objects: Yes</li>
+<li>Fill holes in identified objects: Yes</li>
 <li>Discard secondary objects touching the border of the image: Yes</li>
 <li>Discard the associated primary objects: Yes</li>
 </ol>
@@ -1448,7 +1448,7 @@ things!</p>
 </h3>
 <p>Did you get stuck with one of the steps? Download a working version
 of the pipeline here:</p>
-<p><a href="data/pipeline_secondary.cppipe" download class="btn btn-primary" style="display:inline-block;padding:8px 12px;background:#007bff;color:#fff;border-radius:4px;text-decoration:none;">Download
+<p><a href="data/pipeline_2.cppipe" download class="btn btn-primary" style="display:inline-block;padding:8px 12px;background:#007bff;color:#fff;border-radius:4px;text-decoration:none;">Download
 pipeline</a></p>
 <div id="callout2" class="callout">
 <div class="callout-square">
@@ -1499,7 +1499,7 @@ any links that you are not going to use.
 </div>
 </section></section><section id="aio-measure-features"><p>Content from <a href="measure-features.html">Measuring object intensity and shape</a></p>
 <hr>
-<p>Last updated on 2026-01-21 |
+<p>Last updated on 2026-01-22 |
 
         <a href="https://github.com/DBI-INFRA/2026-02-05-DCI-CellProfiler/edit/main/episodes/measure-features.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -1596,7 +1596,7 @@ neighbor.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>The simplest setup is to measure all channels in all parts of the
 cells and decide which measurements to interpret down the line. Perhaps
@@ -1660,7 +1660,7 @@ MeanIntensity”. What do you observe?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>Depending on your segmentation settings and which image you are using
 to test, the mean DNA intensity is about 3-4x higher in nuclei than in
@@ -1712,7 +1712,7 @@ cytoplasm/nucleus.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <p>The cytoplasm occupies about 3-4x more space than the nucleus. Again,
 depending on your segmentation settings, your result may differ.</p>
@@ -1767,7 +1767,7 @@ shape measurements?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <p>With default settings, CellProfiler typically exports one spreadsheet
 per object type (e.g. one for nuclei, one for cells, one for cytoplasm),
@@ -1822,7 +1822,7 @@ profiles, or training classifiers.</p>
 </h3>
 <p>Did you get stuck with one of the steps? Download a working version
 of the pipeline here:</p>
-<p><a href="data/pipeline_measurements.cppipe" download class="btn btn-primary" style="display:inline-block;padding:8px 12px;background:#007bff;color:#fff;border-radius:4px;text-decoration:none;">Download
+<p><a href="data/pipeline.cppipe" download class="btn btn-primary" style="display:inline-block;padding:8px 12px;background:#007bff;color:#fff;border-radius:4px;text-decoration:none;">Download
 pipeline</a></p>
 <div id="callout3" class="callout">
 <div class="callout-square">
