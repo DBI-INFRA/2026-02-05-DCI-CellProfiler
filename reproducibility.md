@@ -49,6 +49,7 @@ Then share the file with your neighbor by following the instructions below.
 You have a few options to quickly share your files. If you have a USB stick
 with you, that may be the fastest option. But otherwise follow the instructions
 under `Online file share`.
+
 ::: tab
 
 ### USB stick
