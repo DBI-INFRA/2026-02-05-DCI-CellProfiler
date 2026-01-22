@@ -266,7 +266,7 @@ the nuclei as anchors to find cell boundaries.
 
 Did you get stuck with one of the steps? Download a working version of the pipeline here:
 
-<a href="data/pipeline.cppipe" download class="btn btn-primary" style="display:inline-block;padding:8px 12px;background:#007bff;color:#fff;border-radius:4px;text-decoration:none;">Download pipeline</a>
+<a href="data/pipeline_1.cppipe" download class="btn btn-primary" style="display:inline-block;padding:8px 12px;background:#007bff;color:#fff;border-radius:4px;text-decoration:none;">Download pipeline</a>
 
 :::::::::: callout
 If you are using Firefox, you have to right click the button and select "Save Link As...".

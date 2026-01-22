@@ -169,7 +169,7 @@ yield nonsensical data down the line.
 
 Once you are happy with the result, make sure to check the following options:
 
-1. Fill holes in identifies objects: Yes
+1. Fill holes in identified objects: Yes
 2. Discard secondary objects touching the border of the image: Yes
 3. Discard the associated primary objects: Yes
 
@@ -208,7 +208,7 @@ Finally, we have created all masks we need and can move on to measure things!
 Did you get stuck with one of the steps? Download a working version of the
 pipeline here:
 
-<a href="data/pipeline_secondary.cppipe" download class="btn btn-primary" style="display:inline-block;padding:8px 12px;background:#007bff;color:#fff;border-radius:4px;text-decoration:none;">Download pipeline</a>
+<a href="data/pipeline_2.cppipe" download class="btn btn-primary" style="display:inline-block;padding:8px 12px;background:#007bff;color:#fff;border-radius:4px;text-decoration:none;">Download pipeline</a>
 
 :::::::::: callout
 If you are using Firefox, you have to right click the button and select "Save Link As...".
