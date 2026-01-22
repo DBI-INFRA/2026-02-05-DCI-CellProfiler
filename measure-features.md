@@ -37,7 +37,7 @@ In this episode, we will measure two broad classes of features:
 
 ## MeasureObjectIntensity: measuring fluorescence per object
 
-Add the **MeasureObjectIntensity** to your pipeline.
+Add the **MeasureObjectIntensity** module to your pipeline.
 
 This module measures per-object intensity statistics for one or more images.
 For example, it can quantify the DNA stain in the nucleus, or the actin stain
@@ -185,7 +185,10 @@ ExportToSpreadsheet and re-run the pipeline.
 ### Tip: run on a subset first
 When developing a pipeline, it’s often faster to run on a small subset of images
 first to confirm that exports look correct. Once you’re satisfied, run the pipeline
-on the full dataset.
+on the full dataset. 
+In this exercise, you have only been provided with a few images so this
+does not apply, but it will make a big difference when dealing with
+hundreds of images.
 :::::
 
 

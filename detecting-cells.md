@@ -137,9 +137,9 @@ Much like when segmenting nuclei, the `IdentifySecondaryObjects` module
 allows us to fine-tune our segmentation by changing the thresholding strategy
 and method. As before, the best choice depends on illumination and staining
 consistency. While **Minimum Cross-Entropy** (right) is the default thresholding
-method, **Otsu** (left) can often also yield good masks and makes a bit fewer assumptions about your image. For this dataset, they perform very similarly, except that Minimum Cross-Entropy does slightly better at detecting protrusions such as in the below image.
+method, **Otsu** (left) can often also yield good masks and makes a bit fewer assumptions about your image. For this dataset they perform very similarly, except that Minimum Cross-Entropy does slightly better at detecting protrusions such as in the below image.
 
-![](fig/secondary_otsu_me.png){alt="Side-by-side of otsu and
+![](fig/secondary_otsu_me.png){alt="Side-by-side of Otsu and
 minimum cross-entropy thresholding results."}
 
 :::: challenge
