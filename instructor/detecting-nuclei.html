@@ -328,7 +328,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Identifying primary objects</h1>
-        <p>Last updated on 2026-01-21 |
+        <p>Last updated on 2026-01-22 |
 
         <a href="https://github.com/DBI-INFRA/2026-02-05-DCI-CellProfiler/edit/main/episodes/detecting-nuclei.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -390,18 +390,20 @@ microtubules, right: DAPI-stained nuclei.</div>
 </figure><p>Once nuclei are correctly identified, we can often use them to guide
 later steps like finding whole cells (secondary objects) or cytoplasm
 (tertiary objects), and to compute per-cell measurements.</p>
-<p>In CellProfiler’s terminology: - <strong>Primary objects</strong> are
-detected directly from an image (here: nuclei from the DNA channel). -
-<strong>Secondary objects</strong> are grown out from primary objects
-(often whole cells). - <strong>Tertiary objects</strong> are derived
-from other objects (often cytoplasm = cell minus nucleus).</p>
-</section><section><h2 class="section-heading" id="the-identifyprimaryobjects-module">The IdentifyPrimaryObjects module<a class="anchor" aria-label="anchor" href="#the-identifyprimaryobjects-module"></a></h2>
+<p>In CellProfiler’s terminology:</p>
+<ul><li>
+<strong>Primary objects</strong> are detected directly from an image
+(here: nuclei from the DNA channel).</li>
+<li>
+<strong>Secondary objects</strong> are grown out from primary
+objects (often whole cells).</li>
+<li>
+<strong>Tertiary objects</strong> are derived from other objects
+(often cytoplasm = cell minus nucleus).</li>
+</ul></section><section><h2 class="section-heading" id="the-identifyprimaryobjects-module">The IdentifyPrimaryObjects module<a class="anchor" aria-label="anchor" href="#the-identifyprimaryobjects-module"></a></h2>
 <hr class="half-width"><p>Add a new module via <strong>+ Add</strong> → <strong>Object
 Processing</strong> → <strong>IdentifyPrimaryObjects</strong>.</p>
-<figure><img src="../fig/addmodule_primary.png" alt="Screenshots of CellProfiler, showing how to add the IdentifyPrimaryObjects module." class="figure mx-auto d-block"><div class="figcaption">Often, identifying cells is easier with a
-nuclear rather than an intracellular stain. Left: Cells stained for
-microtubules, right: DAPI-stained nuclei.</div>
-</figure><p>You should now see a module where you need to specify: 1. which image
+<figure><img src="../fig/addmodule_primary.png" alt="Screenshots of CellProfiler, showing how to add the IdentifyPrimaryObjects module." class="figure mx-auto d-block"></figure><p>You should now see a module where you need to specify: 1. which image
 to segment, 2. what to call the resulting objects, 3. how CellProfiler
 should separate touching nuclei, 4. what size and shape constraints to
 apply, 5. and (optionally) how to filter out artifacts.</p>
@@ -411,14 +413,13 @@ apply, 5. and (optionally) how to filter out artifacts.</p>
 image (i.e. <code>DNA</code>, if you followed the steps in the <a href="introduction.html#namesandtypes">previous episode</a>).</p>
 <p>Set <strong>Name the primary objects to be identified</strong> to
 something descriptive like <code>Nuclei</code>.</p>
-<div id="challenge-confirm-you-are-using-the-correct-channel" class="callout challenge">
+<div id="confirm-you-are-using-the-correct-channel" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <span class="callout-header">Challenge</span>
-<div id="challenge-confirm-you-are-using-the-correct-channel" class="callout-inner">
-<h3 class="callout-title">Challenge: confirm you are using the correct
-channel</h3>
+<div id="confirm-you-are-using-the-correct-channel" class="callout-inner">
+<h3 class="callout-title">Confirm you are using the correct channel</h3>
 <div class="callout-content">
 <p>How can you quickly verify that you selected the <strong>DNA</strong>
 image (and not actin or tubulin)?</p>
@@ -430,7 +431,7 @@ image (and not actin or tubulin)?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="section level5 accordion-body">
 <h5 id="using-interactive-test-mode">Using interactive test mode<a class="anchor" aria-label="anchor" href="#using-interactive-test-mode"></a></h5>
 <p>One way to verify the image that is being segmented is to use
@@ -460,13 +461,13 @@ Max)</strong> to a range that matches your nuclei.</li>
 </ul><p>This is one of the most important parameters. If the minimum is too
 small, you may pick up noise; if the maximum is too small, large nuclei
 may be split.</p>
-<div id="challenge-estimate-nucleus-size" class="callout challenge">
+<div id="estimate-nucleus-size" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <span class="callout-header">Challenge</span>
-<div id="challenge-estimate-nucleus-size" class="callout-inner">
-<h3 class="callout-title">Challenge: estimate nucleus size</h3>
+<div id="estimate-nucleus-size" class="callout-inner">
+<h3 class="callout-title">Estimate nucleus size</h3>
 <div class="callout-content">
 <p>Using a representative image, estimate a reasonable nucleus diameter
 range.</p>
@@ -476,9 +477,9 @@ range.</p>
 <div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
-  <h4 class="accordion-header" id="headingSolution2"> Solution: diameter range </h4>
+  <h4 class="accordion-header" id="headingSolution2"> Diameter range </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>To estimate nuclei size range, it is good to measure the diameter of
 a few nuclei in a representative image. We can do so by using the
@@ -520,13 +521,13 @@ image)</li>
 </ul><p>Set the thresholding method appropriate for your images. If
 illumination is uneven or background varies strongly, adaptive methods
 often perform better.</p>
-<div id="challenge-compare-thresholding-options" class="callout challenge">
+<div id="compare-thresholding-options" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <span class="callout-header">Challenge</span>
-<div id="challenge-compare-thresholding-options" class="callout-inner">
-<h3 class="callout-title">Challenge: compare thresholding options</h3>
+<div id="compare-thresholding-options" class="callout-inner">
+<h3 class="callout-title">Compare thresholding options</h3>
 <div class="callout-content">
 <p>Run the module in Test Mode on 2–3 images and compare at least two
 thresholding settings. Look out for things like</p>
@@ -555,7 +556,7 @@ the border. Nuclei that will be kept are outlined in green.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <p>In this dataset, as if often the case, it is difficult finding
 perfect settings! Ideally, one spends a significant portion of time
@@ -574,20 +575,18 @@ affected by the settings we will change next. <img src="../fig/primary_global_vs
 <div class="section level3">
 <h3 id="step-4-declump-touching-nuclei">Step 4: declump touching nuclei<a class="anchor" aria-label="anchor" href="#step-4-declump-touching-nuclei"></a></h3>
 <p>Nuclei often touch or overlap, particular if many cells were seeded.
-While a z-stack of images can help distinguish which nuclei goes where,
-due to the increased imaging time needed and more complex downstream
-analysis not all experiments involve z-stacks. Instead, we can instruct
-CellProfiler to separate clumped nuclei using information about nuclei
-shape and intensity.</p>
-<p>While doing so, we need to make sure that <strong>one nucleus
-corresponds to one “object”</strong>.</p>
-<div id="challenge-tune-declumping" class="callout challenge">
+While a z-stack (3D slices) of images can help distinguish which nuclei
+goes where, due to the increased imaging time needed and more complex
+downstream analysis not all experiments involve z-stacks. Instead, we
+can instruct CellProfiler to separate clumped nuclei using information
+about nuclei shape and intensity.</p>
+<div id="tune-declumping" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <span class="callout-header">Challenge</span>
-<div id="challenge-tune-declumping" class="callout-inner">
-<h3 class="callout-title">Challenge: tune declumping</h3>
+<div id="tune-declumping" class="callout-inner">
+<h3 class="callout-title">Tune declumping</h3>
 <div class="callout-content">
 <p>Find an image region with several touching nuclei. (In the sample
 data, the image of cells treated with cytoD has more clumped nuclei.)
@@ -599,14 +598,20 @@ correctly.</p>
 <div id="accordionSolution4" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
-  <h4 class="accordion-header" id="headingSolution4"> Solution: declumping </h4>
+  <h4 class="accordion-header" id="headingSolution4"> Declumping </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <p>As before, it is not trivial to find ideal declumping settings. We
 can get satisfactory results using “Shape” for both, distinguishing
-clumped objects and to draw dividing lines here, but not that this will
-differ for each dataset and should be carefully tested.</p>
+clumped objects and drawing dividing lines here, but note that this will
+differ for each dataset and should be carefully tested. It might also be
+helpful to set
+<code>Automatically calculate size of smoothing filter for declumping</code>
+to <code>No</code> and playing with the
+<code>Suppress local maxima that are closer than this minimum allowed distance</code>
+parameter. A good value seems to be in the range of 4-8 for this
+dataset.</p>
 <p>This figure shows the impact of not using declumping at all (left) vs
 declumping using “Shape” (right). <img src="../fig/primary_declumping.png" alt="Enabling declumping can help discern nearby nuclei." class="figure"></p>
 </div>
@@ -616,24 +621,22 @@ declumping using “Shape” (right). <img src="../fig/primary_declumping.png" a
 </div>
 <div class="section level3">
 <h3 id="step-5-optional-filter-cells">Step 5 (optional): filter cells<a class="anchor" aria-label="anchor" href="#step-5-optional-filter-cells"></a></h3>
-<p>Depending on your dataset, you may need to exclude: - tiny bright
-specks (dust/hot pixels), - very large blobs (out-of-focus regions), -
-edge artifacts.</p>
-<p>Within <strong>IdentifyPrimaryObjects</strong>, you can often handle
-some of this using: - size constraints (min/max diameter), - smoothing
-of the image before thresholding, - discard objects touching the image
-border (if appropriate).</p>
-<p><em>Placeholder:</em> Decide whether learners should remove
-border-touching objects in your course and justify it (e.g. do partial
-nuclei matter for your analysis?).</p>
-<div id="challenge-should-we-exclude-border-objects" class="callout challenge">
+<p>Depending on your dataset, you may need to exclude:</p>
+<ul><li>tiny bright specks (dust/hot pixels),</li>
+<li>very large blobs (out-of-focus regions),</li>
+<li>edge artifacts.</li>
+</ul><p>Within <strong>IdentifyPrimaryObjects</strong>, you can handle some
+of this using:</p>
+<ul><li>size constraints (min/max diameter),</li>
+<li>smoothing of the image before thresholding,</li>
+<li>discard objects touching the image border (if appropriate).</li>
+</ul><div id="should-we-exclude-border-objects" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <span class="callout-header">Challenge</span>
-<div id="challenge-should-we-exclude-border-objects" class="callout-inner">
-<h3 class="callout-title">Challenge: should we exclude border
-objects?</h3>
+<div id="should-we-exclude-border-objects" class="callout-inner">
+<h3 class="callout-title">Should we exclude border objects?</h3>
 <div class="callout-content">
 <p>With your neighbor, discuss whether nuclei touching the image border
 should be kept or removed for your research question formulated in the
@@ -647,14 +650,14 @@ induce a morphological change in MCF7 cells?”</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
   <h4 class="accordion-header" id="headingSolution5"> Show me the solution </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
 <div class="accordion-body">
-<p>In most cases we advise removing cells touching the image border,
-because when we move to measuring cell characteristics they will
-represent outliers. For example, they may appear as disproportionately
-small cells because they were cut off. This does not represent
-biological changes but technical parameters, which we are not interested
-in during the analysis.</p>
+<p>In most cases we advise <strong>removing cells touching the image
+border</strong>, because they will represent outliers when we move to
+measuring cell characteristics. For example, they may appear as
+disproportionately small cells because they were cut off. This does not
+represent biological changes but technical parameters, which we are not
+interested in during the analysis.</p>
 </div>
 </div>
 </div>
@@ -663,8 +666,8 @@ in during the analysis.</p>
 </section><section><h2 class="section-heading" id="conclusions">Conclusions<a class="anchor" aria-label="anchor" href="#conclusions"></a></h2>
 <hr class="half-width"><p>Segmentation is rarely perfect, but it should be fit for purpose. A
 good nucleus segmentation typically has:</p>
-<ul><li>Most nuclei detected (few false negatives)</li>
-<li>Few background objects detected (few false positives)</li>
+<ul><li>Most nuclei detected (i.e. nuclei do not get missed)</li>
+<li>Few background objects detected</li>
 <li>Reasonable splitting of touching nuclei</li>
 <li>Consistent performance across conditions (e.g. DMSO vs
 treatment)</li>
@@ -691,9 +694,10 @@ select “Save Link As…”.</p>
 </div>
 </div>
 <p>After downloading the pipeline, you can compare it to yours for
-troubleshooting. To do so, first open a new CellProfiler window. Then,
-import this pipeline in CellProfiler by clicking on <code>File</code>
-&gt; <code>Import</code> &gt; <code>Pipeline from File</code>.</p>
+troubleshooting. To do so, first open a new CellProfiler window
+(<code>File &gt; New Project</code>). Then, import this pipeline in
+CellProfiler by clicking on <code>File</code> &gt; <code>Import</code>
+&gt; <code>Pipeline from File</code>.</p>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -780,7 +784,7 @@ any links that you are not going to use.
   "url": "https://DBI-INFRA.github.io/2026-02-05-DCI-CellProfiler/instructor/detecting-nuclei.html",
   "identifier": "https://DBI-INFRA.github.io/2026-02-05-DCI-CellProfiler/instructor/detecting-nuclei.html",
   "dateCreated": "2026-01-08",
-  "dateModified": "2026-01-21",
+  "dateModified": "2026-01-22",
   "datePublished": "2026-01-22"
 }
 
