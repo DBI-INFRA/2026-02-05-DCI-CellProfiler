@@ -587,7 +587,7 @@ CellProfiler</h3>
   Solution: loading images
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>You can drag and drop the two folders, <code>DMSO</code> and
 <code>cytoD_0.1</code>, onto the white field in CellProfiler.
@@ -646,7 +646,7 @@ expression?</p>
   Solution: regular expressions in CellProfiler
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>We can break up our file names by underscores. For example,
 <code>cytoD_B07_s1_channel1.tif</code> can be read as</p>
@@ -846,7 +846,7 @@ image (and not actin or tubulin)?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="section level5 accordion-body">
 <h5 id="using-interactive-test-mode">Using interactive test mode<a class="anchor" aria-label="anchor" href="#using-interactive-test-mode"></a>
 </h5>
@@ -898,7 +898,7 @@ range.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Diameter range </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>To estimate nuclei size range, it is good to measure the diameter of
 a few nuclei in a representative image. We can do so by using the
@@ -982,7 +982,7 @@ the border. Nuclei that will be kept are outlined in green.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <p>In this dataset, as if often the case, it is difficult finding
 perfect settings! Ideally, one spends a significant portion of time
@@ -1027,7 +1027,7 @@ correctly.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Declumping </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <p>As before, it is not trivial to find ideal declumping settings. We
 can get satisfactory results using “Shape” for both, distinguishing
@@ -1082,7 +1082,7 @@ induce a morphological change in MCF7 cells?”</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
   <h4 class="accordion-header" id="headingSolution5"> Show me the solution </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
 <div class="accordion-body">
 <p>In most cases we advise <strong>removing cells touching the image
 border</strong>, because they will represent outliers when we move to
@@ -1238,7 +1238,7 @@ Processing</strong> → <strong>IdentifySecondaryObjects</strong>.</p>
 <li>which primary objects act as “seeds” (nuclei),</li>
 <li>which image contains cell boundary information (actin),</li>
 <li>how to determine where each cell ends (thresholding + method),</li>
-<li>how to handle cells the image border.</li>
+<li>how to handle cells touching the image border.</li>
 </ol>
 <div class="section level3">
 <h3 id="step-1-choose-primary-input-objects">Step 1: choose primary input objects<a class="anchor" aria-label="anchor" href="#step-1-choose-primary-input-objects"></a>
@@ -1256,14 +1256,13 @@ cytoplasmic) channel, e.g. <code>Actin</code> (or whatever name you
 assigned in <em>NamesAndTypes</em>).</p>
 <p>The channel should contain relatively strong signal across the cell
 body and/or along the cell boundary.</p>
-<div id="challenge-confirm-the-actin-image-is-suitable-to-find-cell-boundaries" class="callout challenge">
+<div id="checking-the-actin-image" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <span class="callout-header">Challenge</span>
-<div id="challenge-confirm-the-actin-image-is-suitable-to-find-cell-boundaries" class="callout-inner">
-<h3 class="callout-title">Challenge: confirm the actin image is suitable
-to find cell boundaries</h3>
+<div id="checking-the-actin-image" class="callout-inner">
+<h3 class="callout-title">Checking the actin image</h3>
 <div class="callout-content">
 <p>Using Test Mode, inspect a few images:</p>
 <ul>
@@ -1280,9 +1279,10 @@ to find cell boundaries</h3>
 <div class="callout-inner">
 <div class="callout-content">
 <p>If you find the contrast too dim to see the channel well, you can
-increase the contrast by selectig File &gt; (Object name) outlines &gt;
-Adjust Contrast, selecting normalized and a normalization factor in the
-range of 2-5, then click Apply to all. <img src="../fig/secondary_contrast.png" alt="Screenshots showing that contrast be adjusted using File &gt; (Object name) outlines &gt; Adjust Contrast and selecting normalized and a normalization factor in the range of 2-5, the clicking Apply to all." class="figure"></p>
+increase the contrast. You can do so either by **right clicking &gt;
+Adjust Contrast*, or by selecting <strong>Subplots &gt; (Object name)
+outlines &gt; Adjust Contrast</strong>. Then, select normalized and a
+normalization factor in the range of 2-5 and click Apply to all. <img src="../fig/secondary_contrast.png" alt="Screenshots showing that contrast be adjusted using Subplots &gt; (Object name) outlines &gt; Adjust Contrast and selecting normalized and a normalization factor in the range of 2-5, the clicking Apply to all." class="figure"></p>
 </div>
 </div>
 </div>
@@ -1319,13 +1319,13 @@ We encourage you to read their descriptions in CellProfiler by clicking
 the <code>?</code> symbol, but most often it is set to
 <code>Propagation</code>. To see why, let’s see what happens when we try
 segmenting cells with either method!</p>
-<div id="challenge-optional-explore-methods" class="callout challenge">
+<div id="optional-challenge-explore-methods" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <span class="callout-header">Challenge</span>
-<div id="challenge-optional-explore-methods" class="callout-inner">
-<h3 class="callout-title">Challenge (optional): explore methods</h3>
+<div id="optional-challenge-explore-methods" class="callout-inner">
+<h3 class="callout-title">Optional challenge: explore methods</h3>
 <div class="callout-content">
 <p>Try two different methods (e.g. propagation vs watershed gradient).
 How do the resulting cell boundaries differ?</p>
@@ -1358,9 +1358,12 @@ is true. This means that, once again, choices should be made carefully.
 segmentation by changing the thresholding strategy and method. As
 before, the best choice depends on illumination and staining
 consistency. While <strong>Minimum Cross-Entropy</strong> (right) is the
-default thresholding method, <strong>Propagation</strong> (left) often
-yields less jagged cell boundaries:</p>
-<figure><img src="../fig/secondary_propagation_me.png" alt="Side-by-side of propagation and minimum cross-entropy threshold results." class="figure mx-auto d-block"></figure><div id="challenge-biological-pitfalls" class="callout challenge">
+default thresholding method, <strong>Otsu</strong> (left) can often also
+yield good masks and makes a bit fewer assumptions about your image. For
+this dataset, they perform very similarly, except that Minimum
+Cross-Entropy does slightly better at detecting protrusions such as in
+the below image.</p>
+<figure><img src="../fig/secondary_otsu_me.png" alt="Side-by-side of otsu and minimum cross-entropy thresholding results." class="figure mx-auto d-block"></figure><div id="challenge-biological-pitfalls" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
@@ -1382,19 +1385,20 @@ where these assumptions may not be met? Discuss with your neighbor.</p>
 <div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <p>CellProfiler identifies cells by expanding outwards from a nucleus.
-This assumes that each cell only has exactly one nucleus in the same
-plane. When imaging hepatocytes, for example, this can prove
-problematic: they often contain more than one nucleus. Equally, if we
-were imaging cells in suspension, we would have to make sure than we
-capture the nucleus accurately in 3D and expand the cell in 3D space
-too. And lastly, red blood cells do not even have a nucleus, so this
-method would not work for them either!</p>
-<p>Other pitfalls include mitotic/meiotic cells: from when on do we term
-a splitting cell as two cells? When the two nuclei have budded off, or
-when the membrane is fully split? CellProfiler cannot answer these
-questions for us, instead, we must consider these biological
-complexities when designing our analysis pipeline to not yield
-nonsensical data down the line.</p>
+This assumes that <strong>each cell only has exactly one
+nucleus</strong> in the same plane. When imaging hepatocytes, for
+example, this can prove problematic: they often contain more than one
+nucleus. Equally, if we were imaging cells in suspension, we would have
+to make sure than we <strong>capture the nucleus accurately in
+3D</strong> and expand the cell in 3D space too. And lastly, red blood
+cells do not even have a nucleus, so this method would not work for them
+either!</p>
+<p>Other pitfalls include <strong>mitotic/meiotic cells</strong>: from
+when on do we term a splitting cell as two cells? When the two nuclei
+have budded off, or when the membrane is fully split? CellProfiler
+cannot answer these questions for us, instead, we must consider these
+biological complexities when designing our analysis pipeline to not
+yield nonsensical data down the line.</p>
 </div>
 </div>
 </div>
@@ -1603,7 +1607,7 @@ neighbor.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>The simplest setup is to measure all channels in all parts of the
 cells and decide which measurements to interpret down the line. Perhaps
@@ -1667,7 +1671,7 @@ MeanIntensity”. What do you observe?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>Depending on your segmentation settings and which image you are using
 to test, the mean DNA intensity is about 3-4x higher in nuclei than in
@@ -1719,7 +1723,7 @@ cytoplasm/nucleus.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <p>The cytoplasm occupies about 3-4x more space than the nucleus. Again,
 depending on your segmentation settings, your result may differ.</p>
@@ -1774,7 +1778,7 @@ shape measurements?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <p>With default settings, CellProfiler typically exports one spreadsheet
 per object type (e.g. one for nuclei, one for cells, one for cytoplasm),
@@ -1968,12 +1972,12 @@ instructions under <code>Online file share</code>.</p>
 </button>
 </div>
 </nav><div id="nav-tabContent-1" class="tab-content">
-<div id="nav-tabpanel-1-1" class="tab-pane show active" aria-labelledby="nav-tab-1-1" role="tabpanel">
+<div id="nav-tabpanel-1-1" class="tab-pane show active" role="tabpanel" aria-labelledby="nav-tab-1-1">
 <p>If you have a USB stick, just copy the files onto it, pass it to your
 neighbor and have them copy it onto their computer for testing.
 Easy!</p>
 </div>
-<div id="nav-tabpanel-1-2" class="tab-pane" aria-labelledby="nav-tab-1-2" role="tabpanel">
+<div id="nav-tabpanel-1-2" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-2">
 <p>If you do not have a USB stick with you, we can use an online file
 sharing solution. You can use OneDrive/Dropbox/Google Drive if you like,
 or follow the instructions below if you do not want to create an account
@@ -2028,7 +2032,7 @@ comparing with each other.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>The workflow should be reproducible, but you may encounter an issue:
 the images loaded in with the <code>Images</code> module are not in the
@@ -2190,7 +2194,7 @@ show?</p>
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler1" aria-expanded="false" aria-controls="collapseSpoiler1">
   <h3 class="accordion-header" id="headingSpoiler1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> Show details </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
 <div class="accordion-body">
 <p>You should get a table and bar chart similar to this: <img src="../fig/bonus_excel_bar.png" alt="Bar graph showing that cells treated with cytoD are about ~30 percent points smaller than cells treated with DMSO only, on average." class="figure"></p>
 <p>If we do the math, this shows that cells treated with cytoD are about

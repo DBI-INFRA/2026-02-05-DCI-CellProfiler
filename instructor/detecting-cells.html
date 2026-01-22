@@ -398,7 +398,7 @@ Processing</strong> → <strong>IdentifySecondaryObjects</strong>.</p>
 <ol style="list-style-type: decimal"><li>which primary objects act as “seeds” (nuclei),</li>
 <li>which image contains cell boundary information (actin),</li>
 <li>how to determine where each cell ends (thresholding + method),</li>
-<li>how to handle cells the image border.</li>
+<li>how to handle cells touching the image border.</li>
 </ol><div class="section level3">
 <h3 id="step-1-choose-primary-input-objects">Step 1: choose primary input objects<a class="anchor" aria-label="anchor" href="#step-1-choose-primary-input-objects"></a></h3>
 <p>Set <strong>Select the input objects</strong> (or similarly named
@@ -413,14 +413,13 @@ cytoplasmic) channel, e.g. <code>Actin</code> (or whatever name you
 assigned in <em>NamesAndTypes</em>).</p>
 <p>The channel should contain relatively strong signal across the cell
 body and/or along the cell boundary.</p>
-<div id="challenge-confirm-the-actin-image-is-suitable-to-find-cell-boundaries" class="callout challenge">
+<div id="checking-the-actin-image" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <span class="callout-header">Challenge</span>
-<div id="challenge-confirm-the-actin-image-is-suitable-to-find-cell-boundaries" class="callout-inner">
-<h3 class="callout-title">Challenge: confirm the actin image is suitable
-to find cell boundaries</h3>
+<div id="checking-the-actin-image" class="callout-inner">
+<h3 class="callout-title">Checking the actin image</h3>
 <div class="callout-content">
 <p>Using Test Mode, inspect a few images:</p>
 <ul><li>Can you see whole cell bodies?</li>
@@ -435,9 +434,10 @@ to find cell boundaries</h3>
 <div class="callout-inner">
 <div class="callout-content">
 <p>If you find the contrast too dim to see the channel well, you can
-increase the contrast by selectig File &gt; (Object name) outlines &gt;
-Adjust Contrast, selecting normalized and a normalization factor in the
-range of 2-5, then click Apply to all. <img src="../fig/secondary_contrast.png" alt="Screenshots showing that contrast be adjusted using File &gt; (Object name) outlines &gt; Adjust Contrast and selecting normalized and a normalization factor in the range of 2-5, the clicking Apply to all." class="figure"></p>
+increase the contrast. You can do so either by **right clicking &gt;
+Adjust Contrast*, or by selecting <strong>Subplots &gt; (Object name)
+outlines &gt; Adjust Contrast</strong>. Then, select normalized and a
+normalization factor in the range of 2-5 and click Apply to all. <img src="../fig/secondary_contrast.png" alt="Screenshots showing that contrast be adjusted using Subplots &gt; (Object name) outlines &gt; Adjust Contrast and selecting normalized and a normalization factor in the range of 2-5, the clicking Apply to all." class="figure"></p>
 </div>
 </div>
 </div>
@@ -473,13 +473,13 @@ We encourage you to read their descriptions in CellProfiler by clicking
 the <code>?</code> symbol, but most often it is set to
 <code>Propagation</code>. To see why, let’s see what happens when we try
 segmenting cells with either method!</p>
-<div id="challenge-optional-explore-methods" class="callout challenge">
+<div id="optional-challenge-explore-methods" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <span class="callout-header">Challenge</span>
-<div id="challenge-optional-explore-methods" class="callout-inner">
-<h3 class="callout-title">Challenge (optional): explore methods</h3>
+<div id="optional-challenge-explore-methods" class="callout-inner">
+<h3 class="callout-title">Optional challenge: explore methods</h3>
 <div class="callout-content">
 <p>Try two different methods (e.g. propagation vs watershed gradient).
 How do the resulting cell boundaries differ?</p>
@@ -511,9 +511,12 @@ is true. This means that, once again, choices should be made carefully.
 segmentation by changing the thresholding strategy and method. As
 before, the best choice depends on illumination and staining
 consistency. While <strong>Minimum Cross-Entropy</strong> (right) is the
-default thresholding method, <strong>Propagation</strong> (left) often
-yields less jagged cell boundaries:</p>
-<figure><img src="../fig/secondary_propagation_me.png" alt="Side-by-side of propagation and minimum cross-entropy threshold results." class="figure mx-auto d-block"></figure><div id="challenge-biological-pitfalls" class="callout challenge">
+default thresholding method, <strong>Otsu</strong> (left) can often also
+yield good masks and makes a bit fewer assumptions about your image. For
+this dataset, they perform very similarly, except that Minimum
+Cross-Entropy does slightly better at detecting protrusions such as in
+the below image.</p>
+<figure><img src="../fig/secondary_otsu_me.png" alt="Side-by-side of otsu and minimum cross-entropy thresholding results." class="figure mx-auto d-block"></figure><div id="challenge-biological-pitfalls" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
@@ -535,19 +538,20 @@ where these assumptions may not be met? Discuss with your neighbor.</p>
 <div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <p>CellProfiler identifies cells by expanding outwards from a nucleus.
-This assumes that each cell only has exactly one nucleus in the same
-plane. When imaging hepatocytes, for example, this can prove
-problematic: they often contain more than one nucleus. Equally, if we
-were imaging cells in suspension, we would have to make sure than we
-capture the nucleus accurately in 3D and expand the cell in 3D space
-too. And lastly, red blood cells do not even have a nucleus, so this
-method would not work for them either!</p>
-<p>Other pitfalls include mitotic/meiotic cells: from when on do we term
-a splitting cell as two cells? When the two nuclei have budded off, or
-when the membrane is fully split? CellProfiler cannot answer these
-questions for us, instead, we must consider these biological
-complexities when designing our analysis pipeline to not yield
-nonsensical data down the line.</p>
+This assumes that <strong>each cell only has exactly one
+nucleus</strong> in the same plane. When imaging hepatocytes, for
+example, this can prove problematic: they often contain more than one
+nucleus. Equally, if we were imaging cells in suspension, we would have
+to make sure than we <strong>capture the nucleus accurately in
+3D</strong> and expand the cell in 3D space too. And lastly, red blood
+cells do not even have a nucleus, so this method would not work for them
+either!</p>
+<p>Other pitfalls include <strong>mitotic/meiotic cells</strong>: from
+when on do we term a splitting cell as two cells? When the two nuclei
+have budded off, or when the membrane is fully split? CellProfiler
+cannot answer these questions for us, instead, we must consider these
+biological complexities when designing our analysis pipeline to not
+yield nonsensical data down the line.</p>
 </div>
 </div>
 </div>
