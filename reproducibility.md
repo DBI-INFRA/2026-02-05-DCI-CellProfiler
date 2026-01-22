@@ -126,7 +126,7 @@ will be able to run the pipeline.
 
 When you want to continue your own work, saving the project is convenient.
 
-When you want to share a reproducible analysis, exporting the pipeline is usually
+When you want to share a reproducible analysis workflow, exporting the pipeline is usually
 the better default. If you share a pipeline, it is a good idea to also share some
 example images for testing. And of course for full reproducibility, you need to 
 [share all images](https://doi.org/10.1111/jmi.13317).
