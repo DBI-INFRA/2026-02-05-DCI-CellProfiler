@@ -48,7 +48,7 @@ You should now see a module where you need to specify:
 1. which primary objects act as “seeds” (nuclei),
 2. which image contains cell boundary information (actin),
 3. how to determine where each cell ends (thresholding + method),
-4. how to handle cells the image border.
+4. how to handle cells touching the image border.
 
 ### Step 1: choose primary input objects
 
@@ -65,7 +65,7 @@ The channel should contain relatively strong signal across the cell body and/or
 along the cell boundary.
 
 :::: challenge
-## Challenge: confirm the actin image is suitable to find cell boundaries
+## Checking the actin image
 
 Using Test Mode, inspect a few images:
 
@@ -77,11 +77,12 @@ If not, what issues do you observe?
 
 ::::: callout
 If you find the contrast too dim to see the channel well, you can increase
-the contrast by selectig  File > (Object name) outlines > Adjust Contrast,
-selecting normalized and a normalization factor in the range of 2-5, 
-then click Apply to all.
+the contrast.
+You can do so either by **right clicking > Adjust Contrast*, or
+by selecting **Subplots > (Object name) outlines > Adjust Contrast**.
+Then, select normalized and a normalization factor in the range of 2-5 and click Apply to all.
 ![](fig/secondary_contrast.png){alt="Screenshots showing that contrast
-be adjusted using File > (Object name) outlines > Adjust Contrast and selecting
+be adjusted using Subplots > (Object name) outlines > Adjust Contrast and selecting
 normalized and a normalization factor in the range of 2-5, the clicking Apply
 to all."}
 :::::
@@ -109,7 +110,7 @@ symbol, but most often it is set to `Propagation`. To see why, let's see what
 happens when we try segmenting cells with either method!
 
 :::: challenge
-## Challenge (optional): explore methods
+## Optional challenge: explore methods
 
 Try two different methods (e.g. propagation vs watershed gradient).
 How do the resulting cell boundaries differ?
@@ -136,10 +137,10 @@ Much like when segmenting nuclei, the `IdentifySecondaryObjects` module
 allows us to fine-tune our segmentation by changing the thresholding strategy
 and method. As before, the best choice depends on illumination and staining
 consistency. While **Minimum Cross-Entropy** (right) is the default thresholding
-method, **Propagation** (left) often yields less jagged cell boundaries:
+method, **Otsu** (left) can often also yield good masks and makes a bit fewer assumptions about your image. For this dataset, they perform very similarly, except that Minimum Cross-Entropy does slightly better at detecting protrusions such as in the below image.
 
-![](fig/secondary_propagation_me.png){alt="Side-by-side of propagation and
-minimum cross-entropy threshold results."}
+![](fig/secondary_otsu_me.png){alt="Side-by-side of otsu and
+minimum cross-entropy thresholding results."}
 
 :::: challenge
 ## Challenge: biological pitfalls
@@ -150,14 +151,14 @@ assumptions may not be met? Discuss with your neighbor.
 
 ::: solution
 CellProfiler identifies cells by expanding outwards from a nucleus.
-This assumes that each cell only has exactly one nucleus in the same plane.
+This assumes that **each cell only has exactly one nucleus** in the same plane.
 When imaging hepatocytes, for example, this can prove problematic: they often
 contain more than one nucleus. Equally, if we were imaging cells in suspension,
-we would have to make sure than we capture the nucleus accurately in 3D and 
+we would have to make sure than we **capture the nucleus accurately in 3D** and 
 expand the cell in 3D space too. And lastly, red blood cells do not even
 have a nucleus, so this method would not work for them either!
 
-Other pitfalls include mitotic/meiotic cells: from when on do we term a 
+Other pitfalls include **mitotic/meiotic cells**: from when on do we term a 
 splitting cell as two cells?
 When the two nuclei have budded off, or when the membrane is fully
 split?
