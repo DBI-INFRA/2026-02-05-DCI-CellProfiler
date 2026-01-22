@@ -39,6 +39,7 @@ like finding whole cells (secondary objects) or cytoplasm (tertiary objects),
 and to compute per-cell measurements.
 
 In CellProfiler’s terminology:
+
 -   **Primary objects** are detected directly from an image (here: nuclei from
     the DNA channel).
 -   **Secondary objects** are grown out from primary objects (often whole cells).
@@ -49,7 +50,7 @@ In CellProfiler’s terminology:
 
 Add a new module via **+ Add** → **Object Processing** → **IdentifyPrimaryObjects**.
 
-![Often, identifying cells is easier with a nuclear rather than an intracellular stain. Left: Cells stained for microtubules, right: DAPI-stained nuclei.](fig/addmodule_primary.png){alt="Screenshots of CellProfiler, showing how to add the IdentifyPrimaryObjects module."}
+![](fig/addmodule_primary.png){alt="Screenshots of CellProfiler, showing how to add the IdentifyPrimaryObjects module."}
 
 You should now see a module where you need to specify:
 1. which image to segment,
@@ -68,7 +69,7 @@ Set **Name the primary objects to be identified** to something descriptive like
 `Nuclei`.
 
 :::: challenge
-## Challenge: confirm you are using the correct channel
+## Confirm you are using the correct channel
 
 How can you quickly verify that you selected the **DNA** image (and not actin or
 tubulin)?
@@ -103,12 +104,12 @@ This is one of the most important parameters. If the minimum is too small,
 you may pick up noise; if the maximum is too small, large nuclei may be split.
 
 :::: challenge
-## Challenge: estimate nucleus size
+## Estimate nucleus size
 
 Using a representative image, estimate a reasonable nucleus diameter range.
 
 ::::: solution
-#### Solution: diameter range
+#### Diameter range
 
 To estimate nuclei size range, it is good to measure the diameter of a few 
 nuclei in a representative image. 
@@ -145,7 +146,7 @@ Set the thresholding method appropriate for your images. If illumination is
 uneven or background varies strongly, adaptive methods often perform better.
 
 :::: challenge
-## Challenge: compare thresholding options
+## Compare thresholding options
 
 Run the module in Test Mode on 2–3 images and compare at least two thresholding
 settings. Look out for things like
@@ -182,27 +183,27 @@ results with different segmentation strategies"}
 ### Step 4: declump touching nuclei
 
 Nuclei often touch or overlap, particular if many cells were seeded. While a
-z-stack of images can help distinguish which nuclei goes where, due to the
+z-stack (3D slices) of images can help distinguish which nuclei goes where, due to the
 increased imaging time needed and more complex downstream analysis not all 
 experiments involve z-stacks. Instead, we can instruct CellProfiler to separate
 clumped nuclei using information about nuclei shape and intensity.
 
-While doing so, we need to make sure that **one nucleus corresponds to one 
-"object"**.
-
 :::: challenge
-## Challenge: tune declumping
+## Tune declumping
 
 Find an image region with several touching nuclei. (In the sample data,
 the image of cells treated with cytoD has more clumped nuclei.)
 Adjust declumping parameters until most nuclei are separated correctly.
 
 ::: solution
-#### Solution: declumping
+#### Declumping
 As before, it is not trivial to find ideal declumping settings. We can get
-satisfactory results using "Shape" for both, distinguishing clumped objects and
-to draw dividing lines here, but not that this will differ for each dataset and
-should be carefully tested.
+satisfactory results using "Shape" for both, distinguishing clumped objects and drawing
+dividing lines here, but note that this will differ for each dataset and
+should be carefully tested. It might also be helpful to set
+`Automatically calculate size of smoothing filter for declumping` to `No` and 
+playing with the `Suppress local maxima that are closer than this minimum allowed
+distance` parameter. A good value seems to be in the range of 4-8 for this dataset.
 
 This figure shows the impact of not using declumping at all (left) vs declumping
 using "Shape" (right).
@@ -215,20 +216,19 @@ nuclei."}
 ### Step 5 (optional): filter cells
 
 Depending on your dataset, you may need to exclude:
+
 -   tiny bright specks (dust/hot pixels),
 -   very large blobs (out-of-focus regions),
 -   edge artifacts.
 
-Within **IdentifyPrimaryObjects**, you can often handle some of this using:
+Within **IdentifyPrimaryObjects**, you can handle some of this using:
+
 -   size constraints (min/max diameter),
 -   smoothing of the image before thresholding,
 -   discard objects touching the image border (if appropriate).
 
-*Placeholder:* Decide whether learners should remove border-touching objects in
-your course and justify it (e.g. do partial nuclei matter for your analysis?).
-
 :::: challenge
-## Challenge: should we exclude border objects?
+## Should we exclude border objects?
 
 With your neighbor, discuss whether nuclei touching the image border should be 
 kept or removed for your research question formulated in the [previous section](
@@ -236,10 +236,9 @@ dataset.Rmd), e.g. "does cytochalasin D induce a morphological change in MCF7
 cells?"
 
 ::: solution
-#### Solution
 
-In most cases we advise removing cells touching the image border, because when
-we move to measuring cell characteristics they will represent outliers. For
+In most cases we advise **removing cells touching the image border**, because
+they will represent outliers when we move to measuring cell characteristics. For
 example, they may appear as disproportionately small cells because they were cut
 off. This does not represent biological changes but technical parameters, which
 we are not interested in during the analysis.
@@ -252,12 +251,14 @@ we are not interested in during the analysis.
 Segmentation is rarely perfect, but it should be fit for purpose. A good
 nucleus segmentation typically has:
 
--   Most nuclei detected (few false negatives)
--   Few background objects detected (few false positives)
+-   Most nuclei detected (i.e. nuclei do not get missed)
+-   Few background objects detected
 -   Reasonable splitting of touching nuclei
 -   Consistent performance across conditions (e.g. DMSO vs treatment)
 
-Now that we have `Nuclei` objects, we can detect whole cells, an important step towards measuring features per cell! Therefore, in the next episode we will use the nuclei as anchors to find cell boundaries.
+Now that we have `Nuclei` objects, we can detect whole cells, an important step
+towards measuring features per cell! Therefore, in the next episode we will use
+the nuclei as anchors to find cell boundaries.
 
 ### Help
 
@@ -271,7 +272,7 @@ If you are using Firefox, you have to right click the button and select "Save Li
 ::::::::::
 
 After downloading the pipeline, you can compare it to yours for troubleshooting. 
-To do so, first open a new CellProfiler window. 
+To do so, first open a new CellProfiler window (`File > New Project`). 
 Then, import this pipeline in CellProfiler by clicking on
 `File` > `Import` > `Pipeline from File`.
 
