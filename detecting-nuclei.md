@@ -120,6 +120,8 @@ length in pixels, which is displayed in the bottom right of the window (3).
 By repeating this process for a few nuclei, ideally across a few images, we
 can gain a good intuition for typical nuclei diameters.
 
+In this dataset, you could use lower bounds of 10-20 pixels, and upper bounds of 40-70 pixels, for example.
+
 ![](fig/primary_measure_length.png){
 alt="Screenshots of CellProfiler showing that nuclei diameters can be estimated
 using the measurement tool."}
