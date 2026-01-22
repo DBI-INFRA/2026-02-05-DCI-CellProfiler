@@ -60,12 +60,13 @@ and have them copy it onto their computer for testing. Easy!
 ### Online file share
 
 If you do not have a USB stick with you, we can use an online file sharing 
-solution. You can use OneDrive/Dropbox/Google Drive if you like, or follow
+solution. You can use email/OneDrive/Dropbox/Google Drive if you like, or follow
 the instructions below if you do not want to create an account on a service.
 
 1. Both you and your neighbor should open https://toffeeshare.com
 2. You share one of the two files by clicking on the `+`
-![](fig/reproducibility_toffeeshare.png){alt="Toffeeshare website"}
+![](fig/reproducibility_toffeeshare.png){alt="Toffeeshare website"}.
+Note that toffeeshare only allows sharing one file at a time.
 3. Make sure to set the `Local sharing code` option
 ![](fig/reproducibility_toffeeshare_options.png){alt="Toffeeshare website sharing options"}
 4. Your neighbor now clicks on `Nearby devices` in the top right
