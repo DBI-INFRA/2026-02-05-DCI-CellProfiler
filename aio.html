@@ -1288,7 +1288,7 @@ normalization factor in the range of 2-5 and click Apply to all. <img src="fig/s
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>Compared to nuclei, cell boundaries are often less easily
 distinguished. We can see that the actin channel does increase at cell
@@ -1331,7 +1331,7 @@ How do the resulting cell boundaries differ?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Comparing methods </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>As with the segmentation of nuclei, getting cell segmentation right
 can be tricky. Often, starting with “propagation” as method is a good
@@ -1376,7 +1376,7 @@ where these assumptions may not be met? Discuss with your neighbor.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <p>CellProfiler identifies cells by expanding outwards from a nucleus.
 This assumes that <strong>each cell only has exactly one
@@ -1424,7 +1424,7 @@ select what you think are the correct options.</p>
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler1" aria-expanded="false" aria-controls="collapseSpoiler1">
   <h3 class="accordion-header" id="headingSpoiler1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> Suggested settings </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
 <div class="accordion-body">
 <ul>
 <li>Larger objects: cells identified with
@@ -1967,12 +1967,12 @@ instructions under <code>Online file share</code>.</p>
 </button>
 </div>
 </nav><div id="nav-tabContent-1" class="tab-content">
-<div id="nav-tabpanel-1-1" class="tab-pane show active" role="tabpanel" aria-labelledby="nav-tab-1-1">
+<div id="nav-tabpanel-1-1" class="tab-pane show active" aria-labelledby="nav-tab-1-1" role="tabpanel">
 <p>If you have a USB stick, just copy the files onto it, pass it to your
 neighbor and have them copy it onto their computer for testing.
 Easy!</p>
 </div>
-<div id="nav-tabpanel-1-2" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-2">
+<div id="nav-tabpanel-1-2" class="tab-pane" aria-labelledby="nav-tab-1-2" role="tabpanel">
 <p>If you do not have a USB stick with you, we can use an online file
 sharing solution. You can use email/OneDrive/Dropbox/Google Drive if you
 like, or follow the instructions below if you do not want to create an
@@ -2100,7 +2100,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-bonus"><p>Content from <a href="bonus.html">Bonus: visualising features</a></p>
 <hr>
-<p>Last updated on 2026-01-21 |
+<p>Last updated on 2026-01-22 |
 
         <a href="https://github.com/DBI-INFRA/2026-02-05-DCI-CellProfiler/edit/main/episodes/bonus.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -2137,8 +2137,9 @@ any links that you are not going to use.
 we will dive into the data that CellProfiler outputs and start to get a
 feel for the problems we may face in analyzing it.</p>
 <p>To start with, find the folder with the <code>.csv</code> files
-created in the previous episode. There should be 5-6 files in the folde,
-prefixed by whatever we set in the settings of the export module.</p>
+created in the previous episode. There should be 5-6 files in the
+folder, prefixed by whatever we set in the settings of the export
+module.</p>
 <ul>
 <li>
 <code>Experiment.csv</code> contains basic information about the
@@ -2189,7 +2190,7 @@ show?</p>
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler1" aria-expanded="false" aria-controls="collapseSpoiler1">
   <h3 class="accordion-header" id="headingSpoiler1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> Show details </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
 <div class="accordion-body">
 <p>You should get a table and bar chart similar to this: <img src="fig/bonus_excel_bar.png" alt="Bar graph showing that cells treated with cytoD are about ~30 percent points smaller than cells treated with DMSO only, on average." class="figure"></p>
 <p>If we do the math, this shows that cells treated with cytoD are about
@@ -2211,11 +2212,13 @@ Excel is doing here entirely, and cluster single-cells?</p>
 If you</p>
 <ul>
 <li>would like to just see a quick result, skip to the next section</li>
-<li>have experience in Python programming, use <a href="https://pycytominer.readthedocs.io/en/stable/" class="external-link">pycytominer</a>
-</li>
+<li>have experience in Python programming, use <a href="https://pycytominer.readthedocs.io/en/stable/" class="external-link">pycytominer</a>, a
+Python package that can be used to the analysis of morphological
+features.</li>
 <li>have no experience in Python yet but would like to learn, attend our
-future Python workshop!</li>
-<li>would like to analyse your results in depth, <a href="https://www.dbi-infra.eu/iacf-about#contact" class="external-link">contact us</a>!</li>
+future <a href="https://dbi-infra.eu/dbi-infra-events/python4bia" class="external-link">Python
+workshop</a>!</li>
+<li>would like help to analyse your results in depth, <a href="https://www.dbi-infra.eu/iacf-about#contact" class="external-link">contact us</a>!</li>
 </ul>
 <div class="section level4">
 <h4 id="analysis-with-morpheus">Analysis with Morpheus<a class="anchor" aria-label="anchor" href="#analysis-with-morpheus"></a>
@@ -2223,8 +2226,10 @@ future Python workshop!</li>
 <p>One useful tool to visualize CellProfiler outputs is Morpheus: <a href="https://software.broadinstitute.org/morpheus/" class="external-link uri">https://software.broadinstitute.org/morpheus/</a></p>
 <p>Morpheus is a matrix visualization tool that can quickly cluster rows
 and columns.</p>
-<p>To see it in action, first download this sample input, which we
-created from a CellProfiler output:</p>
+<p>To see it in action, first download the sample input below, which we
+created from a CellProfiler output. Note that CellProfiler output cannot
+be loaded into Morpheus straight, but requires some preprocessing, which
+in this case we did for you using Python.</p>
 <p><a href="data/CellProfiler_singleCell.json" download class="btn btn-primary" style="display:inline-block;padding:8px 12px;background:#007bff;color:#fff;border-radius:4px;text-decoration:none;">Download
 Morpheus input</a></p>
 <p>Then open <a href="https://software.broadinstitute.org/morpheus/" class="external-link uri">https://software.broadinstitute.org/morpheus/</a> and drop

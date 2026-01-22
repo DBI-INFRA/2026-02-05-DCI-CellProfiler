@@ -319,7 +319,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Bonus: visualising features</h1>
-        <p>Last updated on 2026-01-21 |
+        <p>Last updated on 2026-01-22 |
 
         <a href="https://github.com/DBI-INFRA/2026-02-05-DCI-CellProfiler/edit/main/episodes/bonus.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -358,8 +358,9 @@
 we will dive into the data that CellProfiler outputs and start to get a
 feel for the problems we may face in analyzing it.</p>
 <p>To start with, find the folder with the <code>.csv</code> files
-created in the previous episode. There should be 5-6 files in the folde,
-prefixed by whatever we set in the settings of the export module.</p>
+created in the previous episode. There should be 5-6 files in the
+folder, prefixed by whatever we set in the settings of the export
+module.</p>
 <ul><li>
 <code>Experiment.csv</code> contains basic information about the
 pipeline.</li>
@@ -407,7 +408,7 @@ show?</p>
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler1" aria-expanded="false" aria-controls="collapseSpoiler1">
   <h3 class="accordion-header" id="headingSpoiler1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> Show details </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
 <div class="accordion-body">
 <p>You should get a table and bar chart similar to this: <img src="fig/bonus_excel_bar.png" alt="Bar graph showing that cells treated with cytoD are about ~30 percent points smaller than cells treated with DMSO only, on average." class="figure"></p>
 <p>If we do the math, this shows that cells treated with cytoD are about
@@ -427,18 +428,22 @@ Excel is doing here entirely, and cluster single-cells?</p>
 <p>Depending on your expertise with programming, you have a few options.
 If you</p>
 <ul><li>would like to just see a quick result, skip to the next section</li>
-<li>have experience in Python programming, use <a href="https://pycytominer.readthedocs.io/en/stable/" class="external-link">pycytominer</a>
-</li>
+<li>have experience in Python programming, use <a href="https://pycytominer.readthedocs.io/en/stable/" class="external-link">pycytominer</a>, a
+Python package that can be used to the analysis of morphological
+features.</li>
 <li>have no experience in Python yet but would like to learn, attend our
-future Python workshop!</li>
-<li>would like to analyse your results in depth, <a href="https://www.dbi-infra.eu/iacf-about#contact" class="external-link">contact us</a>!</li>
+future <a href="https://dbi-infra.eu/dbi-infra-events/python4bia" class="external-link">Python
+workshop</a>!</li>
+<li>would like help to analyse your results in depth, <a href="https://www.dbi-infra.eu/iacf-about#contact" class="external-link">contact us</a>!</li>
 </ul><div class="section level4">
 <h4 id="analysis-with-morpheus">Analysis with Morpheus<a class="anchor" aria-label="anchor" href="#analysis-with-morpheus"></a></h4>
 <p>One useful tool to visualize CellProfiler outputs is Morpheus: <a href="https://software.broadinstitute.org/morpheus/" class="external-link uri">https://software.broadinstitute.org/morpheus/</a></p>
 <p>Morpheus is a matrix visualization tool that can quickly cluster rows
 and columns.</p>
-<p>To see it in action, first download this sample input, which we
-created from a CellProfiler output:</p>
+<p>To see it in action, first download the sample input below, which we
+created from a CellProfiler output. Note that CellProfiler output cannot
+be loaded into Morpheus straight, but requires some preprocessing, which
+in this case we did for you using Python.</p>
 <p><a href="data/CellProfiler_singleCell.json" download class="btn btn-primary" style="display:inline-block;padding:8px 12px;background:#007bff;color:#fff;border-radius:4px;text-decoration:none;">Download
 Morpheus input</a></p>
 <p>Then open <a href="https://software.broadinstitute.org/morpheus/" class="external-link uri">https://software.broadinstitute.org/morpheus/</a> and drop
@@ -548,7 +553,7 @@ any links that you are not going to use.
   "url": "https://DBI-INFRA.github.io/2026-02-05-DCI-CellProfiler/bonus.html",
   "identifier": "https://DBI-INFRA.github.io/2026-02-05-DCI-CellProfiler/bonus.html",
   "dateCreated": "2026-01-08",
-  "dateModified": "2026-01-21",
+  "dateModified": "2026-01-22",
   "datePublished": "2026-01-22"
 }
 
