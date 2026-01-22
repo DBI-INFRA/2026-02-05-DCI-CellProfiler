@@ -8,7 +8,7 @@ editor_options:
 ---
 
 ::: questions
--   What is the difference between saving a CellProfiler *project* and exporting a *pipeline*?
+-   What is the difference between saving a CellProfiler project and exporting a pipeline?
 -   Which approach is more portable across computers and collaborators?
 :::
 
@@ -28,10 +28,10 @@ So how do we share our workflow?
 
 CellProfiler gives you two common ways to save your work:
 
-**Save Project** captures your *whole working session*, including the image file list.
+**Save Project** captures your whole working session, including the image file list.
 This is convenient when you want to pause and continue later on the same computer.
 
-**Export Pipeline** captures your *analysis recipe* (modules + settings), but not the image
+**Export Pipeline** captures your analysis recipe (modules + settings), but not the image
 file list. Which one is better for sharing your workflow? Let's find out!
 
 ::: callout
@@ -121,9 +121,9 @@ will be able to run the pipeline.
 
 ## Practical takeaways
 
-When you want to *continue your own work*, saving the project is convenient.
+When you want to continue your own work, saving the project is convenient.
 
-When you want to *share a reproducible analysis*, exporting the pipeline is usually
+When you want to share a reproducible analysis, exporting the pipeline is usually
 the better default. If you share a pipeline, it is a good idea to also share some
 example images for testing. And of course for full reproducibility, you need to 
 [share all images](https://doi.org/10.1111/jmi.13317).
