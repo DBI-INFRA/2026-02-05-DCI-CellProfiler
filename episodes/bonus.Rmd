@@ -24,7 +24,7 @@ dive into the data that CellProfiler outputs and start to get a feel for the
 problems we may face in analyzing it.
 
 To start with, find the folder with the `.csv` files created in the previous
-episode. There should be 5-6 files in the folde, prefixed by whatever we 
+episode. There should be 5-6 files in the folder, prefixed by whatever we 
 set in the settings of the export module.
 
 - `Experiment.csv` contains basic information about the pipeline.
@@ -77,9 +77,10 @@ Depending on your expertise with programming, you have a few options.
 If you
 
 - would like to just see a quick result, skip to the next section
-- have experience in Python programming, use [pycytominer](https://pycytominer.readthedocs.io/en/stable/)
-- have no experience in Python yet but would like to learn, attend our future Python workshop!
-- would like to analyse your results in depth, [contact us](https://www.dbi-infra.eu/iacf-about#contact)!
+- have experience in Python programming, use [pycytominer](https://pycytominer.readthedocs.io/en/stable/),
+  a Python package that can be used to the analysis of morphological features.
+- have no experience in Python yet but would like to learn, attend our future [Python workshop](https://dbi-infra.eu/dbi-infra-events/python4bia)!
+- would like help to analyse your results in depth, [contact us](https://www.dbi-infra.eu/iacf-about#contact)!
 
 #### Analysis with Morpheus
 
@@ -87,8 +88,10 @@ One useful tool to visualize CellProfiler outputs is Morpheus: https://software.
 
 Morpheus is a matrix visualization tool that can quickly cluster rows and columns.
 
-To see it in action, first download this sample input, which we created from a
-CellProfiler output:
+To see it in action, first download the sample input below, which we created from a
+CellProfiler output. Note that CellProfiler output cannot be loaded into Morpheus
+straight, but requires some preprocessing, which in this case we did for you using
+Python.
 
 <a href="data/CellProfiler_singleCell.json" download class="btn btn-primary" style="display:inline-block;padding:8px 12px;background:#007bff;color:#fff;border-radius:4px;text-decoration:none;">Download Morpheus input</a>
 
