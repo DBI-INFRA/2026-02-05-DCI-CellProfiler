@@ -54,8 +54,8 @@ into information that CellProfiler can understand.
 
 Get started by click on ´yes´ for ´Extract metadata?´, upon which a menu should
 pop open. This is what it looks like by default: 
-!(fig/metadata_default.png){Screenshot of the
-CellProfiler module "Metadata" with default settings}
+![](fig/metadata_default.png){alt="Screenshot of the
+CellProfiler module "Metadata" with default settings"}
 
 Now, we wish to inform CellProfiler about which image contains what. To do so,
 set up the module as follows. 
@@ -66,7 +66,6 @@ easily using tools like [regex101.com](https://regex101.com/). Unfortunately,
 they are also beyond the scope of our workshop, so feel free to just copy them
 from here:
 
-The regular expression may be copied from here:
 `^(?P<Treatment>.*)_(?P<Well>[A-P][0-9]{2})_s(?P<Site>[0-9])_channel(?P<ChannelNumber>[0-9])`
 
 :::: challenge
@@ -151,6 +150,8 @@ launch into our analysis.
 
 ::: keypoints
 -   Load images by dragging/dropping them onto CellProfiler's Images module
--   Translate your folder and file names into metadata Cellprofiler can
-    interpret using modules.
+-   The Metadata module translates file names to extract metadata from file
+    names, which will be saved along with your measurements.
+-   The NamesAndTypes module converts image names to meaningful names to be 
+    used within CellProfiler.
 :::
