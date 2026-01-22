@@ -67,6 +67,8 @@ the instructions below if you do not want to create an account on a service.
 2. You share one of the two files by clicking on the `+`
 ![](fig/reproducibility_toffeeshare.png){alt="Toffeeshare website"}.
 Note that toffeeshare only allows sharing one file at a time.
+You can zip the two files to an archive to only share one file if you prefer,
+in which case skip step 7.
 3. Make sure to set the `Local sharing code` option
 ![](fig/reproducibility_toffeeshare_options.png){alt="Toffeeshare website sharing options"}
 4. Your neighbor now clicks on `Nearby devices` in the top right
