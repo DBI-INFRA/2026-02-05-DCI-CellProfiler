@@ -100,7 +100,7 @@ name automatically, as long as it follows the same naming convention.
 ::::
 
 With this in hand, we can now translate the file names into metadata that
-CellProfiler can understand. To see this in action, press on the update button
+CellProfiler can understand. To see this in action, press the `Update` button
 (top left in the below image), after which you can see the new columns to the
 right containing information about the imaging site, the week of the experiment,
 the imaged well, and treatment used.
