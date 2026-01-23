@@ -52,10 +52,9 @@ what image belongs to which sample. For this, we use the Metadata module. This
 module's purpose is to translate information that is captured in the file names
 into information that CellProfiler can understand.
 
-Get started by click on ´yes´ for ´Extract metadata?´, upon which a menu should
+Get started by clicking on `yes` for `Extract metadata?`, upon which a menu should
 pop open. This is what it looks like by default: 
-![](fig/metadata_default.png){alt="Screenshot of the
-CellProfiler module "Metadata" with default settings"}
+![](fig/metadata_default.png){alt="Screenshot of the CellProfiler module `Metadata` with default settings"}
 
 Now, we wish to inform CellProfiler about which image contains what. To do so,
 set up the module as follows. 
@@ -124,10 +123,10 @@ settings"}
 
 Recall that in the Metadata module we extracted the channel number. We can now
 make use of this information to assign stain names to the images. To do so, we
-switch the "Assign a name" to "Images matching rules" (see below) and then
-assign the channels to names. You will have to click "Add another image" to add
+switch the `Assign a name` to `Images matching rules` (see below) and then
+assign the channels to names. You will have to click `Add another image` to add
 a new stain name, filling out the information as in the screenshot and then
-clicking "Update".
+clicking `Update`.
 
 ![](fig/namesandtypes_configured.png){alt="Screenshot of the NamesAndTypes module after configuration settings"}
 

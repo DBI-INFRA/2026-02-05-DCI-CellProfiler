@@ -78,6 +78,7 @@ separate spreadsheet. For example, the file name
 If you have not yet done so, you will need to download the dataset now.
 Click on the button below and unzip the archive to a convenient location
 on your computer.
+
 <a href="data/BBBC021_data.zip" download class="btn btn-primary" style="display:inline-block;padding:8px 12px;background:#007bff;color:#fff;border-radius:4px;text-decoration:none;">Download dataset</a>
 
 ### Next steps
