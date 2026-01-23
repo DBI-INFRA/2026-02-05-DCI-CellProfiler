@@ -19,7 +19,7 @@ editor_options:
 
 ## Measuring: turning segmentations into numbers
 
-So far, we have been creating *masks*: pixels belonging to nuclei, cells, and cytoplasm.
+So far, we have been creating masks: pixels belonging to nuclei, cells, and cytoplasm.
 Masks are useful on their own for quality control, but the real power of CellProfiler is
 that it can turn masks into **quantitative measurements**.
 
@@ -37,7 +37,7 @@ In this episode, we will measure two broad classes of features:
 
 ## MeasureObjectIntensity: measuring fluorescence per object
 
-Add the **MeasureObjectIntensity** module to your pipeline.
+Add the `MeasureObjectIntensity` module to your pipeline.
 
 This module measures per-object intensity statistics for one or more images.
 For example, it can quantify the DNA stain in the nucleus, or the actin stain
@@ -66,7 +66,7 @@ of channel and cell components will be the right approach.
 ::::::
 
 
-To set this up in CellProfiler, for **Select the objects to measure** select:
+To set this up in CellProfiler, for `Select the objects to measure` select:
 
 - `Nuclei_Filtered`
 - `Cells`
@@ -79,7 +79,7 @@ we filtered them in `IdentifySecondaryObjects` to only contain nuclei of cells
 that are not touching the image boundary.
 :::::::
 
-Then, select all channels in **Select images to measure**, unless you would like
+Then, select all channels in `Select images to measure`, unless you would like
 to only measure some of the channels. Finally, run the module in test mode and 
 look at the output.
 
@@ -110,7 +110,7 @@ Example measurements include:
 - eccentricity / elongation
 - compactness
 
-Once again, we add the module (**MeasureObjectSizeShape**) and select our objects
+Once again, we add the module (`MeasureObjectSizeShape`) and select our objects
 to measure in as before. For this workshop, disable Zernike and advanced features,
 as they slow down CellProfiler, which can be annoying while building the pipeline.
 
@@ -122,8 +122,8 @@ area and shape will be misleading.
 :::: challenge
 ## Challenge: calculate the cytoplasm/nucleus ratio
 
-Run the module in test mode and look for the **Area** feature for **Cytoplasm**
-and **Nuclei_Filtered** (or equivalent names in your pipeline). This feature
+Run the module in test mode and look for the `Area` feature for `Cytoplasm`
+and `Nuclei_Filtered` (or equivalent names in your pipeline). This feature
 describes the average number of pixels occupied by the cytoplasm/nucleus.
 
 ::: solution
@@ -138,16 +138,16 @@ Again, depending on your segmentation settings, your result may differ.
 ## Exporting measurements
 
 So far we have created segmentation masks and computed measurements (intensity and
-size/shape). To actually *use* these measurements outside CellProfiler (e.g. in R,
+size/shape). To use these measurements outside CellProfiler (e.g. in R,
 Python, or Excel), we need to export them to files. The standard way to do this is the
-**ExportToSpreadsheet** module.
+`ExportToSpreadsheet` module.
 
-Add the **ExportToSpreadsheet** module. 
-For this workshop, the **default settings are fine**. The most important thing is that:
+Add the `ExportToSpreadsheet` module. 
+For this workshop, the default settings are fine. The most important thing is that:
 
 - the module exports **object-level measurements** (for `Nuclei_Filtered`, `Cells`,
   and `Cytoplasm`), and
-- you know where the files are written to.
+- you need to know where the files are written to.
 
 :::: challenge
 ## Challenge: export your measurements
@@ -172,12 +172,12 @@ measurements if any were computed.
 Open one of the exported spreadsheets and look for column names such as:
 
 - `Intensity_MeanIntensity_*` or `Intensity_IntegratedIntensity_*` (from
-  **MeasureObjectIntensity**)
+  `MeasureObjectIntensity`)
 - `AreaShape_Area` / `AreaShape_Perimeter` / `AreaShape_Eccentricity` (from
-  **MeasureObjectSizeShape**)
+  `MeasureObjectSizeShape`)
 
-If you cannot find the files, check the **Output file location** setting in
-ExportToSpreadsheet and re-run the pipeline.
+If you cannot find the files, check the `Output file location` setting in
+`ExportToSpreadsheet` and re-run the pipeline.
 :::
 ::::
 

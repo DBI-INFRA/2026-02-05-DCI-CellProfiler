@@ -34,7 +34,7 @@ often more challenging than nuclei segmentation because:
 -   neighboring cells may **touch** or overlap,
 -   staining can be **uneven** across the cell body.
 
-To tackle this, CellProfiler provides **IdentifySecondaryObjects**, which grows
+To tackle this, CellProfiler provides `IdentifySecondaryObjects`, which grows
 secondary objects outward from nuclei using information from another image (here
 an actin channel). This approach helps prevent ambiguous assignments of boundary
 pixels by ensuring each cell is linked to exactly one starting nucleus.
@@ -52,14 +52,14 @@ You should now see a module where you need to specify:
 
 ### Step 1: choose primary input objects
 
-Set **Select the input objects** (or similarly named setting) to `Nuclei` or
+Set `Select the input objects` (or similarly named setting) to `Nuclei` or
 the name you set in the previous lesson. This tells CellProfiler that each cell
 object should be grown outward from one nucleus.
 
 ### Step 2: choose the correct input image (actin)
 
-Set **Select the input image** to your actin (or cytoplasmic) channel, e.g.
-`Actin` (or whatever name you assigned in *NamesAndTypes*).
+Set `Select the input image` to your actin (or cytoplasmic) channel, e.g.
+`Actin` (or whatever name you assigned in `NamesAndTypes`).
 
 The channel should contain relatively strong signal across the cell body and/or
 along the cell boundary.
@@ -78,12 +78,12 @@ If not, what issues do you observe?
 ::::: callout
 If you find the contrast too dim to see the channel well, you can increase
 the contrast.
-You can do so either by **right clicking > Adjust Contrast*, or
-by selecting **Subplots > (Object name) outlines > Adjust Contrast**.
-Then, select normalized and a normalization factor in the range of 2-5 and click Apply to all.
+You can do so either by right clicking > `Adjust Contrast`, or
+by selecting `Subplots > (Object name) outlines > Adjust Contrast`.
+Then, select `Log normalized` and a `normalization factor` that you deem suitable, the click `Apply to all`.
 ![](fig/secondary_contrast.png){alt="Screenshots showing that contrast
 be adjusted using Subplots > (Object name) outlines > Adjust Contrast and selecting
-normalized and a normalization factor in the range of 2-5, the clicking Apply
+Log normalized and a normalization factor in the range of 2-5, the clicking Apply
 to all."}
 :::::
 ::: solution
@@ -119,7 +119,7 @@ How do the resulting cell boundaries differ?
 #### Comparing methods
 
 As with the segmentation of nuclei, getting cell segmentation right can be tricky.
-Often, starting with "propagation" as method is a good starting point,
+Often, starting with `propagation` as method is a good starting point,
 because watershed can expand into neighboring cells (see below). But you can
 certainly find areas of the image where the reverse is true. This means that,
 once again, choices should be made carefully.
@@ -212,7 +212,7 @@ pipeline here:
 <a href="data/pipeline_2.cppipe" download class="btn btn-primary" style="display:inline-block;padding:8px 12px;background:#007bff;color:#fff;border-radius:4px;text-decoration:none;">Download pipeline</a>
 
 :::::::::: callout
-If you are using Firefox, you have to right click the button and select "Save Link As...".
+If you are using Firefox, you have to right click the button and select `Save Link As...`.
 ::::::::::
 
 After downloading the pipeline, you can compare it to yours for troubleshooting. 
