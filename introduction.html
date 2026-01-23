@@ -391,7 +391,7 @@ CellProfiler</h3>
   Solution: loading images
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>You can drag and drop the two folders, <code>DMSO</code> and
 <code>cytoD_0.1</code>, onto the white field in CellProfiler.
@@ -449,7 +449,7 @@ expression?</p>
   Solution: regular expressions in CellProfiler
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>We can break up our file names by underscores. For example,
 <code>cytoD_B07_s1_channel1.tif</code> can be read as</p>
@@ -468,10 +468,11 @@ convention.</p>
 </div>
 </div>
 <p>With this in hand, we can now translate the file names into metadata
-that CellProfiler can understand. To see this in action, press on the
-update button (top left in the below image), after which you can see the
-new columns to the right containing information about the imaging site,
-the week of the experiment, the imaged well, and treatment used.</p>
+that CellProfiler can understand. To see this in action, press the
+<code>Update</code> button (top left in the below image), after which
+you can see the new columns to the right containing information about
+the imaging site, the week of the experiment, the imaged well, and
+treatment used.</p>
 <figure><img src="fig/metadata_extracted.png" alt="Screenshot showing the extracted metadata" class="figure mx-auto d-block"></figure></div>
 </section><section><h2 class="section-heading" id="namesandtypes">NamesAndTypes<a class="anchor" aria-label="anchor" href="#namesandtypes"></a></h2>
 <hr class="half-width"><p>This module allows us to rename channel numbers to stain names.
