@@ -448,12 +448,14 @@ declumping using <code>Shape</code> (right). <img src="../fig/primary_declumping
 <hr></section><section id="detecting-cells"><h2 class="section-heading"><a href="detecting-cells.html">Identifying secondary &amp; tertiary objects</a></h2>
 <hr class="half-width">
 <h3 id="detecting-cells-figure-1">Figure 1</h3>
-<p aria-hidden="true">Image 1 of 1: ‘Screenshots showing that contrast be adjusted using Subplots &gt; (Object name) outlines &gt; Adjust Contrast and selecting normalized and a normalization factor in the range of 2-5, the clicking Apply to all.’</p>
+<p aria-hidden="true">Image 1 of 1: ‘Screenshots showing that contrast be adjusted using Subplots &gt; (Object name) outlines &gt; Adjust Contrast and selecting Log normalized and a normalization factor in the range of 2-5, the clicking Apply to all.’</p>
 <p>If you find the contrast too dim to see the channel well, you can
-increase the contrast. You can do so either by **right clicking &gt;
-Adjust Contrast*, or by selecting <strong>Subplots &gt; (Object name)
-outlines &gt; Adjust Contrast</strong>. Then, select normalized and a
-normalization factor in the range of 2-5 and click Apply to all. <img src="../fig/secondary_contrast.png" alt="Screenshots showing that contrast be adjusted using Subplots &gt; (Object name) outlines &gt; Adjust Contrast and selecting normalized and a normalization factor in the range of 2-5, the clicking Apply to all." class="figure"></p>
+increase the contrast. You can do so either by right clicking &gt;
+<code>Adjust Contrast</code>, or by selecting
+<code>Subplots &gt; (Object name) outlines &gt; Adjust Contrast</code>.
+Then, select <code>Log normalized</code> and a
+<code>normalization factor</code> that you deem suitable, the click
+<code>Apply to all</code>. <img src="../fig/secondary_contrast.png" alt="Screenshots showing that contrast be adjusted using Subplots &gt; (Object name) outlines &gt; Adjust Contrast and selecting Log normalized and a normalization factor in the range of 2-5, the clicking Apply to all." class="figure"></p>
 <hr>
 <h3 id="detecting-cells-figure-2">Figure 2</h3>
 <p aria-hidden="true">Image 1 of 1: ‘Picture of cells, with DNA stain shown in blue and actin stain shown in gray. While nuclei are fairly well separated, cell boundaries are touching in many places and are not easily distinguished.’</p>
@@ -467,11 +469,11 @@ perfect here: after all, where would you draw the boundaries by hand?
 <h3 id="detecting-cells-figure-3">Figure 3</h3>
 <p aria-hidden="true">Image 1 of 1: ‘Comparing two methods of identifying cell boundaries: watershed and propagation. Using watershed, some cell boundaries spill over into adjacent cells, leading to incorrect cell masks.’</p>
 <p>As with the segmentation of nuclei, getting cell segmentation right
-can be tricky. Often, starting with “propagation” as method is a good
-starting point, because watershed can expand into neighboring cells (see
-below). But you can certainly find areas of the image where the reverse
-is true. This means that, once again, choices should be made carefully.
-<img src="../fig/secondary_watershed_propagation.png" alt="Comparing two methods of identifying cell boundaries: watershed and propagation. Using watershed, some cell boundaries spill over into adjacent cells, leading to incorrect cell masks." class="figure"></p>
+can be tricky. Often, starting with <code>propagation</code> as method
+is a good starting point, because watershed can expand into neighboring
+cells (see below). But you can certainly find areas of the image where
+the reverse is true. This means that, once again, choices should be made
+carefully. <img src="../fig/secondary_watershed_propagation.png" alt="Comparing two methods of identifying cell boundaries: watershed and propagation. Using watershed, some cell boundaries spill over into adjacent cells, leading to incorrect cell masks." class="figure"></p>
 <hr>
 <h3 id="detecting-cells-figure-4">Figure 4</h3>
 <p aria-hidden="true">Image 1 of 1: ‘Side-by-side of Otsu and minimum cross-entropy thresholding results.’</p>

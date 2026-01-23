@@ -370,10 +370,10 @@ descriptors for each object.</li>
 </div>
 </div>
 <section><h2 class="section-heading" id="measuring-turning-segmentations-into-numbers">Measuring: turning segmentations into numbers<a class="anchor" aria-label="anchor" href="#measuring-turning-segmentations-into-numbers"></a></h2>
-<hr class="half-width"><p>So far, we have been creating <em>masks</em>: pixels belonging to
-nuclei, cells, and cytoplasm. Masks are useful on their own for quality
-control, but the real power of CellProfiler is that it can turn masks
-into <strong>quantitative measurements</strong>.</p>
+<hr class="half-width"><p>So far, we have been creating masks: pixels belonging to nuclei,
+cells, and cytoplasm. Masks are useful on their own for quality control,
+but the real power of CellProfiler is that it can turn masks into
+<strong>quantitative measurements</strong>.</p>
 <p>In this episode, we will measure two broad classes of features:</p>
 <ol style="list-style-type: decimal"><li>
 <strong>Intensity features</strong>: “how bright is this object in a
@@ -392,7 +392,7 @@ this object?”
 </ul></li>
 </ul></li>
 </ol></section><section><h2 class="section-heading" id="measureobjectintensity-measuring-fluorescence-per-object">MeasureObjectIntensity: measuring fluorescence per object<a class="anchor" aria-label="anchor" href="#measureobjectintensity-measuring-fluorescence-per-object"></a></h2>
-<hr class="half-width"><p>Add the <strong>MeasureObjectIntensity</strong> module to your
+<hr class="half-width"><p>Add the <code>MeasureObjectIntensity</code> module to your
 pipeline.</p>
 <p>This module measures per-object intensity statistics for one or more
 images. For example, it can quantify the DNA stain in the nucleus, or
@@ -434,8 +434,8 @@ the right approach.</p>
 </div>
 </div>
 </div>
-<p>To set this up in CellProfiler, for <strong>Select the objects to
-measure</strong> select:</p>
+<p>To set this up in CellProfiler, for
+<code>Select the objects to measure</code> select:</p>
 <ul><li><code>Nuclei_Filtered</code></li>
 <li><code>Cells</code></li>
 <li><code>Cytoplasm</code></li>
@@ -454,10 +454,9 @@ that are not touching the image boundary.</p>
 </div>
 </div>
 </div>
-<p>Then, select all channels in <strong>Select images to
-measure</strong>, unless you would like to only measure some of the
-channels. Finally, run the module in test mode and look at the
-output.</p>
+<p>Then, select all channels in <code>Select images to measure</code>,
+unless you would like to only measure some of the channels. Finally, run
+the module in test mode and look at the output.</p>
 <div id="challenge2" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
@@ -496,11 +495,10 @@ descriptors of cells. Example measurements include:</p>
 <li>perimeter</li>
 <li>eccentricity / elongation</li>
 <li>compactness</li>
-</ul><p>Once again, we add the module
-(<strong>MeasureObjectSizeShape</strong>) and select our objects to
-measure in as before. For this workshop, disable Zernike and advanced
-features, as they slow down CellProfiler, which can be annoying while
-building the pipeline.</p>
+</ul><p>Once again, we add the module (<code>MeasureObjectSizeShape</code>)
+and select our objects to measure in as before. For this workshop,
+disable Zernike and advanced features, as they slow down CellProfiler,
+which can be annoying while building the pipeline.</p>
 <div class="section level3">
 <h3 id="step-3-qc-shape-measurements-visually">Step 3: QC shape measurements visually<a class="anchor" aria-label="anchor" href="#step-3-qc-shape-measurements-visually"></a></h3>
 <p>Shape measurements are only as good as your segmentation. If cell
@@ -514,11 +512,10 @@ boundaries are off, area and shape will be misleading.</p>
 <h3 class="callout-title">Challenge: calculate the cytoplasm/nucleus
 ratio</h3>
 <div class="callout-content">
-<p>Run the module in test mode and look for the <strong>Area</strong>
-feature for <strong>Cytoplasm</strong> and
-<strong>Nuclei_Filtered</strong> (or equivalent names in your pipeline).
-This feature describes the average number of pixels occupied by the
-cytoplasm/nucleus.</p>
+<p>Run the module in test mode and look for the <code>Area</code>
+feature for <code>Cytoplasm</code> and <code>Nuclei_Filtered</code> (or
+equivalent names in your pipeline). This feature describes the average
+number of pixels occupied by the cytoplasm/nucleus.</p>
 </div>
 </div>
 </div>
@@ -538,17 +535,16 @@ depending on your segmentation settings, your result may differ.</p>
 </div>
 </section><section><h2 class="section-heading" id="exporting-measurements">Exporting measurements<a class="anchor" aria-label="anchor" href="#exporting-measurements"></a></h2>
 <hr class="half-width"><p>So far we have created segmentation masks and computed measurements
-(intensity and size/shape). To actually <em>use</em> these measurements
-outside CellProfiler (e.g. in R, Python, or Excel), we need to export
-them to files. The standard way to do this is the
-<strong>ExportToSpreadsheet</strong> module.</p>
-<p>Add the <strong>ExportToSpreadsheet</strong> module. For this
-workshop, the <strong>default settings are fine</strong>. The most
-important thing is that:</p>
+(intensity and size/shape). To use these measurements outside
+CellProfiler (e.g. in R, Python, or Excel), we need to export them to
+files. The standard way to do this is the
+<code>ExportToSpreadsheet</code> module.</p>
+<p>Add the <code>ExportToSpreadsheet</code> module. For this workshop,
+the default settings are fine. The most important thing is that:</p>
 <ul><li>the module exports <strong>object-level measurements</strong> (for
 <code>Nuclei_Filtered</code>, <code>Cells</code>, and
 <code>Cytoplasm</code>), and</li>
-<li>you know where the files are written to.</li>
+<li>you need to know where the files are written to.</li>
 </ul><div id="challenge-export-your-measurements" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
@@ -586,14 +582,14 @@ as:</p>
 <ul><li>
 <code>Intensity_MeanIntensity_*</code> or
 <code>Intensity_IntegratedIntensity_*</code> (from
-<strong>MeasureObjectIntensity</strong>)</li>
+<code>MeasureObjectIntensity</code>)</li>
 <li>
 <code>AreaShape_Area</code> / <code>AreaShape_Perimeter</code> /
 <code>AreaShape_Eccentricity</code> (from
-<strong>MeasureObjectSizeShape</strong>)</li>
-</ul><p>If you cannot find the files, check the <strong>Output file
-location</strong> setting in ExportToSpreadsheet and re-run the
-pipeline.</p>
+<code>MeasureObjectSizeShape</code>)</li>
+</ul><p>If you cannot find the files, check the
+<code>Output file location</code> setting in
+<code>ExportToSpreadsheet</code> and re-run the pipeline.</p>
 </div>
 </div>
 </div>
