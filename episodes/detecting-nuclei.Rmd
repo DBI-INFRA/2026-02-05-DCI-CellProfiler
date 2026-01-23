@@ -53,6 +53,7 @@ Add a new module via **+ Add** → **Object Processing** → **IdentifyPrimaryOb
 ![](fig/addmodule_primary.png){alt="Screenshots of CellProfiler, showing how to add the IdentifyPrimaryObjects module."}
 
 You should now see a module where you need to specify:
+
 1. which image to segment,
 2. what to call the resulting objects,
 3. how CellProfiler should separate touching nuclei,
@@ -95,10 +96,8 @@ settings for the segmentation and metadata modules.
 
 ### Step 2: set an expected nucleus diameter (in pixels)
 
-CellProfiler needs an approximate size range for objects. Set:
-
--   **Typical diameter of objects, in pixel units (Min, Max)** to a range that
-    matches your nuclei.
+CellProfiler needs an approximate size range for objects. Set `Typical diameter of objects, in pixel units (Min, Max)`
+to a range that matches your nuclei.
 
 This is one of the most important parameters. If the minimum is too small,
 you may pick up noise; if the maximum is too small, large nuclei may be split.
@@ -138,7 +137,7 @@ experimental conditions to make sure we are not biasing analyses.
 ### Step 3: choose a thresholding strategy (foreground vs background)
 
 CellProfiler separates nuclei (foreground) from background using a threshold.
-In the advanced settings of **IdentifyPrimaryObjects**, you have the choice of
+In the advanced settings of `IdentifyPrimaryObjects`, you have the choice of
 two threshold strategies: 
 
 -   **Global thresholding** (one threshold per image)
@@ -205,7 +204,7 @@ dividing lines here, but note that this will differ for each dataset and
 should be carefully tested. It might also be helpful to set
 `Automatically calculate size of smoothing filter for declumping` to `No` and 
 playing with the `Suppress local maxima that are closer than this minimum allowed
-distance` parameter. A good value seems to be in the range of 4-8 for this dataset.
+distance` parameter.
 
 This figure shows the impact of not using declumping at all (left) vs declumping
 using `Shape` (right).
