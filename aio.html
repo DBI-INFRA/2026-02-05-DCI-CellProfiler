@@ -372,7 +372,7 @@
         
 <section id="aio-dataset"><p>Content from <a href="dataset.html">Introduction to the BBBC021 dataset</a></p>
 <hr>
-<p>Last updated on 2026-01-21 |
+<p>Last updated on 2026-01-23 |
 
         <a href="https://github.com/DBI-INFRA/2026-02-05-DCI-CellProfiler/edit/main/episodes/dataset.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -455,7 +455,7 @@ using the images.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>One option is: does cytochalasin D induce a morphological change in
 MCF7 cells?</p>
@@ -483,8 +483,8 @@ separate spreadsheet. For example, the file name
 </h3>
 <p>If you have not yet done so, you will need to download the dataset
 now. Click on the button below and unzip the archive to a convenient
-location on your computer.
-<a href="data/BBBC021_data.zip" download class="btn btn-primary" style="display:inline-block;padding:8px 12px;background:#007bff;color:#fff;border-radius:4px;text-decoration:none;">Download
+location on your computer.</p>
+<p><a href="data/BBBC021_data.zip" download class="btn btn-primary" style="display:inline-block;padding:8px 12px;background:#007bff;color:#fff;border-radius:4px;text-decoration:none;">Download
 dataset</a></p>
 </div>
 <div class="section level3">
@@ -519,7 +519,7 @@ any links that you are not going to use.
 </div>
 </section></section><section id="aio-introduction"><p>Content from <a href="introduction.html">Reading images</a></p>
 <hr>
-<p>Last updated on 2026-01-22 |
+<p>Last updated on 2026-01-23 |
 
         <a href="https://github.com/DBI-INFRA/2026-02-05-DCI-CellProfiler/edit/main/episodes/introduction.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -603,9 +603,9 @@ CellProfiler what image belongs to which sample. For this, we use the
 Metadata module. This module’s purpose is to translate information that
 is captured in the file names into information that CellProfiler can
 understand.</p>
-<p>Get started by click on ´yes´ for ´Extract metadata?´, upon which a
-menu should pop open. This is what it looks like by default: <img src="fig/metadata_default.png" class="figure">{alt=“Screenshot of the CellProfiler
-module”Metadata” with default settings”}</p>
+<p>Get started by clicking on <code>yes</code> for
+<code>Extract metadata?</code>, upon which a menu should pop open. This
+is what it looks like by default: <img src="fig/metadata_default.png" alt="Screenshot of the CellProfiler module `Metadata` with default settings" class="figure"></p>
 <p>Now, we wish to inform CellProfiler about which image contains what.
 To do so, set up the module as follows. <img src="fig/metadata_regular_expression.png" alt="Screenshot showing metadata module settings" class="figure"></p>
 <p>While these regular expressions look complicated, they can be crafted
@@ -683,10 +683,11 @@ which channel belongs to which stain. Opening the module, we can see the
 following defaults: <img src="fig/namesandtypes_default.png" alt="Screenshot of the NamesAndTypes module with default settings" class="figure"></p>
 <p>Recall that in the Metadata module we extracted the channel number.
 We can now make use of this information to assign stain names to the
-images. To do so, we switch the “Assign a name” to “Images matching
-rules” (see below) and then assign the channels to names. You will have
-to click “Add another image” to add a new stain name, filling out the
-information as in the screenshot and then clicking “Update”.</p>
+images. To do so, we switch the <code>Assign a name</code> to
+<code>Images matching rules</code> (see below) and then assign the
+channels to names. You will have to click <code>Add another image</code>
+to add a new stain name, filling out the information as in the
+screenshot and then clicking <code>Update</code>.</p>
 <figure><img src="fig/namesandtypes_configured.png" alt="Screenshot of the NamesAndTypes module after configuration settings" class="figure mx-auto d-block"></figure></section><section><h2 class="section-heading" id="groups">Groups<a class="anchor" aria-label="anchor" href="#groups"></a>
 </h2>
 <hr class="half-width">
@@ -734,7 +735,7 @@ any links that you are not going to use.
  -->
 </div></section><section id="aio-detecting-nuclei"><p>Content from <a href="detecting-nuclei.html">Identifying primary objects</a></p>
 <hr>
-<p>Last updated on 2026-01-22 |
+<p>Last updated on 2026-01-23 |
 
         <a href="https://github.com/DBI-INFRA/2026-02-05-DCI-CellProfiler/edit/main/episodes/detecting-nuclei.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -841,7 +842,7 @@ image (and not actin or tubulin)?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="section level5 accordion-body">
 <h5 id="using-interactive-test-mode">Using interactive test mode<a class="anchor" aria-label="anchor" href="#using-interactive-test-mode"></a>
 </h5>
@@ -893,7 +894,7 @@ range.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Diameter range </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>To estimate nuclei size range, it is good to measure the diameter of
 a few nuclei in a representative image. We can do so by using the
@@ -977,17 +978,17 @@ the border. Nuclei that will be kept are outlined in green.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <p>In this dataset, as if often the case, it is difficult finding
 perfect settings! Ideally, one spends a significant portion of time
 optimizing the settings to make sure that results are biologically
 representative of cells. In the figure below, you can see that changing
-the segmentation strategy and method to “Adaptive” and “Otsu”,
-respectively, may not make much of a difference. But results of the
-segmentation with adaptive Otsu show that some pixels that are parts of
-nuclei are discarded (top right). Note that the result will also be
-affected by the settings we will change next. <img src="fig/primary_global_vs_local.png" alt="Side by side comparison of segmentation results with different segmentation strategies" class="figure"></p>
+the segmentation strategy and method to <code>Adaptive</code> and
+<code>Otsu</code>, respectively, may not make much of a difference. But
+results of the segmentation with adaptive Otsu show that some pixels
+that are parts of nuclei are discarded (top right). Note that the result
+will also be affected by the settings we will change next. <img src="fig/primary_global_vs_local.png" alt="Side by side comparison of segmentation results with different segmentation strategies" class="figure"></p>
 </div>
 </div>
 </div>
@@ -1022,20 +1023,20 @@ correctly.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Declumping </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <p>As before, it is not trivial to find ideal declumping settings. We
-can get satisfactory results using “Shape” for both, distinguishing
-clumped objects and drawing dividing lines here, but note that this will
-differ for each dataset and should be carefully tested. It might also be
-helpful to set
+can get satisfactory results using <code>Shape</code> for both,
+distinguishing clumped objects and drawing dividing lines here, but note
+that this will differ for each dataset and should be carefully tested.
+It might also be helpful to set
 <code>Automatically calculate size of smoothing filter for declumping</code>
 to <code>No</code> and playing with the
 <code>Suppress local maxima that are closer than this minimum allowed distance</code>
 parameter. A good value seems to be in the range of 4-8 for this
 dataset.</p>
 <p>This figure shows the impact of not using declumping at all (left) vs
-declumping using “Shape” (right). <img src="fig/primary_declumping.png" alt="Enabling declumping can help discern nearby nuclei." class="figure"></p>
+declumping using <code>Shape</code> (right). <img src="fig/primary_declumping.png" alt="Enabling declumping can help discern nearby nuclei." class="figure"></p>
 </div>
 </div>
 </div>
@@ -1077,7 +1078,7 @@ induce a morphological change in MCF7 cells?”</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
   <h4 class="accordion-header" id="headingSolution5"> Show me the solution </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
 <div class="accordion-body">
 <p>In most cases we advise <strong>removing cells touching the image
 border</strong>, because they will represent outliers when we move to
@@ -1121,7 +1122,7 @@ pipeline</a></p>
 <div class="callout-inner">
 <div class="callout-content">
 <p>If you are using Firefox, you have to right click the button and
-select “Save Link As…”.</p>
+select <code>Save Link As...</code>.</p>
 </div>
 </div>
 </div>
@@ -1503,7 +1504,7 @@ any links that you are not going to use.
 </div>
 </section></section><section id="aio-measure-features"><p>Content from <a href="measure-features.html">Measuring object intensity and shape</a></p>
 <hr>
-<p>Last updated on 2026-01-22 |
+<p>Last updated on 2026-01-23 |
 
         <a href="https://github.com/DBI-INFRA/2026-02-05-DCI-CellProfiler/edit/main/episodes/measure-features.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -1601,7 +1602,7 @@ neighbor.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>The simplest setup is to measure all channels in all parts of the
 cells and decide which measurements to interpret down the line. Perhaps
@@ -1612,8 +1613,8 @@ prove useful if <a href="https://doi.org/10.1073/pnas.1404171111" class="externa
 leaks through the nuclear envelope due to environmental stress</a>.</p>
 <p>That said, if you have a narrow research question and an idea of
 where to look for changes in cell morphology, then only measuring the
-“correct” combination of channel and cell components will be the right
-approach.</p>
+<code>correct</code> combination of channel and cell components will be
+the right approach.</p>
 </div>
 </div>
 </div>
@@ -1654,9 +1655,10 @@ output.</p>
 <div class="callout-content">
 <p>Let’s see whether the DNA intensity is higher in the cytoplasm or the
 nucleus. Using the table that the module outputs in test mode, look for
-a row with “DNA - Cytoplasm - MeanIntensity” and read off the value in
-the “Mean” column. Then repeat this for “DNA - Nuclei_Filtered -
-MeanIntensity”. What do you observe?</p>
+a row with <code>DNA - Cytoplasm - MeanIntensity</code> and read off the
+value in the <code>Mean</code> column. Then repeat this for
+<code>DNA - Nuclei_Filtered - MeanIntensity</code>. What do you
+observe?</p>
 </div>
 </div>
 </div>
@@ -1665,7 +1667,7 @@ MeanIntensity”. What do you observe?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>Depending on your segmentation settings and which image you are using
 to test, the mean DNA intensity is about 3-4x higher in nuclei than in
@@ -1717,7 +1719,7 @@ cytoplasm/nucleus.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <p>The cytoplasm occupies about 3-4x more space than the nucleus. Again,
 depending on your segmentation settings, your result may differ.</p>
@@ -1772,7 +1774,7 @@ shape measurements?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <p>With default settings, CellProfiler typically exports one spreadsheet
 per object type (e.g. one for nuclei, one for cells, one for cytoplasm),
@@ -1839,7 +1841,7 @@ pipeline</a></p>
 <div class="callout-inner">
 <div class="callout-content">
 <p>If you are using Firefox, you have to right click the button and
-select “Save Link As…”.</p>
+select <code>Save Link As...</code>.</p>
 </div>
 </div>
 </div>
