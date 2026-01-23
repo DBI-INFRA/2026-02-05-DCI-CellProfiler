@@ -102,7 +102,7 @@ of `MeasureObjectIntensity` in test mode and comparing with each other.
 The workflow should be reproducible, but you may encounter an issue:
 the images loaded in with the `Images` module are not in the same location
 on your computer. You will have to select and delete them (right click > 
-Remove From File List). Then, add the images into CellProfiler again.
+`Remove From File List`). Then, add the images into CellProfiler again.
 Now run through the workflow.
 ::::
 :::

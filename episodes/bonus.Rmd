@@ -78,7 +78,7 @@ If you
 
 - would like to just see a quick result, skip to the next section
 - have experience in Python programming, use [pycytominer](https://pycytominer.readthedocs.io/en/stable/),
-  a Python package that can be used to the analysis of morphological features.
+  a Python package that can be used to the analyse morphological features.
 - have no experience in Python yet but would like to learn, attend our future [Python workshop](https://dbi-infra.eu/dbi-infra-events/python4bia)!
 - would like help to analyse your results in depth, [contact us](https://www.dbi-infra.eu/iacf-about#contact)!
 
