@@ -13,6 +13,6 @@
 "episodes/bonus.Rmd" "9322157af28ba7e48227aff20748c7a1" "site/built/bonus.md" "2026-01-22"
 "instructors/instructor-notes.md" "b863967929dd19d84709da75b237494a" "site/built/instructor-notes.md" "2026-01-09"
 "learners/reference.md" "1c3501e51744e96933df90bde459d957" "site/built/reference.md" "2026-01-09"
-"learners/setup.md" "15f5e475c3b86a985cdefeb34a93c2be" "site/built/setup.md" "2026-01-21"
+"learners/setup.md" "12ac1db2c666854dcf7290ad5d647af4" "site/built/setup.md" "2026-01-23"
 "profiles/learner-profiles.md" "aed730eddcf826e1d0006759789a6107" "site/built/learner-profiles.md" "2026-01-09"
 "renv/profiles/lesson-requirements/renv.lock" "c9ccab344f95bc4a0fd14d167b9413bf" "site/built/renv.lock" "2026-01-09"

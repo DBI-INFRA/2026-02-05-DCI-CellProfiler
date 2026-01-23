@@ -14,6 +14,15 @@ If you have any trouble with these steps, please let one of the teachers know
 so they can help you set this up before proceeding. Once you are ready, navigate
 to the exercise using the arrow buttons below.
 
+::: callout
+If you already have CellProfiler installed, please check whether it is the latest
+version. You can do so in CellProfiler by clicking `Help > About CellProfiler`.
+The latest version as of January 2026 is `4.2.8`. If you have version 4.2.0
+or newer this workshop should work for you, though you may see a warning during
+the reproducibility episode, which can be ignored. If you have an older version,
+please install the latest version of CellProfiler before starting this workshop.
+:::
+
 ### Help
 
 If you get stuck at any step, first try to solve the issue yourself or with the
@@ -35,3 +44,6 @@ Then, import this pipeline in CellProfiler by clicking on
 A lot of the information covered in this workshop are 
 also covered in the [Ask Erin Dear Beth podcast](https://www.youtube.com/watch?v=JcfPQ44p3pc&list=PLCucasmZ3XNm24zV2bx-gG9InCAASqfOn)
 series, a fantastic resource by Erin Weisbart and Beth Cimini.
+
+CellProfiler also has a number of tutorials, like [this one](https://tutorials.cellprofiler.org/#beginner-segmentation)
+on segmentation. And it also comes with extensive documentation, [found here](https://cellprofiler-manual.s3.amazonaws.com/CellProfiler-4.2.8/index.html).
