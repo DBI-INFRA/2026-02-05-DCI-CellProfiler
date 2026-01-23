@@ -172,7 +172,7 @@ In this dataset, as if often the case, it is difficult finding perfect settings!
 Ideally, one spends a significant portion of time optimizing the settings to
 make sure that results are biologically representative of cells. In the figure 
 below, you can see
-that changing the segmentation strategy and method to "Adaptive" and "Otsu",
+that changing the segmentation strategy and method to `Adaptive` and `Otsu`,
 respectively, may not make much of a difference. But results of the 
 segmentation with adaptive Otsu show that some pixels that are parts of nuclei
 are discarded (top right). Note that the result will also be affected by
@@ -200,7 +200,7 @@ Adjust declumping parameters until most nuclei are separated correctly.
 ::: solution
 #### Declumping
 As before, it is not trivial to find ideal declumping settings. We can get
-satisfactory results using "Shape" for both, distinguishing clumped objects and drawing
+satisfactory results using `Shape` for both, distinguishing clumped objects and drawing
 dividing lines here, but note that this will differ for each dataset and
 should be carefully tested. It might also be helpful to set
 `Automatically calculate size of smoothing filter for declumping` to `No` and 
@@ -208,7 +208,7 @@ playing with the `Suppress local maxima that are closer than this minimum allowe
 distance` parameter. A good value seems to be in the range of 4-8 for this dataset.
 
 This figure shows the impact of not using declumping at all (left) vs declumping
-using "Shape" (right).
+using `Shape` (right).
 ![](fig/primary_declumping.png){alt="Enabling declumping can help discern nearby
 nuclei."}
 
@@ -269,7 +269,7 @@ Did you get stuck with one of the steps? Download a working version of the pipel
 <a href="data/pipeline_1.cppipe" download class="btn btn-primary" style="display:inline-block;padding:8px 12px;background:#007bff;color:#fff;border-radius:4px;text-decoration:none;">Download pipeline</a>
 
 :::::::::: callout
-If you are using Firefox, you have to right click the button and select "Save Link As...".
+If you are using Firefox, you have to right click the button and select `Save Link As...`.
 
 ::::::::::
 

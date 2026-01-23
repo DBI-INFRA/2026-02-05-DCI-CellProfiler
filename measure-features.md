@@ -59,7 +59,7 @@ where measuring e.g. DNA in the cytoplasm may prove useful if [DNA leaks through
 the nuclear envelope due to environmental stress](https://doi.org/10.1073/pnas.1404171111).
 
 That said, if you have a narrow research question and an idea of where to
-look for changes in cell morphology, then only measuring the "correct" combination
+look for changes in cell morphology, then only measuring the `correct` combination
 of channel and cell components will be the right approach.
 :::::::
 
@@ -87,8 +87,8 @@ look at the output.
 
 Let's see whether the DNA intensity is higher in the cytoplasm or the nucleus.
 Using the table that the module outputs in test mode, look for a row with
-"DNA - Cytoplasm - MeanIntensity" and read off the value in the "Mean" column.
-Then repeat this for "DNA - Nuclei_Filtered - MeanIntensity". 
+`DNA - Cytoplasm - MeanIntensity` and read off the value in the `Mean` column.
+Then repeat this for `DNA - Nuclei_Filtered - MeanIntensity`. 
 What do you observe?
 
 :::::::::: solution
@@ -210,7 +210,7 @@ pipeline here:
 <a href="data/pipeline.cppipe" download class="btn btn-primary" style="display:inline-block;padding:8px 12px;background:#007bff;color:#fff;border-radius:4px;text-decoration:none;">Download pipeline</a>
 
 :::::::::: callout
-If you are using Firefox, you have to right click the button and select "Save Link As...".
+If you are using Firefox, you have to right click the button and select `Save Link As...`.
 ::::::::::
 
 After downloading the pipeline, you can compare it to yours for troubleshooting. 
