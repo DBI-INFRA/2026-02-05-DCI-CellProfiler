@@ -3,6 +3,7 @@ title: Setup
 ---
 
 
+
 ### Setup
 For this workshop, you will need to:
 
@@ -17,7 +18,7 @@ to the exercise using the arrow buttons below.
 ::: callout
 If you already have CellProfiler installed, please check whether it is the latest
 version. You can do so in CellProfiler by clicking `Help > About CellProfiler`.
-The latest version as of January 2026 is `4.2.8`. If you have version 4.2.0
+The latest version as of January 2026 is 4.2.8. If you have version 4.2.0
 or newer this workshop should work for you, though you may see a warning during
 the reproducibility episode, which can be ignored. If you have an older version,
 please install the latest version of CellProfiler before starting this workshop.
