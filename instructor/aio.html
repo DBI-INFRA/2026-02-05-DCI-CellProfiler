@@ -458,7 +458,7 @@ using the images.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>One option is: does cytochalasin D induce a morphological change in
 MCF7 cells?</p>
@@ -567,14 +567,13 @@ episode, we will go through each and show what they are used for.</p>
 <p>Before we can get started with analyzing our images in CellProfiler,
 we need to load them in. Start CellProfiler and see whether you can
 figure out how!</p>
-<div id="challenge-load-the-images-into-cellprofiler" class="callout challenge">
+<div id="load-the-images-into-cellprofiler" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <span class="callout-header">Challenge</span>
-<div id="challenge-load-the-images-into-cellprofiler" class="callout-inner">
-<h3 class="callout-title">Challenge: load the images into
-CellProfiler</h3>
+<div id="load-the-images-into-cellprofiler" class="callout-inner">
+<h3 class="callout-title">Load the images into CellProfiler</h3>
 <div class="callout-content">
 <p>Open CellProfiler and try loading the images into CellProfiler.</p>
 </div>
@@ -583,11 +582,9 @@ CellProfiler</h3>
 <div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
-  <h4 class="accordion-header" id="headingSolution1">
-  Solution: loading images
-  </h4>
+  <h4 class="accordion-header" id="headingSolution1"> Loading images </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>You can drag and drop the two folders, <code>DMSO</code> and
 <code>cytoD_0.1</code>, onto the white field in CellProfiler.
@@ -612,18 +609,18 @@ understand.</p>
 is what it looks like by default: <img src="../fig/metadata_default.png" alt="Screenshot of the CellProfiler module `Metadata` with default settings" class="figure"></p>
 <p>Now, we wish to inform CellProfiler about which image contains what.
 To do so, set up the module as follows. <img src="../fig/metadata_regular_expression.png" alt="Screenshot showing metadata module settings" class="figure"></p>
-<p>While these regular expressions look complicated, they can be crafted
-more easily using tools like <a href="https://regex101.com/" class="external-link">regex101.com</a>. Unfortunately, they are
-also beyond the scope of our workshop, so feel free to just copy them
-from here:</p>
+<p>While this regular expression looks complicated, in general they can
+be crafted more easily using tools like <a href="https://regex101.com/" class="external-link">regex101.com</a>. Unfortunately, regular
+expressions are beyond the scope of this workshop, so feel free to just
+copy them from here:</p>
 <p><code>^(?P&lt;Treatment&gt;.*)_(?P&lt;Well&gt;[A-P][0-9]{2})_s(?P&lt;Site&gt;[0-9])_channel(?P&lt;ChannelNumber&gt;[0-9])</code></p>
-<div id="challenge-what-is-happening-here" class="callout challenge">
+<div id="what-is-happening-here" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <span class="callout-header">Challenge</span>
-<div id="challenge-what-is-happening-here" class="callout-inner">
-<h3 class="callout-title">Challenge: What is happening here?</h3>
+<div id="what-is-happening-here" class="callout-inner">
+<h3 class="callout-title">What is happening here?</h3>
 <div class="callout-content">
 <p>The images we are using have names like
 <code>cytoD_B07_s1_channel1.tif</code>. We are trying to translate these
@@ -642,11 +639,9 @@ expression?</p>
 <div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
-  <h4 class="accordion-header" id="headingSolution2">
-  Solution: regular expressions in CellProfiler
-  </h4>
+  <h4 class="accordion-header" id="headingSolution2"> Regular expressions in CellProfiler </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>We can break up our file names by underscores. For example,
 <code>cytoD_B07_s1_channel1.tif</code> can be read as</p>
@@ -683,17 +678,33 @@ stains are for DNA, actin, and tubulin, imaged in the first, second, and
 third channel. To make our lives easier when working with CellProfiler,
 we therefore wish to rename the channels to the corresponding stains.
 This helps us later when we pick the stain to detect cells from.</p>
-<p>To do so, the <code>NamedAndTypes</code> modules tells CellProfiler
-which channel belongs to which stain. Opening the module, we can see the
+<p>If you are working on this workshop as part of our CellProfiler
+course, you will have done this yesterday, in which case: give it a go
+yourself! But if this is the first time you encounter the
+<code>NamesAndTypes</code> module, click on the spoiler below.</p>
+<div id="accordionSpoiler1" class="accordion spoiler-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler1" aria-expanded="false" aria-controls="collapseSpoiler1">
+  <h3 class="accordion-header" id="headingSpoiler1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> Show details </h3>
+</button>
+<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
+<div class="accordion-body">
+<p>The <code>NamedAndTypes</code> module tells CellProfiler which
+channel belongs to which stain. Opening the module, we can see the
 following defaults: <img src="../fig/namesandtypes_default.png" alt="Screenshot of the NamesAndTypes module with default settings" class="figure"></p>
-<p>Recall that in the Metadata module we extracted the channel number.
-We can now make use of this information to assign stain names to the
-images. To do so, we switch the <code>Assign a name</code> to
-<code>Images matching rules</code> (see below) and then assign the
+<p>Recall that in the <code>Metadata</code> module we extracted the
+channel number. We can now make use of this information to assign stain
+names to the images. To do so, we switch the <code>Assign a name</code>
+to <code>Images matching rules</code> (see below) and then assign the
 channels to names. You will have to click <code>Add another image</code>
 to add a new stain name, filling out the information as in the
 screenshot and then clicking <code>Update</code>.</p>
-<figure><img src="../fig/namesandtypes_configured.png" alt="Screenshot of the NamesAndTypes module after configuration settings" class="figure mx-auto d-block"></figure></section><section><h2 class="section-heading" id="groups">Groups<a class="anchor" aria-label="anchor" href="#groups"></a>
+<figure><img src="../fig/namesandtypes_configured.png" alt="Screenshot of the NamesAndTypes module after configuration settings" class="figure mx-auto d-block"></figure>
+</div>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="groups">Groups<a class="anchor" aria-label="anchor" href="#groups"></a>
 </h2>
 <hr class="half-width">
 <p>You can leave this module untouched for now. It is intended to
@@ -703,7 +714,7 @@ additional grouping.</p>
 </section><div class="section level1">
 <h1 id="conclusions">Conclusions<a class="anchor" aria-label="anchor" href="#conclusions"></a>
 </h1>
-<p>To summarise, the preprocessing modules do not make any changes to
+<p>To summarize, the preprocessing modules do not make any changes to
 the images, but instead translate file and folder names into structures
 CellProfiler can understand. As we will see in the next tutorial, this
 will be useful once we start working with the images in CellProfiler to
@@ -720,12 +731,13 @@ our analysis.</p>
 <div class="callout-inner">
 <div class="callout-content">
 <ul>
-<li>Load images by dragging/dropping them onto CellProfiler’s Images
-module</li>
-<li>The Metadata module translates file names to extract metadata from
-file names, which will be saved along with your measurements.</li>
-<li>The NamesAndTypes module converts image names to meaningful names to
-be used within CellProfiler.</li>
+<li>Load images by dragging/dropping them onto CellProfiler’s
+<code>Images</code> module</li>
+<li>The <code>Metadata</code> module translates file names to extract
+metadata from file names, which will be saved along with your
+measurements.</li>
+<li>The <code>NamesAndTypes</code> module converts image names to
+meaningful names to be used within CellProfiler.</li>
 </ul>
 </div>
 </div>
@@ -867,8 +879,8 @@ nuclei? You can zoom in using the magnifying glass (step 4 in figure).
 <img src="../fig/primary_visualisedna.png" alt="Screenshots of CellProfiler, showing how to use the test interface to see which channel is being segmented." class="figure"></p>
 <p>Nuclei should show as compact, round, and high-contrast objects, as
 in the figure above. If you get a different result, make sure to
-double-check your settings for the segmentation and metadata
-modules.</p>
+double-check your settings for the <code>IdentifyPrimaryObjects</code>
+and <code>Metadata</code> modules.</p>
 </div>
 </div>
 </div>
@@ -972,8 +984,8 @@ thresholding settings. Look out for things like</p>
 <div class="callout-content">
 <p>Note that CellProfiler colors nuclei it will remove in subsequent
 analyses in purple outlines. These nuclei are removed because they
-either do not fit the set diameter range, or because they are touching
-the border. Nuclei that will be kept are outlined in green.</p>
+either do not fit the set diameter range. Nuclei that will be kept are
+outlined in green.</p>
 </div>
 </div>
 </div>
@@ -1064,13 +1076,14 @@ of this using:</p>
 <li>smoothing of the image before thresholding,</li>
 <li>discard objects touching the image border (if appropriate).</li>
 </ul>
-<div id="should-we-exclude-border-objects" class="callout challenge">
+<div id="discuss-should-we-exclude-border-objects" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <span class="callout-header">Challenge</span>
-<div id="should-we-exclude-border-objects" class="callout-inner">
-<h3 class="callout-title">Should we exclude border objects?</h3>
+<div id="discuss-should-we-exclude-border-objects" class="callout-inner">
+<h3 class="callout-title">Discuss: should we exclude border
+objects?</h3>
 <div class="callout-content">
 <p>With your neighbor, discuss whether nuclei touching the image border
 should be kept or removed for your research question formulated in the
@@ -1623,8 +1636,8 @@ prove useful if <a href="https://doi.org/10.1073/pnas.1404171111" class="externa
 leaks through the nuclear envelope due to environmental stress</a>.</p>
 <p>That said, if you have a narrow research question and an idea of
 where to look for changes in cell morphology, then only measuring the
-<code>correct</code> combination of channel and cell components will be
-the right approach.</p>
+correct combination of channel and cell components will be the right
+approach.</p>
 </div>
 </div>
 </div>
@@ -1700,24 +1713,43 @@ descriptors of cells. Example measurements include:</p>
 and select our objects to measure in as before. For this workshop,
 disable Zernike and advanced features, as they slow down CellProfiler,
 which can be annoying while building the pipeline.</p>
+<div id="callout2" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div class="callout-inner">
+<div class="callout-content">
+<p>CellProfiler measures many things - including some with names that
+most will never have heard of. The helps a lot with deciphering the
+measurement names. For example, for <code>eccentricity</code> it
+contains this helpful image: <img src="https://cellprofiler-manual.s3.amazonaws.com/CellProfiler-4.2.8/_images/MeasureObjectSizeShape_Eccentricity.png" class="figure">
+Which shows that eccentricity will be higher for elongated cells.</p>
+</div>
+</div>
+</div>
 <div class="section level3">
-<h3 id="step-3-qc-shape-measurements-visually">Step 3: QC shape measurements visually<a class="anchor" aria-label="anchor" href="#step-3-qc-shape-measurements-visually"></a>
+<h3 id="step-3-sanity-check-measurements">Step 3: Sanity check measurements<a class="anchor" aria-label="anchor" href="#step-3-sanity-check-measurements"></a>
 </h3>
-<p>Shape measurements are only as good as your segmentation. If cell
-boundaries are off, area and shape will be misleading.</p>
-<div id="challenge-calculate-the-cytoplasmnucleus-ratio" class="callout challenge">
+<p>When building a workflow, it is worthwhile checking outputs at each
+step. For measurements this can be a bit harder than with segmentation,
+but one of the things we can check is the cytoplasm/nucleus area ratio.
+We have now seen many example images of these MCF7 cells and could
+venture a guess that the cytoplasm occupies more space than the nuclei
+(in 2D).</p>
+<div id="calculate-the-cytoplasmnucleus-ratio" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <span class="callout-header">Challenge</span>
-<div id="challenge-calculate-the-cytoplasmnucleus-ratio" class="callout-inner">
-<h3 class="callout-title">Challenge: calculate the cytoplasm/nucleus
-ratio</h3>
+<div id="calculate-the-cytoplasmnucleus-ratio" class="callout-inner">
+<h3 class="callout-title">Calculate the cytoplasm/nucleus ratio</h3>
 <div class="callout-content">
 <p>Run the module in test mode and look for the <code>Area</code>
 feature for <code>Cytoplasm</code> and <code>Nuclei_Filtered</code> (or
 equivalent names in your pipeline). This feature describes the average
-number of pixels occupied by the cytoplasm/nucleus.</p>
+number of pixels occupied by the cytoplasm/nucleus. Now calculate the
+ratio of the cytoplasm to nucleus area.</p>
 </div>
 </div>
 </div>
@@ -1729,7 +1761,8 @@ number of pixels occupied by the cytoplasm/nucleus.</p>
 <div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <p>The cytoplasm occupies about 3-4x more space than the nucleus. Again,
-depending on your segmentation settings, your result may differ.</p>
+depending on your segmentation settings, your result may differ. This is
+in line with our observations from images of the cells.</p>
 </div>
 </div>
 </div>
@@ -1741,7 +1774,7 @@ depending on your segmentation settings, your result may differ.</p>
 <p>So far we have created segmentation masks and computed measurements
 (intensity and size/shape). To use these measurements outside
 CellProfiler (e.g. in R, Python, or Excel), we need to export them to
-files. The standard way to do this is the
+files. One standard way to do this is the
 <code>ExportToSpreadsheet</code> module.</p>
 <p>Add the <code>ExportToSpreadsheet</code> module. For this workshop,
 the default settings are fine. The most important thing is that:</p>
@@ -1839,7 +1872,7 @@ profiles, or training classifiers.</p>
 of the pipeline here:</p>
 <p><a href="../data/pipeline.cppipe" download class="btn btn-primary" style="display:inline-block;padding:8px 12px;background:#007bff;color:#fff;border-radius:4px;text-decoration:none;">Download
 pipeline</a></p>
-<div id="callout3" class="callout">
+<div id="callout4" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
@@ -1869,9 +1902,6 @@ object; choose objects and channels deliberately.</li>
 <li>
 <strong>MeasureObjectSizeShape</strong> quantifies morphology;
 disable Zernike/advanced features to iterate faster.</li>
-<li>Consistent object relationships matter: measure
-<code>Nuclei_Filtered</code> to maintain clean 1-to-1 mapping with
-cells.</li>
 </ul>
 </div>
 </div>
@@ -1915,7 +1945,7 @@ collaborators?</li>
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
 <ul>
-<li>Practice sharing both formats with a neighbour and observe what
+<li>Practice sharing both formats with a neighbor and observe what
 breaks.</li>
 <li>Verify reproducibility by comparing exported measurements.</li>
 </ul>
@@ -1946,7 +1976,7 @@ for sharing your workflow? Let’s find out!</p>
 <span class="callout-header">Callout</span>
 <div class="callout-inner">
 <div class="callout-content">
-<p>Save your workflow in CellProfiler in two ways:</p>
+<p>Save your workflow in CellProfiler in both ways:</p>
 <ol style="list-style-type: decimal">
 <li><strong>File → Save Project</strong></li>
 <li><strong>File → Export → Pipeline</strong></li>
@@ -1976,12 +2006,12 @@ instructions under <code>Online file share</code>.</p>
 </button>
 </div>
 </nav><div id="nav-tabContent-1" class="tab-content">
-<div id="nav-tabpanel-1-1" class="tab-pane show active" aria-labelledby="nav-tab-1-1" role="tabpanel">
+<div id="nav-tabpanel-1-1" class="tab-pane show active" role="tabpanel" aria-labelledby="nav-tab-1-1">
 <p>If you have a USB stick, just copy the files onto it, pass it to your
 neighbor and have them copy it onto their computer for testing.
 Easy!</p>
 </div>
-<div id="nav-tabpanel-1-2" class="tab-pane" aria-labelledby="nav-tab-1-2" role="tabpanel">
+<div id="nav-tabpanel-1-2" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-2">
 <p>If you do not have a USB stick with you, we can use an online file
 sharing solution. You can use email/OneDrive/Dropbox/Google Drive if you
 like, or follow the instructions below if you do not want to create an
@@ -2037,7 +2067,7 @@ comparing with each other.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>The workflow should be reproducible, but you may encounter an issue:
 the images loaded in with the <code>Images</code> module are not in the
@@ -2200,7 +2230,7 @@ show?</p>
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler1" aria-expanded="false" aria-controls="collapseSpoiler1">
   <h3 class="accordion-header" id="headingSpoiler1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> Show details </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
 <div class="accordion-body">
 <p>You should get a table and bar chart similar to this: <img src="../fig/bonus_excel_bar.png" alt="Bar graph showing that cells treated with cytoD are about ~30 percent points smaller than cells treated with DMSO only, on average." class="figure"></p>
 <p>If we do the math, this shows that cells treated with cytoD are about
@@ -2257,7 +2287,7 @@ cytoD?</p>
 straightforward, because it involves some normalization and, in bigger
 experiments, batch correction steps. It would also not be suitable for
 experiments with more than a few hundred cells, because you will quickly
-use sight of the large data.</p>
+lose sight of the large data.</p>
 <p>Therefore, we recommend contacting DBI-INFRA if you would like to
 learn more:</p>
 <p><a href="https://www.dbi-infra.eu/iacf-about#contact" class="external-link btn btn-primary" style="display:inline-block;padding:8px 12px;background:#c60c30;color:#fff;border-radius:4px;text-decoration:none;">Contact
@@ -2271,9 +2301,9 @@ DBI-INFRA</a></p>
 <div class="callout-content">
 <ul>
 <li>CellProfiler writes one <code>.csv</code> per object type
-(i.e. Nuclei, Cells, Cytoplasm)</li>
-<li>Exported files contain many columns with metadata</li>
-<li>Morpheus can be useful to interrogate morphological changes</li>
+(i.e. Nuclei, Cells, Cytoplasm).</li>
+<li>Exported files contain many columns with metadata.</li>
+<li>Morpheus can be useful to interrogate morphological changes.</li>
 </ul>
 </div>
 </div>

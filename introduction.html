@@ -371,14 +371,13 @@ episode, we will go through each and show what they are used for.</p>
 <p>Before we can get started with analyzing our images in CellProfiler,
 we need to load them in. Start CellProfiler and see whether you can
 figure out how!</p>
-<div id="challenge-load-the-images-into-cellprofiler" class="callout challenge">
+<div id="load-the-images-into-cellprofiler" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <span class="callout-header">Challenge</span>
-<div id="challenge-load-the-images-into-cellprofiler" class="callout-inner">
-<h3 class="callout-title">Challenge: load the images into
-CellProfiler</h3>
+<div id="load-the-images-into-cellprofiler" class="callout-inner">
+<h3 class="callout-title">Load the images into CellProfiler</h3>
 <div class="callout-content">
 <p>Open CellProfiler and try loading the images into CellProfiler.</p>
 </div>
@@ -387,11 +386,9 @@ CellProfiler</h3>
 <div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
-  <h4 class="accordion-header" id="headingSolution1">
-  Solution: loading images
-  </h4>
+  <h4 class="accordion-header" id="headingSolution1"> Loading images </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>You can drag and drop the two folders, <code>DMSO</code> and
 <code>cytoD_0.1</code>, onto the white field in CellProfiler.
@@ -415,18 +412,18 @@ understand.</p>
 is what it looks like by default: <img src="fig/metadata_default.png" alt="Screenshot of the CellProfiler module `Metadata` with default settings" class="figure"></p>
 <p>Now, we wish to inform CellProfiler about which image contains what.
 To do so, set up the module as follows. <img src="fig/metadata_regular_expression.png" alt="Screenshot showing metadata module settings" class="figure"></p>
-<p>While these regular expressions look complicated, they can be crafted
-more easily using tools like <a href="https://regex101.com/" class="external-link">regex101.com</a>. Unfortunately, they are
-also beyond the scope of our workshop, so feel free to just copy them
-from here:</p>
+<p>While this regular expression looks complicated, in general they can
+be crafted more easily using tools like <a href="https://regex101.com/" class="external-link">regex101.com</a>. Unfortunately, regular
+expressions are beyond the scope of this workshop, so feel free to just
+copy them from here:</p>
 <p><code>^(?P&lt;Treatment&gt;.*)_(?P&lt;Well&gt;[A-P][0-9]{2})_s(?P&lt;Site&gt;[0-9])_channel(?P&lt;ChannelNumber&gt;[0-9])</code></p>
-<div id="challenge-what-is-happening-here" class="callout challenge">
+<div id="what-is-happening-here" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <span class="callout-header">Challenge</span>
-<div id="challenge-what-is-happening-here" class="callout-inner">
-<h3 class="callout-title">Challenge: What is happening here?</h3>
+<div id="what-is-happening-here" class="callout-inner">
+<h3 class="callout-title">What is happening here?</h3>
 <div class="callout-content">
 <p>The images we are using have names like
 <code>cytoD_B07_s1_channel1.tif</code>. We are trying to translate these
@@ -445,11 +442,9 @@ expression?</p>
 <div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
-  <h4 class="accordion-header" id="headingSolution2">
-  Solution: regular expressions in CellProfiler
-  </h4>
+  <h4 class="accordion-header" id="headingSolution2"> Regular expressions in CellProfiler </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>We can break up our file names by underscores. For example,
 <code>cytoD_B07_s1_channel1.tif</code> can be read as</p>
@@ -481,24 +476,39 @@ stains are for DNA, actin, and tubulin, imaged in the first, second, and
 third channel. To make our lives easier when working with CellProfiler,
 we therefore wish to rename the channels to the corresponding stains.
 This helps us later when we pick the stain to detect cells from.</p>
-<p>To do so, the <code>NamedAndTypes</code> modules tells CellProfiler
-which channel belongs to which stain. Opening the module, we can see the
+<p>If you are working on this workshop as part of our CellProfiler
+course, you will have done this yesterday, in which case: give it a go
+yourself! But if this is the first time you encounter the
+<code>NamesAndTypes</code> module, click on the spoiler below.</p>
+<div id="accordionSpoiler1" class="accordion spoiler-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler1" aria-expanded="false" aria-controls="collapseSpoiler1">
+  <h3 class="accordion-header" id="headingSpoiler1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> Show details </h3>
+</button>
+<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
+<div class="accordion-body">
+<p>The <code>NamedAndTypes</code> module tells CellProfiler which
+channel belongs to which stain. Opening the module, we can see the
 following defaults: <img src="fig/namesandtypes_default.png" alt="Screenshot of the NamesAndTypes module with default settings" class="figure"></p>
-<p>Recall that in the Metadata module we extracted the channel number.
-We can now make use of this information to assign stain names to the
-images. To do so, we switch the <code>Assign a name</code> to
-<code>Images matching rules</code> (see below) and then assign the
+<p>Recall that in the <code>Metadata</code> module we extracted the
+channel number. We can now make use of this information to assign stain
+names to the images. To do so, we switch the <code>Assign a name</code>
+to <code>Images matching rules</code> (see below) and then assign the
 channels to names. You will have to click <code>Add another image</code>
 to add a new stain name, filling out the information as in the
 screenshot and then clicking <code>Update</code>.</p>
-<figure><img src="fig/namesandtypes_configured.png" alt="Screenshot of the NamesAndTypes module after configuration settings" class="figure mx-auto d-block"></figure></section><section><h2 class="section-heading" id="groups">Groups<a class="anchor" aria-label="anchor" href="#groups"></a></h2>
+<figure><img src="fig/namesandtypes_configured.png" alt="Screenshot of the NamesAndTypes module after configuration settings" class="figure mx-auto d-block"></figure></div>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="groups">Groups<a class="anchor" aria-label="anchor" href="#groups"></a></h2>
 <hr class="half-width"><p>You can leave this module untouched for now. It is intended to
 further group images by experimental units, such as batches, plates,
 etc. Here, we only have two sets of images and do not need the
 additional grouping.</p>
 </section><div class="section level1">
 <h1 id="conclusions">Conclusions<a class="anchor" aria-label="anchor" href="#conclusions"></a></h1>
-<p>To summarise, the preprocessing modules do not make any changes to
+<p>To summarize, the preprocessing modules do not make any changes to
 the images, but instead translate file and folder names into structures
 CellProfiler can understand. As we will see in the next tutorial, this
 will be useful once we start working with the images in CellProfiler to
@@ -514,12 +524,13 @@ our analysis.</p>
 <span class="callout-header">Key Points</span>
 <div class="callout-inner">
 <div class="callout-content">
-<ul><li>Load images by dragging/dropping them onto CellProfiler’s Images
-module</li>
-<li>The Metadata module translates file names to extract metadata from
-file names, which will be saved along with your measurements.</li>
-<li>The NamesAndTypes module converts image names to meaningful names to
-be used within CellProfiler.</li>
+<ul><li>Load images by dragging/dropping them onto CellProfiler’s
+<code>Images</code> module</li>
+<li>The <code>Metadata</code> module translates file names to extract
+metadata from file names, which will be saved along with your
+measurements.</li>
+<li>The <code>NamesAndTypes</code> module converts image names to
+meaningful names to be used within CellProfiler.</li>
 </ul></div>
 </div>
 </div>

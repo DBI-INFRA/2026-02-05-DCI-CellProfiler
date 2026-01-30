@@ -447,8 +447,8 @@ nuclei? You can zoom in using the magnifying glass (step 4 in figure).
 <img src="../fig/primary_visualisedna.png" alt="Screenshots of CellProfiler, showing how to use the test interface to see which channel is being segmented." class="figure"></p>
 <p>Nuclei should show as compact, round, and high-contrast objects, as
 in the figure above. If you get a different result, make sure to
-double-check your settings for the segmentation and metadata
-modules.</p>
+double-check your settings for the <code>IdentifyPrimaryObjects</code>
+and <code>Metadata</code> modules.</p>
 </div>
 </div>
 </div>
@@ -546,8 +546,8 @@ thresholding settings. Look out for things like</p>
 <div class="callout-content">
 <p>Note that CellProfiler colors nuclei it will remove in subsequent
 analyses in purple outlines. These nuclei are removed because they
-either do not fit the set diameter range, or because they are touching
-the border. Nuclei that will be kept are outlined in green.</p>
+either do not fit the set diameter range. Nuclei that will be kept are
+outlined in green.</p>
 </div>
 </div>
 </div>
@@ -632,13 +632,14 @@ of this using:</p>
 <ul><li>size constraints (min/max diameter),</li>
 <li>smoothing of the image before thresholding,</li>
 <li>discard objects touching the image border (if appropriate).</li>
-</ul><div id="should-we-exclude-border-objects" class="callout challenge">
+</ul><div id="discuss-should-we-exclude-border-objects" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <span class="callout-header">Challenge</span>
-<div id="should-we-exclude-border-objects" class="callout-inner">
-<h3 class="callout-title">Should we exclude border objects?</h3>
+<div id="discuss-should-we-exclude-border-objects" class="callout-inner">
+<h3 class="callout-title">Discuss: should we exclude border
+objects?</h3>
 <div class="callout-content">
 <p>With your neighbor, discuss whether nuclei touching the image border
 should be kept or removed for your research question formulated in the
