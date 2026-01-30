@@ -90,7 +90,7 @@ to use the test interface to see which channel is being segmented."}
 
 Nuclei should show as compact, round, and high-contrast objects, as in the 
 figure above. If you get a different result, make sure to double-check your 
-settings for the segmentation and metadata modules.
+settings for the `IdentifyPrimaryObjects` and `Metadata` modules.
 :::
 ::::
 
@@ -160,8 +160,7 @@ Which setting best matches what you consider nuclei?
 :::::: callout
 Note that CellProfiler colors nuclei it will remove in subsequent analyses
 in purple outlines. These nuclei are removed because they either do not fit
-the set diameter range, or because they are touching the border. Nuclei that
-will be kept are outlined in green.
+the set diameter range. Nuclei that will be kept are outlined in green.
 ::::::
 
 ::: solution
@@ -229,7 +228,7 @@ Within **IdentifyPrimaryObjects**, you can handle some of this using:
 -   discard objects touching the image border (if appropriate).
 
 :::: challenge
-## Should we exclude border objects?
+## Discuss: should we exclude border objects?
 
 With your neighbor, discuss whether nuclei touching the image border should be 
 kept or removed for your research question formulated in the [previous section](

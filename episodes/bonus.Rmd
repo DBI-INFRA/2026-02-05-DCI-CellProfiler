@@ -111,7 +111,7 @@ Which features seem to have changed after treatment with cytoD?
 Unfortunately, preparing an input file for Morpheus is not very straightforward,
 because it involves some normalization and, in bigger experiments, batch
 correction steps. It would also not be suitable for experiments with more than 
-a few hundred cells, because you will quickly use sight of the large data.
+a few hundred cells, because you will quickly lose sight of the large data.
 
 Therefore, we recommend contacting DBI-INFRA if you would like to learn more:
 
@@ -120,9 +120,9 @@ Therefore, we recommend contacting DBI-INFRA if you would like to learn more:
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
-- CellProfiler writes one `.csv` per object type (i.e. Nuclei, Cells, Cytoplasm)
-- Exported files contain many columns with metadata
-- Morpheus can be useful to interrogate morphological changes
+- CellProfiler writes one `.csv` per object type (i.e. Nuclei, Cells, Cytoplasm).
+- Exported files contain many columns with metadata.
+- Morpheus can be useful to interrogate morphological changes.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 

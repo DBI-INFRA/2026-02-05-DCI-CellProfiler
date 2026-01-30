@@ -59,7 +59,7 @@ where measuring e.g. DNA in the cytoplasm may prove useful if [DNA leaks through
 the nuclear envelope due to environmental stress](https://doi.org/10.1073/pnas.1404171111).
 
 That said, if you have a narrow research question and an idea of where to
-look for changes in cell morphology, then only measuring the `correct` combination
+look for changes in cell morphology, then only measuring the correct combination
 of channel and cell components will be the right approach.
 :::::::
 
@@ -114,23 +114,36 @@ Once again, we add the module (`MeasureObjectSizeShape`) and select our objects
 to measure in as before. For this workshop, disable Zernike and advanced features,
 as they slow down CellProfiler, which can be annoying while building the pipeline.
 
-### Step 3: QC shape measurements visually
+::::: callout
+CellProfiler measures many things - including some with names that most will never
+have heard of. The helps a lot with deciphering the measurement names.
+For example, for `eccentricity` it contains this helpful image:
+![](https://cellprofiler-manual.s3.amazonaws.com/CellProfiler-4.2.8/_images/MeasureObjectSizeShape_Eccentricity.png)
+Which shows that eccentricity will be higher for elongated cells.
+:::::
 
-Shape measurements are only as good as your segmentation. If cell boundaries are off,
-area and shape will be misleading.
+### Step 3: Sanity check measurements
+
+When building a workflow, it is worthwhile checking outputs at each step.
+For measurements this can be a bit harder than with segmentation, but one of the 
+things we can check is the cytoplasm/nucleus area ratio. We have now seen many 
+example images of these MCF7 cells and could venture a guess that the cytoplasm
+occupies more space than the nuclei (in 2D).
 
 :::: challenge
-## Challenge: calculate the cytoplasm/nucleus ratio
+## Calculate the cytoplasm/nucleus ratio
 
 Run the module in test mode and look for the `Area` feature for `Cytoplasm`
 and `Nuclei_Filtered` (or equivalent names in your pipeline). This feature
 describes the average number of pixels occupied by the cytoplasm/nucleus.
+Now calculate the ratio of the cytoplasm to nucleus area.
 
 ::: solution
 #### Solution
 
 The cytoplasm occupies about 3-4x more space than the nucleus.
 Again, depending on your segmentation settings, your result may differ.
+This is in line with our observations from images of the cells.
 
 :::
 ::::
@@ -139,8 +152,8 @@ Again, depending on your segmentation settings, your result may differ.
 
 So far we have created segmentation masks and computed measurements (intensity and
 size/shape). To use these measurements outside CellProfiler (e.g. in R,
-Python, or Excel), we need to export them to files. The standard way to do this is the
-`ExportToSpreadsheet` module.
+Python, or Excel), we need to export them to files. One standard way to do this 
+is the `ExportToSpreadsheet` module.
 
 Add the `ExportToSpreadsheet` module. 
 For this workshop, the default settings are fine. The most important thing is that:
@@ -221,5 +234,4 @@ Then, import this pipeline in CellProfiler by clicking on
 ::: keypoints
 -   **MeasureObjectIntensity** quantifies fluorescence per object; choose objects and channels deliberately.
 -   **MeasureObjectSizeShape** quantifies morphology; disable Zernike/advanced features to iterate faster.
--   Consistent object relationships matter: measure `Nuclei_Filtered` to maintain clean 1-to-1 mapping with cells.
 :::
