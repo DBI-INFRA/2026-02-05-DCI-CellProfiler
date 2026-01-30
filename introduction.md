@@ -28,12 +28,12 @@ Before we can get started with analyzing our images in CellProfiler, we need to
 load them in. Start CellProfiler and see whether you can figure out how!
 
 :::: challenge
-## Challenge: load the images into CellProfiler
+## Load the images into CellProfiler
 
 Open CellProfiler and try loading the images into CellProfiler.
 
 ::: solution
-#### Solution: loading images
+#### Loading images
 
 You can drag and drop the two folders, `DMSO` and `cytoD_0.1`, onto the white
 field in CellProfiler. Afterwards, it should look something like this:
@@ -60,15 +60,15 @@ Now, we wish to inform CellProfiler about which image contains what. To do so,
 set up the module as follows. 
 ![](fig/metadata_regular_expression.png){alt="Screenshot showing metadata module settings"}
 
-While these regular expressions look complicated, they can be crafted more
-easily using tools like [regex101.com](https://regex101.com/). Unfortunately,
-they are also beyond the scope of our workshop, so feel free to just copy them
+While this regular expression looks complicated, in general they
+can be crafted more easily using tools like [regex101.com](https://regex101.com/).
+Unfortunately, regular expressions are beyond the scope of this workshop, so feel free to just copy them
 from here:
 
 `^(?P<Treatment>.*)_(?P<Well>[A-P][0-9]{2})_s(?P<Site>[0-9])_channel(?P<ChannelNumber>[0-9])`
 
 :::: challenge
-#### Challenge: What is happening here?
+#### What is happening here?
 
 The images we are using have names like `cytoD_B07_s1_channel1.tif`. We are
 trying to translate these names into metadata with this awkward looking
@@ -84,7 +84,7 @@ You do not have to understand all the parts, but can you guess which part of the
 file name will match which part of the regular expression?
 
 ::: solution
-#### Solution: regular expressions in CellProfiler
+#### Regular expressions in CellProfiler
 
 We can break up our file names by underscores. For example,
 `cytoD_B07_s1_channel1.tif` can be read as
@@ -116,12 +116,19 @@ lives easier when working with CellProfiler, we therefore wish to rename the
 channels to the corresponding stains. This helps us later when we pick the stain
 to detect cells from.
 
-To do so, the `NamedAndTypes` modules tells CellProfiler which channel belongs
+If you are working on this workshop as part of our CellProfiler course, you will
+have done this yesterday, in which case: give it a go yourself! But if this is 
+the first time you encounter the `NamesAndTypes` module, click on the spoiler
+below.
+
+:::::::::: spoiler
+
+The `NamedAndTypes` module tells CellProfiler which channel belongs
 to which stain. Opening the module, we can see the following defaults:
 ![](fig/namesandtypes_default.png){alt="Screenshot of the NamesAndTypes module with default
 settings"}
 
-Recall that in the Metadata module we extracted the channel number. We can now
+Recall that in the `Metadata` module we extracted the channel number. We can now
 make use of this information to assign stain names to the images. To do so, we
 switch the `Assign a name` to `Images matching rules` (see below) and then
 assign the channels to names. You will have to click `Add another image` to add
@@ -129,6 +136,7 @@ a new stain name, filling out the information as in the screenshot and then
 clicking `Update`.
 
 ![](fig/namesandtypes_configured.png){alt="Screenshot of the NamesAndTypes module after configuration settings"}
+::::::::::
 
 ## Groups
 
@@ -138,7 +146,7 @@ two sets of images and do not need the additional grouping.
 
 # Conclusions
 
-To summarise, the preprocessing modules do not make any changes to the images,
+To summarize, the preprocessing modules do not make any changes to the images,
 but instead translate file and folder names into structures CellProfiler can
 understand. As we will see in the next tutorial, this will be useful once we
 start working with the images in CellProfiler to do things like detecting cell
@@ -148,9 +156,9 @@ to have it set up properly, but now that we have it in place we can finally
 launch into our analysis.
 
 ::: keypoints
--   Load images by dragging/dropping them onto CellProfiler's Images module
--   The Metadata module translates file names to extract metadata from file
+-   Load images by dragging/dropping them onto CellProfiler's `Images` module
+-   The `Metadata` module translates file names to extract metadata from file
     names, which will be saved along with your measurements.
--   The NamesAndTypes module converts image names to meaningful names to be 
+-   The `NamesAndTypes` module converts image names to meaningful names to be 
     used within CellProfiler.
 :::

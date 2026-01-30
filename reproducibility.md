@@ -13,7 +13,7 @@ editor_options:
 :::
 
 ::: objectives
--   Practice sharing both formats with a neighbour and observe what breaks.
+-   Practice sharing both formats with a neighbor and observe what breaks.
 -   Verify reproducibility by comparing exported measurements.
 :::
 
@@ -35,7 +35,7 @@ This is convenient when you want to pause and continue later on the same compute
 file list. Which one is better for sharing your workflow? Let's find out!
 
 ::: callout
-Save your workflow in CellProfiler in two ways:
+Save your workflow in CellProfiler in both ways:
 
 1. **File → Save Project**
 2. **File → Export → Pipeline**
