@@ -8,12 +8,16 @@ editor_options:
 ---
 
 ::: questions
+
 -   What is the BBBC021 dataset?
+
 :::
 
 ::: objectives
+
 -   Get an overview of the research question behind BBBC021.
 -   Understand the file structure.
+
 :::
 
 ## The example dataset BBBC021

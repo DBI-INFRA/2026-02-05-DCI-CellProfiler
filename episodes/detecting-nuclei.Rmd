@@ -8,16 +8,20 @@ editor_options:
 ---
 
 ::: questions
+
 -   How does CellProfiler identify objects in an image?
 -   Why do we usually start segmentation with nuclei?
 -   Which parameters matter most for good nucleus segmentation?
+
 :::
 
 ::: objectives
+
 -   Understand what primary objects are in CellProfiler.
 -   Configure the **IdentifyPrimaryObjects** module to segment nuclei.
 -   Learn how to assess segmentation quality using the Test Mode viewer.
 -   Produce a nucleus object set suitable for downstream cell/feature analysis.
+
 :::
 
 ## Introduction: why segment nuclei first?

@@ -1,21 +1,25 @@
 ---
 title: 'Reading images'
-teaching: 10
-exercises: 2
+teaching: 5
+exercises: 12
 editor_options: 
   markdown: 
     wrap: 80
 ---
 
 ::: questions
+
 -   How do we get started in CellProfiler?
 -   How do we teach CellProfiler the structure of our images?
-:::
+
+::::::
 
 ::: objectives
+
 -   Load images in CellProfiler.
 -   Understand modules for data loading.
-:::
+
+::::::
 
 ## Understanding preprocessing modules
 

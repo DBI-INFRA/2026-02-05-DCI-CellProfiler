@@ -1,24 +1,28 @@
 ---
 title: 'Identifying secondary & tertiary objects'
 teaching: 5
-exercises: 30
+exercises: 20
 editor_options: 
   markdown: 
     wrap: 100
 ---
 
 ::: questions
+
 -   How can we detect whole cells once we have identified nuclei?
 -   What is the differences between detecting primary, secondary, and tertiary
     objects?
+    
 :::
 
 ::: objectives
+
 -   Use **IdentifySecondaryObjects** to segment whole cells from an actin image.
 -   Understand how secondary objects depend on primary objects.
 -   Learn how propagation-based segmentation expands from nuclei to cell edges.
 -   Create a cell object set suitable for per-cell measurements.
 -   Use **IdentifyTertiaryObjects** to create cytoplasm masks.
+
 :::
 
 ## From nuclei to whole cells
