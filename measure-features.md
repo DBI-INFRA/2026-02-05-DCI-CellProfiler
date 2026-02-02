@@ -118,7 +118,7 @@ as they slow down CellProfiler, which can be annoying while building the pipelin
 CellProfiler measures many things - including some with names that most will never
 have heard of. The helps a lot with deciphering the measurement names.
 For example, for `eccentricity` it contains this helpful image:
-![](https://cellprofiler-manual.s3.amazonaws.com/CellProfiler-4.2.8/_images/MeasureObjectSizeShape_Eccentricity.png)
+![](https://cellprofiler-manual.s3.amazonaws.com/CellProfiler-4.2.8/_images/MeasureObjectSizeShape_Eccentricity.png){alt="Circles that are increasingly stretched into long ovals. Beneath the circles are values for eccentricity, which go from 0 (perfect circle) toward 1 (extremely stretched oval)."}
 Which shows that eccentricity will be higher for elongated cells.
 :::::
 
