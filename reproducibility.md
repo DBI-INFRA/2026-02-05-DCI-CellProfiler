@@ -1,20 +1,24 @@
 ---
 title: 'Reproducibility in CellProfiler'
-teaching: 10
-exercises: 1
+teaching: 5
+exercises: 15
 editor_options: 
   markdown: 
     wrap: 100
 ---
 
 ::: questions
+
 -   What is the difference between saving a CellProfiler project and exporting a pipeline?
 -   Which approach is more portable across computers and collaborators?
+
 :::
 
 ::: objectives
+
 -   Practice sharing both formats with a neighbor and observe what breaks.
 -   Verify reproducibility by comparing exported measurements.
+
 :::
 
 A CellProfiler analysis is only useful if someone else (or future you) can reproduce it.

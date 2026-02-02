@@ -8,13 +8,17 @@ editor_options:
 ---
 
 ::: questions
+
 -   Once we have segmentation masks, what can CellProfiler measure from them?
 -   What is the difference between intensity measurements and shape measurements?
+
 :::
 
 ::: objectives
+
 -   Use **MeasureObjectIntensity** to quantify fluorescence per nucleus, cell, and cytoplasm.
 -   Use **MeasureObjectSizeShape** to quantify area/shape descriptors for each object.
+
 :::
 
 ## Measuring: turning segmentations into numbers
