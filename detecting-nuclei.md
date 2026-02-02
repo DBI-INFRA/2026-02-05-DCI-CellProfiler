@@ -180,6 +180,15 @@ results with different segmentation strategies"}
 :::
 ::::
 
+
+The images we use in this workshop are illuminated fairly evenly, meaning that
+nuclei show up in roughly equal brightness no matter where they are in the 
+image. 
+If you would like to see an example of uneven illumination, for which adaptive
+segmentation is a lot more important, on real images then watch this video: 
+https://www.youtube.com/watch?v=ynrPqsOZVYE
+
+
 ### Step 4: declump touching nuclei
 
 Nuclei often touch or overlap, particular if many cells were seeded. While a
