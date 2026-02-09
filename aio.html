@@ -467,7 +467,7 @@ using the images.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>One option is: does cytochalasin D induce a morphological change in
 MCF7 cells?</p>
@@ -1322,7 +1322,7 @@ Then, select <code>Log normalized</code> and a
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>Compared to nuclei, cell boundaries are often less easily
 distinguished. We can see that the actin channel does increase at cell
@@ -1365,7 +1365,7 @@ How do the resulting cell boundaries differ?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Comparing methods </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>As with the segmentation of nuclei, getting cell segmentation right
 can be tricky. Often, starting with <code>propagation</code> as method
@@ -1410,7 +1410,7 @@ where these assumptions may not be met? Discuss with your neighbor.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <p>CellProfiler identifies cells by expanding outwards from a nucleus.
 This assumes that <strong>each cell only has exactly one
@@ -1458,7 +1458,7 @@ select what you think are the correct options.</p>
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler1" aria-expanded="false" aria-controls="collapseSpoiler1">
   <h3 class="accordion-header" id="headingSpoiler1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> Suggested settings </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
 <div class="accordion-body">
 <ul>
 <li>Larger objects: cells identified with
@@ -2015,12 +2015,12 @@ instructions under <code>Online file share</code>.</p>
 </button>
 </div>
 </nav><div id="nav-tabContent-1" class="tab-content">
-<div id="nav-tabpanel-1-1" class="tab-pane show active" aria-labelledby="nav-tab-1-1" role="tabpanel">
+<div id="nav-tabpanel-1-1" class="tab-pane show active" role="tabpanel" aria-labelledby="nav-tab-1-1">
 <p>If you have a USB stick, just copy the files onto it, pass it to your
 neighbor and have them copy it onto their computer for testing.
 Easy!</p>
 </div>
-<div id="nav-tabpanel-1-2" class="tab-pane" aria-labelledby="nav-tab-1-2" role="tabpanel">
+<div id="nav-tabpanel-1-2" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-2">
 <p>If you do not have a USB stick with you, we can use an online file
 sharing solution. You can use email/OneDrive/Dropbox/Google Drive if you
 like, or follow the instructions below if you do not want to create an
@@ -2238,7 +2238,7 @@ show?</p>
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler1" aria-expanded="false" aria-controls="collapseSpoiler1">
   <h3 class="accordion-header" id="headingSpoiler1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> Show details </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
 <div class="accordion-body">
 <p>You should get a table and bar chart similar to this: <img src="fig/bonus_excel_bar.png" alt="Bar graph showing that cells treated with cytoD are about ~30 percent points smaller than cells treated with DMSO only, on average." class="figure"></p>
 <p>If we do the math, this shows that cells treated with cytoD are about
@@ -2327,7 +2327,7 @@ any links that you are not going to use.
 </div>
 </div></section><section id="aio-cellprofiler-analyst"><p>Content from <a href="cellprofiler-analyst.html">Advanced: classifying cells in CellProfiler Analyst</a></p>
 <hr>
-<p>Last updated on 2026-02-03 |
+<p>Last updated on 2026-02-09 |
 
         <a href="https://github.com/DBI-INFRA/2026-02-05-DCI-CellProfiler/edit/main/episodes/cellprofiler-analyst.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -2375,7 +2375,7 @@ CellProfiler. While CellProfiler is used to <em>segment</em> objects and
 those measurements and to <strong>classify cells into
 phenotypes</strong> (e.g. “healthy” vs “unhealthy”) using machine
 learning.</p>
-<p>Why would we want to do this?</p>
+<p><strong>Why</strong> would we want to do this?</p>
 <ul>
 <li>You may want to <strong>scale up detection of a phenotype</strong>
 that is obvious to a human but hard to summarize with a single
@@ -2385,6 +2385,15 @@ cells.</li>
 <li>You may want to find <strong>abnormal cell states</strong>,
 e.g. stressed or apoptotic cells.</li>
 </ul>
+<p><strong>How</strong> does CPA make predictions?</p>
+<p>CPA uses features measured by CellProfiler to decide which phenotype
+a cell exhibits. Note that this means that any work done in CPA is
+heavily influenced by the features measured in CellProfiler: if we only
+used the <code>MeasureObjectSizeShape</code> module while running
+CellProfiler, then CPA will not be able to use any fluorescence
+intensities to make classifications. It is therefore important that the
+CellProfiler pipeline captures as much information as possible to
+increase the chances of making accurate predictions using CPA.</p>
 <div id="cpa-has-rough-edges" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
@@ -2411,19 +2420,21 @@ Download and install CPA from: <a href="https://cellprofileranalyst.org/releases
 <li>
 <p><strong>Download the additional sample data</strong></p>
 <ul>
-<li>SQLite database: <code>data/analyst/DefaultDB.db</code>
+<li>SQLite database: <a href="data/analyst/DefaultDB.db">DefaultDB.db</a>
 </li>
-<li>Properties file:
-<code>data/analyst/DefaultDB_MyExpt.properties</code>
+<li>Properties file: <a href="data/analyst/DefaultDB_MyExpt.properties">DefaultDB_MyExpt.properties</a>
 </li>
 </ul>
 </li>
 </ol></section><section><h2 class="section-heading" id="first-open-of-cellprofiler-analyst">First open of CellProfiler Analyst<a class="anchor" aria-label="anchor" href="#first-open-of-cellprofiler-analyst"></a>
 </h2>
 <hr class="half-width">
-<p>CPA always needs a <strong>properties file</strong> to know: - where
-your database lives, - what tables/columns hold object measurements, -
-where to find images.</p>
+<p>CPA always needs a <strong>properties file</strong> to know:</p>
+<ul>
+<li>where your database lives,</li>
+<li>what tables/columns hold object measurements,</li>
+<li>where to find images.</li>
+</ul>
 <div id="challenge-open-cpa" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
@@ -2531,28 +2542,28 @@ properties file (<code>.properties</code>).</li>
 <div class="accordion-body">
 <p>You should see a SQLite database file (<code>.db</code>) and a
 <code>.properties</code> file in your chosen output folder. The
-<code>.properties</code> file is what CPA opens.</p>
+<code>.properties</code> file is what CPA opens. If you are struggling
+to generate the right files, keep reading - you can use the provided
+files for now.</p>
 </div>
 </div>
 </div>
 </div>
-<div id="rough-edge-warning-object-relationships-can-break-cpa" class="callout">
+<div id="object-relationships-can-break-cpa" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <span class="callout-header">Callout</span>
-<div id="rough-edge-warning-object-relationships-can-break-cpa" class="callout-inner">
-<h3 class="callout-title">Rough edge warning: object relationships can
-break CPA</h3>
+<div id="object-relationships-can-break-cpa" class="callout-inner">
+<h3 class="callout-title">Object relationships can break CPA</h3>
 <div class="callout-content">
-<p>You may see a warning in <strong>ExportToDatabase</strong> along the
-lines of:</p>
+<p>You may see a warning in CellProfiler’s
+<strong>ExportToDatabase</strong> module along the lines of:</p>
 <blockquote>
 <p>“Cytoplasm is not in a 1:1 relationship with the other objects”</p>
 </blockquote>
 <p>This typically happens when some objects were discarded (e.g. border
-filtering) or when tertiary objects don’t perfectly mirror the matching
-rules CPA expects across tables.</p>
+filtering).</p>
 <p>Fixing this properly often requires filtering or restructuring the
 tables in SQLite/Python, which is beyond today’s workshop (see
 below).</p>
@@ -2563,71 +2574,72 @@ below).</p>
 <div class="section level3">
 <h3 id="using-the-provided-database">Using the provided database<a class="anchor" aria-label="anchor" href="#using-the-provided-database"></a>
 </h3>
-<p>While you can use the database you create above, it will lead to some
-issues in CellProfiler Analyst, because we removed cells touching the
-image border.</p>
-<p>Instead, use the provided database and, if you like, properties
-file:</p>
+<p>While you can use the database you created above, it will lead to
+some issues in CellProfiler Analyst, because we removed cells touching
+the image border.</p>
+<p>Instead, use the provided database and properties file:</p>
 <ul>
-<li><code>data/analyst/DefaultDB.db</code></li>
-<li><code>data/analyst/DefaultDB_MyExpt.properties</code></li>
+<li>SQLite database: <a href="data/analyst/DefaultDB.db">DefaultDB.db</a>
+</li>
+<li>Properties file: <a href="data/analyst/DefaultDB_MyExpt.properties">DefaultDB_MyExpt.properties</a>
+</li>
 </ul>
 <p>If you generated your own properties file and want to reuse it, make
 sure the database location inside it points to the database you are
 using.</p>
-<div id="if-cpa-cant-find-the-database" class="callout">
-<div class="callout-square">
-<i class="callout-icon" data-feather="bell"></i>
-</div>
-<span class="callout-header">Callout</span>
-<div id="if-cpa-cant-find-the-database" class="callout-inner">
-<h3 class="callout-title">If CPA can’t find the database</h3>
-<div class="callout-content">
-<p>Open <code>DefaultDB_MyExpt.properties</code> in a text editor and
-update the database path line (line 10). Save the file and try
-again.</p>
-</div>
-</div>
-</div>
+<p><strong>You have to modify</strong> the
+<code>DefaultDB_MyExpt.properties</code> file in a text editor to update
+the database path line (line 10). Enter the path to where you downloaded
+the database file, then save it.</p>
 </div>
 </section><section><h2 class="section-heading" id="viewing-images-in-cellprofiler-analyst">Viewing images in CellProfiler Analyst<a class="anchor" aria-label="anchor" href="#viewing-images-in-cellprofiler-analyst"></a>
 </h2>
 <hr class="half-width">
+<p>CPA allows us to view quickly. This may seem pointless with only two
+images we are using here, but in a 384-well format you quickly find
+yourself with thousands of images, if multiple images were taken per
+well, making it difficult to get an overview of all images. This section
+will briefly take you through viewing images in CPA.</p>
 <div class="section level3">
 <h3 id="load-the-properties-file">Load the properties file<a class="anchor" aria-label="anchor" href="#load-the-properties-file"></a>
 </h3>
-<p>Open CPA and load the <code>.properties</code> file.</p>
-<!-- slide 1 -->
-<figure><img src="fig/analyst/Slide1.png" alt="CellProfiler Analyst start screen indicating that a properties file must be loaded to begin." class="figure mx-auto d-block"></figure><!-- slide 2 --><figure><img src="fig/analyst/Slide2.png" alt="File selection dialog in CellProfiler Analyst used to browse to and select a .properties file." class="figure mx-auto d-block"></figure><!-- slide 3 --><figure><img src="fig/analyst/Slide3.png" alt="CellProfiler Analyst main window after loading a properties file, showing that the experiment is ready to browse." class="figure mx-auto d-block"></figure>
+<p>Open CPA and load the <code>.properties</code> file by following the
+images below.</p>
+<p>CPA after launching: <!-- slide 1 --> <img src="fig/analyst/Slide1.png" alt="CellProfiler Analyst start screen indicating that a properties file must be loaded to begin." class="figure"></p>
+<p>Selecting a properties file (use the downloaded one, after editing it
+as described above): <!-- slide 2 --> <img src="fig/analyst/Slide2.png" alt="File selection dialog in CellProfiler Analyst used to browse to and select a .properties file." class="figure"></p>
+<p>CPA after loading the properties file, if everything went well:
+<!-- slide 3 --> <img src="fig/analyst/Slide3.png" alt="CellProfiler Analyst main window after loading a properties file, showing that the experiment is ready to browse." class="figure"></p>
 </div>
 <div class="section level3">
 <h3 id="open-the-image-gallery-tool">Open the Image Gallery tool<a class="anchor" aria-label="anchor" href="#open-the-image-gallery-tool"></a>
 </h3>
-<p>In CPA, open the <strong>Image Gallery</strong>.</p>
+<p>In CPA, open the <strong>Image Gallery</strong>. To do so, click on
+the Image Gallery tool:</p>
 <!-- slide 4 -->
 <figure><img src="fig/analyst/Slide4.png" alt="CellProfiler Analyst menu/navigation highlighting the Image Gallery tool." class="figure mx-auto d-block"></figure>
 </div>
 <div class="section level3">
 <h3 id="fetch-a-set-of-images">Fetch a set of images<a class="anchor" aria-label="anchor" href="#fetch-a-set-of-images"></a>
 </h3>
-<p>Click <strong>Fetch!</strong> to load thumbnails.</p>
+<p>Then, click <strong>Fetch!</strong> to load thumbnails:</p>
 <!-- slide 5 -->
 <figure><img src="fig/analyst/Slide5.png" alt="Image Gallery in CellProfiler Analyst with the Fetch button highlighted to load image thumbnails from the database." class="figure mx-auto d-block"></figure>
 </div>
 <div class="section level3">
-<h3 id="adjust-brightnesscontrast">Adjust brightness/contrast<a class="anchor" aria-label="anchor" href="#adjust-brightnesscontrast"></a>
+<h3 id="adjust-contrast">Adjust contrast<a class="anchor" aria-label="anchor" href="#adjust-contrast"></a>
 </h3>
 <p>In the top menu, open <strong>View → Image Controls</strong> and
-increase brightness/contrast so cells are easier to see (e.g. ~150% as a
+increase contrast so cells are easier to see (e.g. 150-200% as a
 starting point).</p>
 <!-- slide 6 -->
-<figure><img src="fig/analyst/Slide6.png" alt="Image Controls window in CellProfiler Analyst showing sliders for brightness/contrast adjustments." class="figure mx-auto d-block"></figure>
+<figure><img src="fig/analyst/Slide6.png" alt="Image Controls window in CellProfiler Analyst showing sliders for contrast adjustments." class="figure mx-auto d-block"></figure>
 </div>
 <div class="section level3">
 <h3 id="open-a-full-image">Open a full image<a class="anchor" aria-label="anchor" href="#open-a-full-image"></a>
 </h3>
 <p>Close the controls window, then double-click a thumbnail to open the
-image.</p>
+image:</p>
 <!-- slide 7 -->
 <figure><img src="fig/analyst/Slide7.png" alt="CellProfiler Analyst showing a selected thumbnail in the Image Gallery ready to be opened by double-clicking." class="figure mx-auto d-block"></figure><p>When the image opens, CPA will assign colors to channels. You can
 change which dye maps to which color using the channel controls at the
@@ -2647,11 +2659,9 @@ controls.</p>
 <li>Tubulin → <strong>red</strong>
 </li>
 </ul>
-<p>This is a basic overview of how you can quickly view images in
+<!-- slide 10 --><figure><img src="fig/analyst/Slide10.png" alt="Multi-channel image in CellProfiler Analyst after setting DNA to blue, actin to green, and tubulin to red." class="figure mx-auto d-block"></figure><p>This is a basic overview of how you can quickly view images in
 CellProfiler Analyst. Next, we will move on to a more important task:
 classification.</p>
-<!-- slide 10 -->
-<figure><img src="fig/analyst/Slide10.png" alt="Multi-channel image in CellProfiler Analyst after setting DNA to blue, actin to green, and tubulin to red." class="figure mx-auto d-block"></figure>
 </div>
 </section><section><h2 class="section-heading" id="classifying-cells-with-cellprofiler-analyst">Classifying cells with CellProfiler Analyst<a class="anchor" aria-label="anchor" href="#classifying-cells-with-cellprofiler-analyst"></a>
 </h2>
@@ -2699,7 +2709,7 @@ drag-and-drop thumbnails into a class, or:</p>
 </li>
 </ul>
 <p>Try to label at least ~20–50 examples total (more is better).</p>
-<div id="callout4" class="callout">
+<div id="callout3" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
@@ -2873,8 +2883,8 @@ any links that you are not going to use.
   "url": "https://DBI-INFRA.github.io/2026-02-05-DCI-CellProfiler/aio.html",
   "identifier": "https://DBI-INFRA.github.io/2026-02-05-DCI-CellProfiler/aio.html",
   "dateCreated": "2026-01-08",
-  "dateModified": "2026-02-04",
-  "datePublished": "2026-02-04"
+  "dateModified": "2026-02-09",
+  "datePublished": "2026-02-09"
 }
 
   </script><script>
