@@ -2,8 +2,8 @@
 title: 'Advanced: classifying cells in CellProfiler Analyst'
 teaching: 10
 exercises: 30
-editor_options: 
-  markdown: 
+editor_options:
+  markdown:
     wrap: 100
 ---
 
@@ -29,12 +29,22 @@ editor_options:
 *segment* objects and *measure* them, CPA is often used to **explore** those measurements and to
 **classify cells into phenotypes** (e.g. “healthy” vs “unhealthy”) using machine learning.
 
-Why would we want to do this?
+**Why** would we want to do this?
 
 - You may want to **scale up detection of a phenotype** that is obvious to a human but hard to
   summarize with a single metric.
 - You may want to identify **rare events**, like mitotic cells.
 - You may want to find **abnormal cell states**, e.g. stressed or apoptotic cells.
+
+**How** does CPA make predictions?
+
+CPA uses features measured by CellProfiler to decide which phenotype
+a cell exhibits. Note that this means that any work done in CPA is heavily influenced
+by the features measured in CellProfiler: if we only used the `MeasureObjectSizeShape`
+module while running CellProfiler, then CPA will not be able to use any fluorescence
+intensities to make classifications. It is therefore important that the CellProfiler
+pipeline captures as much information as possible to increase the chances of making
+accurate predictions using CPA.
 
 :::::::: callout
 ### CPA has rough edges
@@ -52,13 +62,14 @@ Before proceeding, make sure you:
    Download and install CPA from: <https://cellprofileranalyst.org/releases>
 
 2. **Download the additional sample data**
-    - SQLite database: `data/analyst/DefaultDB.db`
-    - Properties file: `data/analyst/DefaultDB_MyExpt.properties`
+    - SQLite database: [DefaultDB.db](data/analyst/DefaultDB.db)
+    - Properties file: [DefaultDB_MyExpt.properties](data/analyst/DefaultDB_MyExpt.properties)
 
 
 ## First open of CellProfiler Analyst
 
 CPA always needs a **properties file** to know:
+
 - where your database lives,
 - what tables/columns hold object measurements,
 - where to find images.
@@ -118,18 +129,18 @@ Can you find both files on disk?
 #### Solution (what you should see)
 
 You should see a SQLite database file (`.db`) and a `.properties` file in your chosen output
-folder. The `.properties` file is what CPA opens.
+folder. The `.properties` file is what CPA opens. If you are struggling to generate
+the right files, keep reading - you can use the provided files for now.
 :::
 ::::
 
 :::::::: callout
-### Rough edge warning: object relationships can break CPA
-You may see a warning in **ExportToDatabase** along the lines of:
+### Object relationships can break CPA
+You may see a warning in CellProfiler's **ExportToDatabase** module along the lines of:
 
 > “Cytoplasm is not in a 1:1 relationship with the other objects”
 
-This typically happens when some objects were discarded (e.g. border filtering) or when tertiary
-objects don’t perfectly mirror the matching rules CPA expects across tables.
+This typically happens when some objects were discarded (e.g. border filtering).
 
 Fixing this properly often requires filtering or restructuring the tables in SQLite/Python, which is
 beyond today’s workshop (see below).
@@ -137,62 +148,70 @@ beyond today’s workshop (see below).
 
 ### Using the provided database
 
-While you can use the database you create above, it will lead to some issues in
+While you can use the database you created above, it will lead to some issues in
 CellProfiler Analyst, because we removed cells touching the image border.
 
-Instead, use the provided database and, if you like, properties file:
+Instead, use the provided database and properties file:
 
-- `data/analyst/DefaultDB.db`
-- `data/analyst/DefaultDB_MyExpt.properties`
+- SQLite database: [DefaultDB.db](data/analyst/DefaultDB.db)
+- Properties file: [DefaultDB_MyExpt.properties](data/analyst/DefaultDB_MyExpt.properties)
 
 If you generated your own properties file and want to reuse it, make sure the database location
 inside it points to the database you are using.
 
-:::::::: callout
-### If CPA can’t find the database
-Open `DefaultDB_MyExpt.properties` in a text editor and update the database path line (line 10). Save the file and try again.
-::::::::
+**You have to modify** the `DefaultDB_MyExpt.properties` file in a text editor
+to update the database path line (line 10). Enter the path to where you downloaded
+the database file, then save it.
 
 ## Viewing images in CellProfiler Analyst
 
+CPA allows us to view quickly. This may seem pointless with only two images we 
+are using here, but in a 384-well format you quickly find yourself with 
+thousands of images, if multiple images were taken per well, making it difficult
+to get an overview of all images. This section will briefly take you through 
+viewing images in CPA.
+
 ### Load the properties file
 
-Open CPA and load the `.properties` file.
+Open CPA and load the `.properties` file by following the images below.
 
+CPA after launching:
 <!-- slide 1 -->
 ![](fig/analyst/Slide1.png){alt="CellProfiler Analyst start screen indicating that a properties file must be loaded to begin."}
 
+Selecting a properties file (use the downloaded one, after editing it as described above):
 <!-- slide 2 -->
 ![](fig/analyst/Slide2.png){alt="File selection dialog in CellProfiler Analyst used to browse to and select a .properties file."}
 
+CPA after loading the properties file, if everything went well:
 <!-- slide 3 -->
 ![](fig/analyst/Slide3.png){alt="CellProfiler Analyst main window after loading a properties file, showing that the experiment is ready to browse."}
 
 ### Open the Image Gallery tool
 
-In CPA, open the **Image Gallery**.
+In CPA, open the **Image Gallery**. To do so, click on the Image Gallery tool:
 
 <!-- slide 4 -->
 ![](fig/analyst/Slide4.png){alt="CellProfiler Analyst menu/navigation highlighting the Image Gallery tool."}
 
 ### Fetch a set of images
 
-Click **Fetch!** to load thumbnails.
+Then, click **Fetch!** to load thumbnails:
 
 <!-- slide 5 -->
 ![](fig/analyst/Slide5.png){alt="Image Gallery in CellProfiler Analyst with the Fetch button highlighted to load image thumbnails from the database."}
 
-### Adjust brightness/contrast
+### Adjust contrast
 
-In the top menu, open **View → Image Controls** and increase brightness/contrast so cells are easier
-to see (e.g. ~150% as a starting point).
+In the top menu, open **View → Image Controls** and increase contrast so cells are easier
+to see (e.g. 150-200% as a starting point).
 
 <!-- slide 6 -->
-![](fig/analyst/Slide6.png){alt="Image Controls window in CellProfiler Analyst showing sliders for brightness/contrast adjustments."}
+![](fig/analyst/Slide6.png){alt="Image Controls window in CellProfiler Analyst showing sliders for contrast adjustments."}
 
 ### Open a full image
 
-Close the controls window, then double-click a thumbnail to open the image.
+Close the controls window, then double-click a thumbnail to open the image:
 
 <!-- slide 7 -->
 ![](fig/analyst/Slide7.png){alt="CellProfiler Analyst showing a selected thumbnail in the Image Gallery ready to be opened by double-clicking."}
@@ -216,11 +235,12 @@ For this tutorial, map:
 - Actin → **green**
 - Tubulin → **red**
 
+<!-- slide 10 -->
+![](fig/analyst/Slide10.png){alt="Multi-channel image in CellProfiler Analyst after setting DNA to blue, actin to green, and tubulin to red."}
+
 This is a basic overview of how you can quickly view images in CellProfiler Analyst.
 Next, we will move on to a more important task: classification.
 
-<!-- slide 10 -->
-![](fig/analyst/Slide10.png){alt="Multi-channel image in CellProfiler Analyst after setting DNA to blue, actin to green, and tubulin to red."}
 
 ## Classifying cells with CellProfiler Analyst
 
